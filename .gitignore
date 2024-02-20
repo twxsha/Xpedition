@@ -1,1 +1,4 @@
 .DS_Store
+/server/node_modules
+/ui/node_modules
+/xpedition/node_modules
