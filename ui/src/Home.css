@@ -1,33 +1,128 @@
 .home {
-    text-align: center;
-  }
-  
-  .header {
-    background-color: #000000;
-    min-height: 100vh;
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  /* Add logo styles if needed */
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-description {
+  flex-grow: 1;
+  margin-right: 10px;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+.run-button {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.main-content {
+  padding-top: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 5px;
+}
+
+.input-label {
+  font-size: 25px;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  /* Align the labels to the start of the flex container */
+  color: white;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-large,
+.input-small {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.input-large {
+  flex: 1;
+  margin-right: 10px;
+  min-height: 200px;
+}
+
+.input-small {
+  flex: 1;
+  margin-right: 10px;
+  min-height: 200px;
+}
+
+/* This will be the last input-small in the row so it shouldn't have a margin */
+.row .input-small:last-child {
+  margin-right: 0;
+}
+
+/* Adjustments for responsive design */
+@media (max-width: 768px) {
+  .description {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    align-items: stretch;
   }
-  
-  .form {
-    display: grid;
-    grid-template-rows: auto auto auto auto;
-    gap: 16px;
+
+  .input-description {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
-  
-  .logo {
-    padding: 20px;
-    text-align: center;
+
+  .row {
+    flex-direction: column;
   }
-  
-  .flights-stay {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 10px;
+
+  .input-large,
+  .input-small {
+    margin-right: 0;
     margin-bottom: 10px;
   }
+
+  .row .input-small:last-child {
+    margin-bottom: 0;
+  }
+}
