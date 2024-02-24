@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from './firebase-config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import logo from './logo.png';
 import './SignUp.css';
 
@@ -9,6 +11,7 @@ const SignUp = () => {
     const [lastname, setLastname] = useState('');
     const [contact, setContact] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleFirstNameChange = (e) => {
         setFirstname(e.target.value);
@@ -22,9 +25,29 @@ const SignUp = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    const handleSignupClick = () => {
-        // signup logic
-        navigate('/');
+    const handleSignupClick = async () => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, contact, password);
+            console.log(userCredential.user)
+            navigate('/login');
+        } catch (error) {
+            console.error("Error signing up:", error.message)
+            if (error.code === 'auth/invalid-email') {
+                setErrorMessage('Please provide a valid email.');
+            }
+            else if (error.code === 'auth/weak-password') {
+                setErrorMessage('Password is too short. Minimum length is 6 characters.')
+            }
+            else if (error.code === 'auth/missing-password') {
+                setErrorMessage('Password is missing. Please enter a password.');
+            }
+            else if (error.code === 'auth/missing-email') {
+                setErrorMessage('Email is missing. Please enter an email.');
+            }
+             else {
+                setErrorMessage('Failed to login. Please try again.');
+            }
+        }
     };
     return (
         <div className="signup">
@@ -56,7 +79,7 @@ const SignUp = () => {
                             id="contact"
                             value={contact}
                             onChange={handleContactChange} 
-                            placeholder='  Email or Phone #' > 
+                            placeholder='  Email' > 
                         </input>
                     </div>
                     <div className='passwordInput'>
@@ -67,6 +90,7 @@ const SignUp = () => {
                             placeholder='  Create a Password' > 
                         </input>
                     </div>
+                    {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
                     <div className='signupButton'>
                         <button className='signupbutton' onClick={handleSignupClick}> <p>Sign Up</p> </button>
                     </div>
