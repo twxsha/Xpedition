@@ -38,79 +38,79 @@ const Home = () => {
         // navigate('/some-result-page');
     };
 
-return (
-    <div className="home">
-        <header className="header">
-            <img src={logo} alt="logo" className="logo" />
-            <div className="description">
-                <div className="input-group">
-                    <label className="input-label">Describe Your Vacation</label>
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={handleInputChange}
-                        placeholder="Tell us details that will help us plan! For example, city you are starting from, place you want to go, dates you want to visit, number of people, etc..."
-                        className="input-description"
-                    />
+    return (
+        <div className="home">
+            <header className="header">
+                <img src={logo} alt="logo" className="home_logo" />
+                <div className="description">
+                    <div className="input-group">
+                        <label className="input-label">Describe Your Vacation</label>
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={handleInputChange}
+                            placeholder="Tell us details that will help us plan! For example, city you are starting from, place you want to go, dates you want to visit, number of people, etc..."
+                            className="input-description"
+                        />
+                    </div>
+
+                    <button onClick={handleRunClick} className="run-button">Run</button>
                 </div>
 
-                <button onClick={handleRunClick} className="run-button">Run</button>
-            </div>
-
-        <main className="main-content">
-            <div className="row">
-                <div className="input-group">
-                    <label className="input-label">Flights</label>
-                    <textarea
-                        className="input-large"
-                        value={flights}
-                        onChange={handleflightsChange}
-                        placeholder="..."
-                    ></textarea>
-                </div>
-                <div className="input-group">
-                    <label className="input-label">Stays</label>
-                    <textarea
-                        className="input-large"
-                        value={stay}
-                        onChange={handleStayChange}
-                        placeholder="..."
-                    ></textarea>
-                </div>
-            </div>
-            <div className="row">
-                <div className="input-group">
-                    <label className="input-label">Weather</label>
-                    <textarea
-                        className="input-small"
-                        value={weather}
-                        onChange={handleWeatherChange}
-                        placeholder="..."
-                    ></textarea>
-                </div>
-                <div className="input-group">
-                    <label className="input-label">Activities</label>
-                    <textarea
-                        className="input-small"
-                        value={activities}
-                        onChange={handleActivitiesClick}
-                        placeholder="..."
-                    ></textarea>
-                </div>
-                <div className="input-group">
-                    <label className="input-label">Packing List</label>
-                    <textarea
-                        className="input-small"
-                        value={packlist}
-                        onChange={handlePacklistClick}
-                        placeholder="..."
-                    ></textarea>
-                </div>
-            </div>
-        </main>
-        </header>
-    </div>
-);
+                <main className="main-content">
+                    <div className="row">
+                        <div className="input-group">
+                            <label className="input-label">Flights</label>
+                            <textarea
+                                className="input-large"
+                                value={flights}
+                                onChange={handleflightsChange}
+                                placeholder="..."
+                            ></textarea>
+                        </div>
+                        <div className="input-group">
+                            <label className="input-label">Stays</label>
+                            <textarea
+                                className="input-large"
+                                value={stay}
+                                onChange={handleStayChange}
+                                placeholder="..."
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-group">
+                            <label className="input-label">Weather</label>
+                            <textarea
+                                className="input-small"
+                                value={weather}
+                                onChange={handleWeatherChange}
+                                placeholder="..."
+                            ></textarea>
+                        </div>
+                        <div className="input-group">
+                            <label className="input-label">Activities</label>
+                            <textarea
+                                className="input-small"
+                                value={activities}
+                                onChange={handleActivitiesClick}
+                                placeholder="..."
+                            ></textarea>
+                        </div>
+                        <div className="input-group">
+                            <label className="input-label">Packing List</label>
+                            <textarea
+                                className="input-small"
+                                value={packlist}
+                                onChange={handlePacklistClick}
+                                placeholder="..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </main>
+            </header>
+        </div>
+    );
 };
 
 export default Home;
