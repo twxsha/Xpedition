@@ -48,7 +48,7 @@ const SignUp = () => {
                 setErrorMessage('Email already in use.')
             }
              else {
-                setErrorMessage('Failed to login. Please try again.');
+                setErrorMessage('Failed to sign up. Please try again.');
             }
         }
     };
