@@ -44,6 +44,9 @@ const SignUp = () => {
             else if (error.code === 'auth/missing-email') {
                 setErrorMessage('Email is missing. Please enter an email.');
             }
+            else if (error.code === 'auth/email-already-in-use') {
+                setErrorMessage('Email already in use.')
+            }
              else {
                 setErrorMessage('Failed to login. Please try again.');
             }
