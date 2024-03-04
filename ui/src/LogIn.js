@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from './firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import logo from './logo.png';
 import './LogIn.css';
 
@@ -7,6 +9,7 @@ const LogIn = () => {
     const navigate = useNavigate();
     const [contact, setContact] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleContactChange = (e) => {
         setContact(e.target.value);
@@ -14,9 +17,24 @@ const LogIn = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    const handleLogInClick = () => {
-        // log in logic
-        navigate('/');
+    const handleLogInClick = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, contact, password);
+            navigate('/X');
+        } catch (error) {
+            console.error("Error signing in:", error.message);
+            if (error.code === 'auth/invalid-credential') {
+                setErrorMessage('Email or password is incorrect.');
+            } 
+            else if (error.code === 'auth/invalid-email') {
+                setErrorMessage('Please provide a valid email.');
+            } 
+            else if (error.code === 'auth/missing-password') {
+                setErrorMessage('Password is missing. Please enter a password.');
+            } else {
+                setErrorMessage('Failed to login. Please try again.');
+            }
+        }
     };
     return (
         <div className="login">
@@ -30,7 +48,7 @@ const LogIn = () => {
                             id="contact"
                             value={contact}
                             onChange={handleContactChange} 
-                            placeholder='  Email or Phone #' > 
+                            placeholder='  Email' > 
                         </input>
                     </div>
                     <div className='passwordInput'>
@@ -38,9 +56,10 @@ const LogIn = () => {
                             id="password"
                             value={password}
                             onChange={handlePasswordChange} 
-                            placeholder='  Create a Password' > 
+                            placeholder='  Password' > 
                         </input>
                     </div>
+                    {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
                     <div className='signupButton'>
                         <button className='signupbutton' onClick={handleLogInClick}> <p>Log In</p> </button>
                     </div>

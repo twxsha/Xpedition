@@ -77,4 +77,7 @@
     border-radius: 25px;
   }
   
-  
+  .errorMessage {
+    color: red;
+    margin-top: 10px;
+  }
