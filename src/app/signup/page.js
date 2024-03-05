@@ -30,8 +30,7 @@ const Page = () => {
     const handleSignupClick = async () => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, contact, password);
-            console.log(userCredential.user)
-            navigate('/login');
+            navigate.push('/login');
         } catch (error) {
             console.error("Error signing up:", error.message)
             if (error.code === 'auth/invalid-email') {

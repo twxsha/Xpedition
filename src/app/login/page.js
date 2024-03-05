@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { auth } from '../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import logo from '@/public/logo.png';
-import './LogIn.css';
+import './login.css';
 import { useRouter } from 'next/navigation';
 
 const Page = () => {
@@ -22,7 +22,7 @@ const Page = () => {
     const handleLogInClick = async () => {
         try {
             await signInWithEmailAndPassword(auth, contact, password);
-            navigate('/X');
+            navigate.push('/');
         } catch (error) {
             console.error("Error signing in:", error.message);
             if (error.code === 'auth/invalid-credential') {
