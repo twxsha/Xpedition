@@ -9,10 +9,10 @@ import Link from 'next/link';
 const Page = () => {
     const navigate = useRouter();
     const handleSignupClick = () => {
-        //navigate('/signup');
+        navigate.push('/signup');
     };
     const handleLogInClick = () => {
-        //navigate('/login');
+        navigate.push('/login');
     };
     return (
         <div className="landing">
