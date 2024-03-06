@@ -142,7 +142,9 @@
     margin: 0 auto;
 }
   
-  .errorMessage {
-    color: red;
-    margin-top: 10px;
-  }
+.errorMessage {
+  color: red;
+  margin-top: 5px;
+  font-family: 'Josephine Sans';
+  font-size: 1.2vw;
+}

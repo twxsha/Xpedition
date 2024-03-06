@@ -126,7 +126,9 @@
 }
   .errorMessage {
     color: red;
-    margin-top: 10px;
+    margin-top: 5px;
+    font-family: 'Josephine Sans';
+    font-size: 1.2vw;
   }
   
   
