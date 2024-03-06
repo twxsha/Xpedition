@@ -1,0 +1,3187 @@
+[
+  {
+    "type": "hotel",
+    "name": "Rakkojae Seoul Main Hanok",
+    "description": "Elegant hotel with warm quarters in a traditional Korean building, plus a dining room & a courtyard.",
+    "link": "http://www.rakkojae.com/",
+    "gps_coordinates": {
+      "latitude": 37.580259399999996,
+      "longitude": 126.98598399999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 35 min"
+          }
+        ]
+      },
+      {
+        "name": "화양연화"
+      }
+    ],
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPUCkfgIfijzVTc-Ykgt8XQB_JiKdOz-bDO_KQD=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPUCkfgIfijzVTc-Ykgt8XQB_JiKdOz-bDO_KQD=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMpRLx8rUH0TflFcLBH8n1sQ2F_J3e4rMGKNxWc=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMpRLx8rUH0TflFcLBH8n1sQ2F_J3e4rMGKNxWc=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNWiyn6ATL9j3Nc5EiNP4778OhjWWiIMCA4E4nQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNWiyn6ATL9j3Nc5EiNP4778OhjWWiIMCA4E4nQ=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMkTPynaZp-6Xmz4L-0yp1b99fIYf_vna6lgYgK=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMkTPynaZp-6Xmz4L-0yp1b99fIYf_vna6lgYgK=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPDseXZJbCPpwvNVkBvoKSg9U9C6Md0okfJaUs6=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPDseXZJbCPpwvNVkBvoKSg9U9C6Md0okfJaUs6=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNDc7hYzuhGY_E6GGpVEiKmXyAqHXqTaN_revws=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNDc7hYzuhGY_E6GGpVEiKmXyAqHXqTaN_revws=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOOgysZrB-zMNNhTVbWxQ5D2x04ijA8dyHbxM_L=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOOgysZrB-zMNNhTVbWxQ5D2x04ijA8dyHbxM_L=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMAbs5NyriJEgKZ82UJqNNt8A_WELYMLIweGrsc=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMAbs5NyriJEgKZ82UJqNNt8A_WELYMLIweGrsc=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNinl4ciCbfA8XUSbBbavIIvTZG9vLXNmhbp2Ab=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNinl4ciCbfA8XUSbBbavIIvTZG9vLXNmhbp2Ab=s10000"
+      }
+    ],
+    "overall_rating": 4.6,
+    "reviews": 85,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 61
+      },
+      {
+        "stars": 4,
+        "count": 15
+      },
+      {
+        "stars": 3,
+        "count": 7
+      },
+      {
+        "stars": 2,
+        "count": 0
+      },
+      {
+        "stars": 1,
+        "count": 2
+      }
+    ],
+    "location_rating": 4.2,
+    "reviews_breakdown": [
+      {
+        "name": "Wellness",
+        "description": "Wellness",
+        "total_mentioned": 7,
+        "positive": 6,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 14,
+        "positive": 13,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Spa",
+        "description": "Spa",
+        "total_mentioned": 6,
+        "positive": 5,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 19,
+        "positive": 16,
+        "negative": 2,
+        "neutral": 1
+      },
+      {
+        "name": "Restaurant",
+        "description": "Restaurant",
+        "total_mentioned": 7,
+        "positive": 7,
+        "negative": 0,
+        "neutral": 0
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 11,
+        "positive": 10,
+        "negative": 1,
+        "neutral": 0
+      }
+    ],
+    "amenities": [
+      "Free breakfast",
+      "Free Wi-Fi",
+      "Free parking",
+      "Hot tub",
+      "Air conditioning",
+      "Room service",
+      "Full-service laundry",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChgI-qPUnsurw8PUARoLL2cvMXRwMnliMmYQAQ",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChgI-qPUnsurw8PUARoLL2cvMXRwMnliMmYQAQ&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Four Seasons Hotel Seoul",
+    "description": "Stylish rooms & suites in a high-end hotel with 3 pools, a gym & a spa, plus restaurants & bars.",
+    "link": "https://www.fourseasons.com/seoul/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-sko-hre-mid-seo-na&utm_content=na-na&utm_term=na",
+    "gps_coordinates": {
+      "latitude": 37.57071,
+      "longitude": 126.9754143
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$1,034",
+      "extracted_lowest": 1034,
+      "before_taxes_fees": "$940",
+      "extracted_before_taxes_fees": 940
+    },
+    "total_rate": {
+      "lowest": "$7,241",
+      "extracted_lowest": 7241,
+      "before_taxes_fees": "$6,583",
+      "extracted_before_taxes_fees": 6583
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 34 min"
+          }
+        ]
+      },
+      {
+        "name": "동성각"
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/_B01m38BUJytzkdsH4H7OWVyGGHeEXkfrDG46OtnKXUVHoieTtRhhx3xoDnjnriA07g-fB7noRFIRft_PC2_y8lXB8gb0xBEHqefAcMl5dRDzL4cn8dQdaDvfIC1uAedCcnNfR_aQNlerPAvMcrCjhyLy0MmZA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/58/585304/585304a_hb_ro_021.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOyC79GNCxB9cCotju6FDoT8gI0Wg1OJyTl2AhO=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOyC79GNCxB9cCotju6FDoT8gI0Wg1OJyTl2AhO=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP6q1iIDtvxLA6drIpPFH22k_YxZqg-7qDePFtx=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP6q1iIDtvxLA6drIpPFH22k_YxZqg-7qDePFtx=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMNlGlNx9C5w4buyujw07MAs3EQGqiFkyAEFCkB=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMNlGlNx9C5w4buyujw07MAs3EQGqiFkyAEFCkB=s10000"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/QpjIi4Mms0pbU35dc2mOnrEURDLl4_13R1Toi5aEhEUe0j3Pvw55dXuqhki3PSVR6Ex8GtKg8btys23W1SMUS7BN1hD7qKXAit7zSwEigIyAf0-uv_otXh635fJ9tHQL1NigB-uvLXZztQB87yhBdO75TUpOH7U=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/7/0/130/285/564/Gym_1_O.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/6KGp3e-ECYEokBud1VQGfS0Q9XN43Lz0AGug9ClniKuvkwSUiNX-SsQ0RTn4RrG1JdncDJPZrFBgtiTGEVyU-wny58wD6aM5NS7zlKA-wSpA2jCOndDf0_69yI2hVi_KlA_MbWqvwJWY6u1ZjMNM9Q_tNYy2eGY=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/7/0/130/286/246/Ballroom_Theatre_2_O.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/5k47BkJO9GeQXZfd6IPQdS2cDeYj79kA_mUzzEM_A_jurZ_NaxiyaYOW30rB8oW5YNBODWEeHv8OhekQbjkzlrzNk5l3XrRDK43xjLpvNNQjYAhNwVwvcvpIAC8XU1dC8hHTd7gszHdkBHGiQ1eiYeAfr-ZniQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/7/0/130/286/74/YuYuan_Dining_Hall_O.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/IngEcl3Dq5gct7kfSmNisV01sLp-qy4U79fMzqjCAAbLjpFKrQhDoHtcWWBMdB9TQrYJVqPnxIZ52Bit03X1n_UkDrKbOvvijkaUbnUaKYjWOax360kTvxtfpjwykPpDgUUQU_hL-S7GS2qIQVPi11aULwdKkw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/58/585304/585304a_hb_ba_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM5N3VmBMa7mGuwLZexWErR5CEJFsrKyKnHeGjj=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM5N3VmBMa7mGuwLZexWErR5CEJFsrKyKnHeGjj=s10000"
+      }
+    ],
+    "overall_rating": 4.5,
+    "reviews": 6455,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 4420
+      },
+      {
+        "stars": 4,
+        "count": 1411
+      },
+      {
+        "stars": 3,
+        "count": 405
+      },
+      {
+        "stars": 2,
+        "count": 87
+      },
+      {
+        "stars": 1,
+        "count": 132
+      }
+    ],
+    "location_rating": 4.3,
+    "reviews_breakdown": [
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 723,
+        "positive": 623,
+        "negative": 66,
+        "neutral": 34
+      },
+      {
+        "name": "Dining",
+        "description": "Food and Beverage",
+        "total_mentioned": 404,
+        "positive": 294,
+        "negative": 48,
+        "neutral": 62
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 230,
+        "positive": 171,
+        "negative": 28,
+        "neutral": 31
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 754,
+        "positive": 641,
+        "negative": 57,
+        "neutral": 56
+      },
+      {
+        "name": "Fitness",
+        "description": "Fitness",
+        "total_mentioned": 130,
+        "positive": 98,
+        "negative": 15,
+        "neutral": 17
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 199,
+        "positive": 150,
+        "negative": 28,
+        "neutral": 21
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Free parking",
+      "Hot tub",
+      "Air conditioning",
+      "Fitness centre",
+      "Spa",
+      "Restaurant",
+      "Room service",
+      "Airport shuttle",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoI-sLC4J76rIy8ARoNL2cvMTFidzQ2aHkyMBAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoI-sLC4J76rIy8ARoNL2cvMTFidzQ2aHkyMBAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Grand Hyatt Seoul",
+    "description": "Polished hotel offering an ice rink, an outdoor pool & 2 bars, plus a deli, a spa & 7 restaurants.",
+    "link": "https://www.hyatt.com/en-US/hotel/south-korea/grand-hyatt-seoul/selrs?src=corp_lclb_gmb_seo_selrs",
+    "gps_coordinates": {
+      "latitude": 37.538987999999996,
+      "longitude": 126.9958415
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$587",
+      "extracted_lowest": 587,
+      "before_taxes_fees": "$485",
+      "extracted_before_taxes_fees": 485
+    },
+    "total_rate": {
+      "lowest": "$4,109",
+      "extracted_lowest": 4109,
+      "before_taxes_fees": "$3,396",
+      "extracted_before_taxes_fees": 3396
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 26 min"
+          }
+        ]
+      },
+      {
+        "name": "소정관"
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPmvgc2A8eO1awwwEDwhT7nBAt5C73kT71f0ERQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPmvgc2A8eO1awwwEDwhT7nBAt5C73kT71f0ERQ=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/DQg8JoJgohFwtyWqS1i7yu4Jf_C9xXMH583fL9zzdLo-DX1-uYrhxtuFnszD5kt1vB-VYFf1EEgFKDVWysGLq3W9VPhJYgeFiRPkdjbpIiGKWzqqcaACEd4f9iGMYJbXhFWubGg6KsyrbLiDYKcthfG2pk5GEw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/12/128027/128027a_hb_ro_053.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/WhtjFbbIJUGShruRn7SX7WyKeZldEpaWesd7IIl24BoaRHW3VMTiwxFfrRUbCbVGbHOIUYub51B-Z-egXtbVBJf7FKOg8KUfG58vNCgVbkvYJtyPYXyQPTgeVobnT_GDjyFzZ-vJU1sJoVg7p0mY_5sKxC9WOD8=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/12/128027/128027a_hb_ro_125.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMW0p8HweeK7CZ7es0BRoEV7vBZicdIxIdgqSPw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMW0p8HweeK7CZ7es0BRoEV7vBZicdIxIdgqSPw=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMppNNoNPzjEyTTQMArUMzV6QwSXkGRnI3jdODg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMppNNoNPzjEyTTQMArUMzV6QwSXkGRnI3jdODg=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPZTYKH0DcVIdtV-Tilpv1qBMxELc3FwIkSNNxZ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPZTYKH0DcVIdtV-Tilpv1qBMxELc3FwIkSNNxZ=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNYfQCzL2WiVIlAymSv_PJrxXFyJAMLbsYuGXy_=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNYfQCzL2WiVIlAymSv_PJrxXFyJAMLbsYuGXy_=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPkulwlnPh5t1gP9TfRmy4neuI8DaCwj5kqfxYs=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPkulwlnPh5t1gP9TfRmy4neuI8DaCwj5kqfxYs=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPiLaGTIo8dEfIqL2RZGtlfnapThv1bxtb3FpyT=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPiLaGTIo8dEfIqL2RZGtlfnapThv1bxtb3FpyT=s10000"
+      }
+    ],
+    "overall_rating": 4.4,
+    "reviews": 7691,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 4806
+      },
+      {
+        "stars": 4,
+        "count": 1948
+      },
+      {
+        "stars": 3,
+        "count": 544
+      },
+      {
+        "stars": 2,
+        "count": 158
+      },
+      {
+        "stars": 1,
+        "count": 235
+      }
+    ],
+    "location_rating": 3.9,
+    "reviews_breakdown": [
+      {
+        "name": "Fitness",
+        "description": "Fitness",
+        "total_mentioned": 235,
+        "positive": 171,
+        "negative": 38,
+        "neutral": 26
+      },
+      {
+        "name": "Room",
+        "description": "Room amenities",
+        "total_mentioned": 448,
+        "positive": 343,
+        "negative": 51,
+        "neutral": 54
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 275,
+        "positive": 175,
+        "negative": 59,
+        "neutral": 41
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 848,
+        "positive": 639,
+        "negative": 130,
+        "neutral": 79
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 578,
+        "positive": 435,
+        "negative": 112,
+        "neutral": 31
+      },
+      {
+        "name": "Dining",
+        "description": "Food and Beverage",
+        "total_mentioned": 349,
+        "positive": 223,
+        "negative": 75,
+        "neutral": 51
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Parking",
+      "Indoor pool",
+      "Hot tub",
+      "Air conditioning",
+      "Fitness centre",
+      "Spa",
+      "Bar",
+      "Restaurant",
+      "Room service",
+      "Airport shuttle",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChYIrsPdy9qOlJIpGgovbS8wYndreTU3EAE",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChYIrsPdy9qOlJIpGgovbS8wYndreTU3EAE&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Novotel Ambassador Seoul Dongdaemun Hotels & Residences",
+    "description": "Contemporary rooms in a cosmopolitan hotel offering 2 restaurants & 2 pools, plus a gym & a sauna.",
+    "link": "https://all.accor.com/lien_externe.svlt?goto=fiche_hotel&code_hotel=A5U6&merchantid=seo-maps-KR-A5U6&sourceid=aw-cen&utm_medium=seo+maps&utm_source=google+Maps&utm_campaign=seo+maps&y_source=1_MTUzNjAwNjUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "gps_coordinates": {
+      "latitude": 37.566424999999995,
+      "longitude": 127.004571
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$339",
+      "extracted_lowest": 339,
+      "before_taxes_fees": "$308",
+      "extracted_before_taxes_fees": 308
+    },
+    "total_rate": {
+      "lowest": "$2,372",
+      "extracted_lowest": 2372,
+      "before_taxes_fees": "$2,156",
+      "extracted_before_taxes_fees": 2156
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 24 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNRvhkTo2K6EFSfiXNLQjZngJAqhPjlT0vizMvL=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNRvhkTo2K6EFSfiXNLQjZngJAqhPjlT0vizMvL=s10000"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/mRxJoQ3v8LzRieBbL2Ie7aOrGpytJrOmf3-wnBHIQ79VAQhHA0h3abzSyqpd9k0Ph7LEiOIBd9t-DTwWIpM91FixGiyYe3KxTYvPLLZDXl5brIc3QceJvvMyleLrOpb6nz2-UYQ5UYwmYBtH1MGLzOwXN2LVWZg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/62/627939/627939a_hb_ro_077.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/-FhMDd9MeCDwAHshUqohse6hR0uH5vGt5onM-_cHPTmVopfkp8UTkI_wmpiGC6N8AAnJKQoDHWg-dQ-dAKjOO5QFVvmIVFNs-Tv8rawqCqBK_40XjKcfo5lKtoR64zvPit0RtPKmNOjLyQ_LE-_jblnczAYiSTo=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/62/627939/627939a_hb_ro_046.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPYLp8w_-LMyRIYIRg3j9hw2b_rd_Tcijo0HbUf=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPYLp8w_-LMyRIYIRg3j9hw2b_rd_Tcijo0HbUf=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPLS6YUDsbl6O3NTy-M6rIcrFePq-JIn0wOOZ3S=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPLS6YUDsbl6O3NTy-M6rIcrFePq-JIn0wOOZ3S=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/KhRhetwxAqdfFpExMKVp2tLgpi7Oe5VO9LQa52MCxtQAhYwyxlAbRg7KeVbegQWIdsoo9vrCcg4pkU6M06EzVj66X_yJ-Z6KqSKuJOfszjI8YZUPgQKxQe7Vh6KKclWtGpuFILrvRrjiZ5fxS4lcdK3Gu-S4Jw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/7/0/165/468/33/a5u6_br_02_p_3000x2250_O.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM6XrbuWzALbY-ZLrEWlWyOZXLK7EIntkz6bhhp=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM6XrbuWzALbY-ZLrEWlWyOZXLK7EIntkz6bhhp=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/_MsXtR56JJYuzVJWyLvqJR3K34vDAHwWpw3wc6I57as8Lv_bEpaQhj9qC8FvGhMUsQd_eoxf0bAjAeWrJmLux7VVKCQt7lmNP9fQhlHdpeotwFisdeOROMl6l-5tfc5NYFGzlzyX-dMGUDj9wv4S0zRQDvf9mw0=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://i.giatamedia.com/m.php?m=AQABAAAAla4KAM3mUwMFALpF_fvidTvrGNz471ExYNE"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/3V300e8qgKwRrecJ549QBAnqYWX06lJUw1I6xGgIXoMt2Z8wRx_aWPwzu75BhNqTvESryCBApNi7Gvo6chhb0vKcZ7b44RC11Qf3DTSwcy63p0thwwyuJbeq9GqTkfpAYmAI4AOr76tvJB_S4eJagLy-yo3lqQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/6/0/99/223/905/a5u6_wd_02_p_3000x2250_O.jpg"
+      }
+    ],
+    "overall_rating": 4.4,
+    "reviews": 2104,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 1227
+      },
+      {
+        "stars": 4,
+        "count": 581
+      },
+      {
+        "stars": 3,
+        "count": 170
+      },
+      {
+        "stars": 2,
+        "count": 59
+      },
+      {
+        "stars": 1,
+        "count": 67
+      }
+    ],
+    "location_rating": 4.4,
+    "reviews_breakdown": [
+      {
+        "name": "Fitness",
+        "description": "Fitness",
+        "total_mentioned": 214,
+        "positive": 116,
+        "negative": 62,
+        "neutral": 36
+      },
+      {
+        "name": "Pool",
+        "description": "Pool",
+        "total_mentioned": 137,
+        "positive": 83,
+        "negative": 33,
+        "neutral": 21
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 175,
+        "positive": 130,
+        "negative": 31,
+        "neutral": 14
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 257,
+        "positive": 183,
+        "negative": 55,
+        "neutral": 19
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 212,
+        "positive": 176,
+        "negative": 10,
+        "neutral": 26
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 86,
+        "positive": 46,
+        "negative": 27,
+        "neutral": 13
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Free parking",
+      "Pools",
+      "Hot tub",
+      "Air conditioning",
+      "Fitness centre",
+      "Bar",
+      "Restaurant",
+      "Room service",
+      "Kitchen in some rooms",
+      "Airport shuttle",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "eco_certified": true,
+    "property_token": "ChoIsKjoqIiugOTUARoNL2cvMTFnMW5uaHJsdxAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIsKjoqIiugOTUARoNL2cvMTFnMW5uaHJsdxAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "ibis Styles Ambassador Seoul Myeongdong",
+    "description": "Hip hotel featuring 2 restaurants, a gym & a rooftop bar, plus a sauna & complimentary Wi-Fi.",
+    "link": "https://all.accor.com/lien_externe.svlt?goto=fiche_hotel&code_hotel=9771&merchantid=seo-maps-KR-9771&sourceid=aw-cen&utm_medium=seo+maps&utm_source=google+Maps&utm_campaign=seo+maps&y_source=1_MTUzNjAxMjktNzE1LWxvY2F0aW9uLndlYnNpdGU=",
+    "gps_coordinates": {
+      "latitude": 37.5616814,
+      "longitude": 126.9893591
+    },
+    "check_in_time": "2:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$289",
+      "extracted_lowest": 289,
+      "before_taxes_fees": "$263",
+      "extracted_before_taxes_fees": 263
+    },
+    "total_rate": {
+      "lowest": "$2,026",
+      "extracted_lowest": 2026,
+      "before_taxes_fees": "$1,842",
+      "extracted_before_taxes_fees": 1842
+    },
+    "nearby_places": [
+      {
+        "name": "Myeong-dong",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "8 min"
+          }
+        ]
+      },
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 17 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "4-star hotel",
+    "extracted_hotel_class": 4,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOd2Y-tVd6Xm0-VMsybrWPNunLuv17TeoZXR0cq=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOd2Y-tVd6Xm0-VMsybrWPNunLuv17TeoZXR0cq=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/P9UC2iT03oBFuvkgEJuX7Yff0pLKrD74FloTO-xrWT3IAPMOIK4vUH15tno1J0KL-YmoiNFHALX-BHrNWWC9VN8-kWjqvmTjTrL99RwaD3Ou0xTBfsAbrplwI6_F1fH17BI7cWQr0Mz5jFTx2ub8l7bO90_LhSk=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/e6/6d/e66d205a987257d7241e0773bbe3d2b390560b5e.jpeg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/XD0tUHdAAbvj89usf-k_pWgMR20RW6BRy9UfrK4Pt0FfrsvpDaJRvFPk6fpUgbfs3skZw1ZizKyssjgB1qGyTp6ORzSlN6pQ1rzi3eDE06ZmR3x7Qm7ytV3H9r87w-3Xc7PT0uIlectdY-eDPzvN9oSBUjY17A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/39/390875/390875a_hb_l_007.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/lQC-a6Un5If1A9wUnalCy-EYQFtbesnnaYZ6KH14-8toz9EV7_VqcsL7UXaWEAf9IxKnK_zfbdaG1IJXnvroSUERFDvVn5Hb0MNGvYnZ6YAMOuzK4fOJDziasNJU9kfCsDmZy6kYEqtL0kd9G-OoFs_gbwnMRA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/39/390875/390875a_hb_ro_031.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNYMVGnoBlLhcIYe8gs9RN3X9qVOwye06rBQmdu=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNYMVGnoBlLhcIYe8gs9RN3X9qVOwye06rBQmdu=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOdN16KJY_NjWhxlVLP2NYPOjJ9rkBte1vE0dIU=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOdN16KJY_NjWhxlVLP2NYPOjJ9rkBte1vE0dIU=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMxss3K6o_-NTegaj1c_Y-g0vorB0s0qyq89MQ6=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMxss3K6o_-NTegaj1c_Y-g0vorB0s0qyq89MQ6=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP5Aqy2r4GcW4tbNa9cMTCfhprpj4_etO4wc4_L=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP5Aqy2r4GcW4tbNa9cMTCfhprpj4_etO4wc4_L=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOC4u6fzDVgIzYmXbeSBmEBlqQ3D-os82gl5QtZ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOC4u6fzDVgIzYmXbeSBmEBlqQ3D-os82gl5QtZ=s10000"
+      }
+    ],
+    "overall_rating": 4.1,
+    "reviews": 1471,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 626
+      },
+      {
+        "stars": 4,
+        "count": 533
+      },
+      {
+        "stars": 3,
+        "count": 211
+      },
+      {
+        "stars": 2,
+        "count": 61
+      },
+      {
+        "stars": 1,
+        "count": 40
+      }
+    ],
+    "location_rating": 4.5,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 274,
+        "positive": 218,
+        "negative": 18,
+        "neutral": 38
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 195,
+        "positive": 159,
+        "negative": 22,
+        "neutral": 14
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 121,
+        "positive": 24,
+        "negative": 80,
+        "neutral": 17
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 245,
+        "positive": 148,
+        "negative": 63,
+        "neutral": 34
+      },
+      {
+        "name": "Room",
+        "description": "Room amenities",
+        "total_mentioned": 114,
+        "positive": 68,
+        "negative": 30,
+        "neutral": 16
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 82,
+        "positive": 53,
+        "negative": 17,
+        "neutral": 12
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Parking ($)",
+      "Air conditioning",
+      "Fitness centre",
+      "Bar",
+      "Restaurant",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "eco_certified": true,
+    "property_token": "ChoIqefvwvqPo9nNARoNL2cvMTFiNzNwOWw1chAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIqefvwvqPo9nNARoNL2cvMTFiNzNwOWw1chAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Josun Palace, a Luxury Collection, Seoul Gangnam",
+    "description": "Stylish luxury hotel with elegant rooms & plush suites, plus 5 restaurants, a bar & an indoor pool.",
+    "link": "https://www.marriott.com/en-us/hotels/sellc-josun-palace-a-luxury-collection-hotel-seoul-gangnam/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+    "gps_coordinates": {
+      "latitude": 37.502899899999996,
+      "longitude": 127.04131059999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 39 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOBMrzEgDFvs_FWJtGBKL3UDtljK-yGz9gFNxLq=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOBMrzEgDFvs_FWJtGBKL3UDtljK-yGz9gFNxLq=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPvQYEGp53YUUJFp_Yfu0_4IY7_pqR0CQOgT1yH=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPvQYEGp53YUUJFp_Yfu0_4IY7_pqR0CQOgT1yH=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipODCRArVTBFGJsFVhXWsYn6IzLPwCqq5HV9Xak9=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipODCRArVTBFGJsFVhXWsYn6IzLPwCqq5HV9Xak9=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPsVIhEMEggifk_mECgpkzUIvh-s0v5lvZ9h7Z_=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPsVIhEMEggifk_mECgpkzUIvh-s0v5lvZ9h7Z_=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipO2vIz09BIXIxyJFDYP-G9NwuPjApXuKtIZ4nfB=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipO2vIz09BIXIxyJFDYP-G9NwuPjApXuKtIZ4nfB=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNlbKcvoGAibBSnaxt3ygZ3hXkLJVecz5Ut9RWp=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNlbKcvoGAibBSnaxt3ygZ3hXkLJVecz5Ut9RWp=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPKF5GqAUfD0MtjiplpPQ1WdIW0FULMMJZMxDiH=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPKF5GqAUfD0MtjiplpPQ1WdIW0FULMMJZMxDiH=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP1H4nwJ6SHw-U3kivd-urN80xtwRW0YQoZtOS8=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP1H4nwJ6SHw-U3kivd-urN80xtwRW0YQoZtOS8=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOWw7mUE92bAd47bhh5c0CLleW9E0z6Wcdi3pRO=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOWw7mUE92bAd47bhh5c0CLleW9E0z6Wcdi3pRO=s10000"
+      }
+    ],
+    "overall_rating": 4.6,
+    "reviews": 1131,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 803
+      },
+      {
+        "stars": 4,
+        "count": 232
+      },
+      {
+        "stars": 3,
+        "count": 61
+      },
+      {
+        "stars": 2,
+        "count": 13
+      },
+      {
+        "stars": 1,
+        "count": 22
+      }
+    ],
+    "location_rating": 4.2,
+    "reviews_breakdown": [
+      {
+        "name": "Fitness",
+        "description": "Fitness",
+        "total_mentioned": 55,
+        "positive": 42,
+        "negative": 6,
+        "neutral": 7
+      },
+      {
+        "name": "Dining",
+        "description": "Food and Beverage",
+        "total_mentioned": 98,
+        "positive": 70,
+        "negative": 12,
+        "neutral": 16
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 138,
+        "positive": 93,
+        "negative": 34,
+        "neutral": 11
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 44,
+        "positive": 32,
+        "negative": 6,
+        "neutral": 6
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 69,
+        "positive": 53,
+        "negative": 6,
+        "neutral": 10
+      },
+      {
+        "name": "Pool",
+        "description": "Pool",
+        "total_mentioned": 34,
+        "positive": 28,
+        "negative": 2,
+        "neutral": 4
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Free parking",
+      "Air conditioning",
+      "Fitness centre",
+      "Bar",
+      "Restaurant",
+      "Room service",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoI66qj7Jidy9ynARoNL2cvMTFyZnBmNmhuMRAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoI66qj7Jidy9ynARoNL2cvMTFyZnBmNmhuMRAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "The Westin Josun Seoul",
+    "description": "Polished rooms with city views in a luxe lodging offering 5 restaurants, a gym & an indoor pool.",
+    "link": "https://www.marriott.com/en-us/hotels/selwi-the-westin-josun-seoul/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+    "gps_coordinates": {
+      "latitude": 37.564378,
+      "longitude": 126.98005799999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 24 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOSbT4jKq5KbQSZxNd_eltLQk97aYYkiPrAu61-=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOSbT4jKq5KbQSZxNd_eltLQk97aYYkiPrAu61-=s10000"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/YM4DtHCR6_arfvTg6FQCGmwXJs7u4bRIiilfm4OtcAgbd4_6LQdjQFbUtyIB3cyxs8npDhjNudb6vxOdrWXkMeBkIs71RlADdCLv7C-96sfQzJI9CP59_44mKHLprrcd1YFbVDb7ZaAcg_IjkGTWfkxwz5Xtqw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/12/128025/128025a_hb_ba_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMoGtg9Estj_84IUUSTx7vnyqEL-qYrkapWz7GQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMoGtg9Estj_84IUUSTx7vnyqEL-qYrkapWz7GQ=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOtRRNERnp5IrdGNT6TQUI9ieVJfEhsUfm0G96b=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOtRRNERnp5IrdGNT6TQUI9ieVJfEhsUfm0G96b=s10000"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/_pIlCH2bhRjOduX4lEJUuDBv3e-0334HheGI5Is3XD2aLZ9llNqUBNJt2SXi-RQrA0B6_jqxSZrz_xWtjQkrwxIrkYWFPbja4NGc83xQBES-u29jppOvgDdTkrRxhBib4j5Baf2BPEeePklFU3bWFt4Up7BTkGk=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/12/128025/128025a_hb_ro_032.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/mCimkriEy-aZ5MkhHdN00nfxs_x3nIRTluhYn4dC08rsOKm5C72wG_5kxClF4cZO2D3maK3X9OkdMdKiEiHABNYBcffHO3zCmWOVrBRaTIu41-GHVBYXYbHQvioUCWALbonKl5DIKFH5GI9mz7IhQKU4rEAzaw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/1000000/30000/25000/24908/cea1f5df_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMU1ykcnxo_AaSslfA-ZqGBLpCt9Svz8F0whsfj=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMU1ykcnxo_AaSslfA-ZqGBLpCt9Svz8F0whsfj=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPRKGqgf-X30TtlkPRrLRpXxq89Wb4YepXwR3wF=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPRKGqgf-X30TtlkPRrLRpXxq89Wb4YepXwR3wF=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMY1INBxtuIYYdJKMpM6497CZiBD28ok01iMMz9=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMY1INBxtuIYYdJKMpM6497CZiBD28ok01iMMz9=s10000"
+      }
+    ],
+    "overall_rating": 4.5,
+    "reviews": 5821,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 3721
+      },
+      {
+        "stars": 4,
+        "count": 1522
+      },
+      {
+        "stars": 3,
+        "count": 372
+      },
+      {
+        "stars": 2,
+        "count": 74
+      },
+      {
+        "stars": 1,
+        "count": 132
+      }
+    ],
+    "location_rating": 4.5,
+    "reviews_breakdown": [
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 643,
+        "positive": 548,
+        "negative": 57,
+        "neutral": 38
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 683,
+        "positive": 543,
+        "negative": 70,
+        "neutral": 70
+      },
+      {
+        "name": "Dining",
+        "description": "Food and Beverage",
+        "total_mentioned": 293,
+        "positive": 229,
+        "negative": 37,
+        "neutral": 27
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 196,
+        "positive": 130,
+        "negative": 39,
+        "neutral": 27
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 409,
+        "positive": 363,
+        "negative": 16,
+        "neutral": 30
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 250,
+        "positive": 208,
+        "negative": 23,
+        "neutral": 19
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Free parking",
+      "Air conditioning",
+      "Fitness centre",
+      "Spa",
+      "Bar",
+      "Restaurant",
+      "Room service",
+      "Airport shuttle",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChgIxcfijY6A0sfiARoLL2cvMXRqZHR2dnoQAQ",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChgIxcfijY6A0sfiARoLL2cvMXRqZHR2dnoQAQ&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "ibis Styles Ambassador Seoul Gangnam",
+    "description": "Unfussy quarters in a contemporary budget hotel offering free breakfast, a gym & a sauna.",
+    "link": "https://all.accor.com/lien_externe.svlt?goto=fiche_hotel&code_hotel=3730&merchantid=seo-maps-KR-3730&sourceid=aw-cen&utm_medium=seo+maps&utm_source=google+Maps&utm_campaign=seo+maps&y_source=1_MTUzNjEyMDMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "gps_coordinates": {
+      "latitude": 37.5050612,
+      "longitude": 127.0570773
+    },
+    "check_in_time": "2:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$211",
+      "extracted_lowest": 211,
+      "before_taxes_fees": "$191",
+      "extracted_before_taxes_fees": 191
+    },
+    "total_rate": {
+      "lowest": "$1,474",
+      "extracted_lowest": 1474,
+      "before_taxes_fees": "$1,340",
+      "extracted_before_taxes_fees": 1340
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 50 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "3-star hotel",
+    "extracted_hotel_class": 3,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/HkcbQXOvYu_SFn9s9qFNSLUWVvByhbKgjqSaw1uYxO3dtMgKBq_EmXP5yAnOSwywiLYvYN1mwCOOHNv0PB6E93q2BXcbbFs0vPmsbtS46lEtX46jpdFJ8fTN3ZRdS-GbU4XugWzlnDIi2eIXv1YXV2u-dBfSKlI=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/088920/088920a_hb_ro_062.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/X-X6MyN_It-nQN8yc1GUkLD3GoUaV7jWxZqH4FOMQA3bx0s-I2mmquqTPubeQ4rUeOIBhqjiso0hp1U-CNfLsqq4wAksSeZS1-xYRAjRbdMnJXUcOKGhUJn4SVWXkRh5ojfbgFpAU8JgB_fgAyvrs5ADHg_P2xk=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://i.giatamedia.com/m.php?m=AQABAAAAla4KAFf5UgMFAAQc6apXXeTbMu157Sx-fxg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipObg8iaTPQl58kAoqvu7TuR3yc4RZdgNc4AF72G=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipObg8iaTPQl58kAoqvu7TuR3yc4RZdgNc4AF72G=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/UrwBRMJFBS9LPMffdPRjD5D0fBjB3HEHx4IXZXOCb_3G_i1b9Zmz-oZ0GkFn3Ldy2G_yZ_Bm9m_8d0Z86BhCSLNdLjpOHXAdFCBOQI0hRNIymOUItl2BJWXlcwpGF_9CrtWkPk5eijJnwyom7R8pZIOF5DL84Q=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://i.giatamedia.com/m.php?m=AQABAAAAla4KAMznTwQFAHv-LP3dXXNnUVnS8KKFUbM"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP92m-wm1z1RuIm-lp7QsOejQNKDb1tjuL3Jbgy=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP92m-wm1z1RuIm-lp7QsOejQNKDb1tjuL3Jbgy=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM5F2cxFnEel3YaYDerrsH-i1tkMk9ZXIZX4GnY=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM5F2cxFnEel3YaYDerrsH-i1tkMk9ZXIZX4GnY=s10000"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/14T84K_hE84mqJekpVKvGz8YSUZzqGJ5WfdoS1n7TJ4ehLQtMXPsb63VA9b9pUNKvtHisjoVRPUrfsHx2IfjrNolk0k6VU9NzkHOUYEMxHRtbj7Z2tRvD3qiWGpl4EyGdwyjOpDgvWsUBea6nkFs9dVXznrCAg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/088920/088920a_hb_r_030.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOYvFMKxfH43NYp-1d21jKix-fRd-lJDBOhnL-F=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOYvFMKxfH43NYp-1d21jKix-fRd-lJDBOhnL-F=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNvVFuyO4sBgE715IjWUSJ0HMHGyFrkUMFH2kCN=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNvVFuyO4sBgE715IjWUSJ0HMHGyFrkUMFH2kCN=s10000"
+      }
+    ],
+    "overall_rating": 4,
+    "reviews": 2083,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 832
+      },
+      {
+        "stars": 4,
+        "count": 724
+      },
+      {
+        "stars": 3,
+        "count": 366
+      },
+      {
+        "stars": 2,
+        "count": 79
+      },
+      {
+        "stars": 1,
+        "count": 82
+      }
+    ],
+    "location_rating": 3.9,
+    "reviews_breakdown": [
+      {
+        "name": "Business",
+        "description": "Business",
+        "total_mentioned": 102,
+        "positive": 64,
+        "negative": 15,
+        "neutral": 23
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 219,
+        "positive": 168,
+        "negative": 17,
+        "neutral": 34
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 270,
+        "positive": 168,
+        "negative": 70,
+        "neutral": 32
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 188,
+        "positive": 155,
+        "negative": 24,
+        "neutral": 9
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 101,
+        "positive": 77,
+        "negative": 12,
+        "neutral": 12
+      },
+      {
+        "name": "Parking",
+        "description": "Parking",
+        "total_mentioned": 63,
+        "positive": 9,
+        "negative": 43,
+        "neutral": 11
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Parking",
+      "Air conditioning",
+      "Fitness centre",
+      "Bar",
+      "Restaurant",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "eco_certified": true,
+    "property_token": "ChgI4sqAps-Tmu6nARoLL2cvMXRkMjNjcDYQAQ",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChgI4sqAps-Tmu6nARoLL2cvMXRkMjNjcDYQAQ&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Seoul Forest Stay",
+    "link": "https://www.seoulforeststay.com/",
+    "gps_coordinates": {
+      "latitude": 37.547353699999995,
+      "longitude": 127.0447709
+    },
+    "check_in_time": "2:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$60",
+      "extracted_lowest": 60,
+      "before_taxes_fees": "$54",
+      "extracted_before_taxes_fees": 54
+    },
+    "total_rate": {
+      "lowest": "$417",
+      "extracted_lowest": 417,
+      "before_taxes_fees": "$379",
+      "extracted_before_taxes_fees": 379
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 36 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "2-star hotel",
+    "extracted_hotel_class": 2,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMBeEYbo5hxBavYtLM2VoNqBMUJn9450tZ3Zr9I=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMBeEYbo5hxBavYtLM2VoNqBMUJn9450tZ3Zr9I=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPZ_zGsZuPq8dixVmbE7KGstzmQxK0-aJFhNqxx=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPZ_zGsZuPq8dixVmbE7KGstzmQxK0-aJFhNqxx=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/xZ3hnn773eT5h7KQefbA43A6mFcCn9vlfEyMiAOJRtgJlzJmeHRdOsFsmPcqD4V2Rqq_skKPUTEyp4kWPzEjHz3huSoyw851LdJNLfCpTxb5KC1NTjJNgbQyJeMcHOq7ptJ8JxIA-2S7Gvn5y89mxLo9MYJjLZQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/26000000/25840000/25833800/25833766/4ef8220c_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM5hzqi5WEV180Hkel6cyUsFID9_tyaZeIUz9n-=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM5hzqi5WEV180Hkel6cyUsFID9_tyaZeIUz9n-=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMaTbWzNaEN8GsedFOvl2RqkvZdpOXLjOinarWV=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMaTbWzNaEN8GsedFOvl2RqkvZdpOXLjOinarWV=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMKc2uidpr88WnB5NxP4xQo20GvxPzO2uDen9OE=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMKc2uidpr88WnB5NxP4xQo20GvxPzO2uDen9OE=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMP_nZh8ca7of_OAB1qOSkEdW4RQ-dBXtAuGOLS=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMP_nZh8ca7of_OAB1qOSkEdW4RQ-dBXtAuGOLS=s10000"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/qczjNCj0lVBIA_FYg105VfjpDypUNf8I102YxqWWdhjzg7IkFkyJbcc6_akPQdxFpnLRq-h0u6Kcue3DwsQXRtNSy1SKfdo55vLWA8VSZI3xoVj1OUphaqINvnolEEtpiB8V55mA-FaDpgyHemFfaPzU-JK-w50=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/73/b7/73b73010e5a87992fe2adbef8c682e0f673d0030.jpeg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/mM-5Xt0IBXcedpBt6UTZKJ-w5OjFeRFoSxpYxRhq7lhoVx8-3Qr2w0OZ05xl6MAtOlWVsZSJiptcUME12_oh-KPBkXLONFoMWZHL6Q2UFPfaA1iOWBm2MzbjA9xltctEENC77cysDyYNGDjb7cBN6I7j9rKwBVs=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/cf/e3/9f/dining-room.jpg"
+      }
+    ],
+    "overall_rating": 4.1,
+    "reviews": 46,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 21
+      },
+      {
+        "stars": 4,
+        "count": 15
+      },
+      {
+        "stars": 3,
+        "count": 5
+      },
+      {
+        "stars": 2,
+        "count": 2
+      },
+      {
+        "stars": 1,
+        "count": 3
+      }
+    ],
+    "location_rating": 3.6,
+    "reviews_breakdown": [
+      {
+        "name": "Sleep",
+        "description": "Sleep",
+        "total_mentioned": 10,
+        "positive": 4,
+        "negative": 4,
+        "neutral": 2
+      },
+      {
+        "name": "Kitchen",
+        "description": "Kitchen",
+        "total_mentioned": 5,
+        "positive": 2,
+        "negative": 2,
+        "neutral": 1
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 11,
+        "positive": 10,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 9,
+        "positive": 8,
+        "negative": 1,
+        "neutral": 0
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 8,
+        "positive": 6,
+        "negative": 1,
+        "neutral": 1
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 10,
+        "positive": 5,
+        "negative": 4,
+        "neutral": 1
+      }
+    ],
+    "amenities": [
+      "Free Wi-Fi",
+      "Air conditioning",
+      "Restaurant",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoI7rrF_dXfjY2pARoNL2cvMTFmZ2p2M3I0NxAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoI7rrF_dXfjY2pARoNL2cvMTFmZ2p2M3I0NxAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "UH Suite The Seoul",
+    "gps_coordinates": {
+      "latitude": 37.556253,
+      "longitude": 126.96824199999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "58 min"
+          }
+        ]
+      },
+      {
+        "name": "차차타이"
+      }
+    ],
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipO1Gu35--1uz3XXW_4L6h2zWOztfTT9If3Yv8Q=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipO1Gu35--1uz3XXW_4L6h2zWOztfTT9If3Yv8Q=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/LL3ZyIB2b7qaEJJlJ_vauTvEcJtqn_zqJaxgodi6bvzI6uDfogHKLfHrVyq24Pbi7ozlzxtWdY8VNuGLi9-NdgT-006HYzUF0ewUmp94StqwaUKljEx_ZaO4NyF5SCeuxuVBaOrg4cXZFvyu_P1cb7WoNYsLhA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/02/02/020279f252898a9cd9649835a97d1d73fd92b6ef.jpeg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/tUpzboiqWmWrfjLEvjUUuYbxCr_i3issqvrpAx59XQWsD5MdV3Xxni6HkeIITA7_Iq5Lvwf7ZOtSiBAo1idvcwWhbGDwZoOmX6coXy4OYDUOJS8dO_lz5Dfu7xxM_TCwPL5p3IV0s3EKpIrZNs8La3ieTfmvPsM=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/66000000/65310000/65308900/65308835/37ac9d13_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/6yNRll08_FZwDfy3vuo_H6ukU6vMzC9lELKiIb4Fr9bNHUc1xxuOTbZU15QSK9H_ZN0yBxIzyEwAqKxwqw-gd-KLqb1pTVjpjpK0nVHCyRzttQmh6kALgPMP2TYFuKzRXfHe998Cuz_n5Crak5sqpAe5VgBwFqU=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/66000000/65310000/65308900/65308835/cf8580c8_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPGJQ1QktrfBmotjuiwpXyJxz0qUot_8OpAF1aM=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPGJQ1QktrfBmotjuiwpXyJxz0qUot_8OpAF1aM=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/PQ8KK3EvFRoAZPJ0fA1wVZvcAFZ7tgCLNk6UuaasVE1d9IqajFOq3vmn-Tpuyb11rqlqFUIo-uMq1Y-a2qCoqf4y-4-iNR4MwZd5zwMJAUnUetyi-Hrgqqt05ql0TkI94iGMWo-1TPZ8f5l47PmBo0pKYhYn7-k=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/b9/12/b91295975fb0e3825c5d6023d963736f936bc139.jpeg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOSML0we4avwZsgHuOO__MCpmYxhxk3GbYhq6U=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOSML0we4avwZsgHuOO__MCpmYxhxk3GbYhq6U=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/42gik7Li3AjuPRbGqsmqFjx8K6AKbNYLLdtDV4pVFbpvHrvyB4tzAUHhRkdM9QNGQKD8bRfMxxi4rfqgZpSPs1fcdtBqWRg0LsTzr67UMxaPUrMvAQsOdM-LVCdi57DyG5il_2e1MIIVBdekQwp0vPHVmVyxEQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/66000000/65310000/65308900/65308835/b983c0b2_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/BduGZOLOs5-XJn-OaDM8b5W4o6bbELR9_Cqdnr8LNLahQhPcxn-rraql6BfnLQlNJVHgy7a_Fl91j0-P-_sasnZbrjU4pwwH0wcaVlMGs6xawlne0eqdnkQYLUBKoD0WC2t21V4HrTgtehoKJiuHIiVixTliLk4=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/f6/67/f6677431843a0ef5ebe3bbbc7cfc984c6259f230.jpeg"
+      }
+    ],
+    "overall_rating": 4.3,
+    "reviews": 23,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 12
+      },
+      {
+        "stars": 4,
+        "count": 8
+      },
+      {
+        "stars": 3,
+        "count": 2
+      },
+      {
+        "stars": 2,
+        "count": 0
+      },
+      {
+        "stars": 1,
+        "count": 1
+      }
+    ],
+    "location_rating": 3.3,
+    "reviews_breakdown": [
+      {
+        "name": "Room",
+        "description": "Room amenities",
+        "total_mentioned": 7,
+        "positive": 5,
+        "negative": 1,
+        "neutral": 1
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 7,
+        "positive": 6,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 7,
+        "positive": 3,
+        "negative": 3,
+        "neutral": 1
+      },
+      {
+        "name": "Sleep",
+        "description": "Sleep",
+        "total_mentioned": 5,
+        "positive": 3,
+        "negative": 1,
+        "neutral": 1
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 8,
+        "positive": 6,
+        "negative": 1,
+        "neutral": 1
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 5,
+        "positive": 4,
+        "negative": 0,
+        "neutral": 1
+      }
+    ],
+    "amenities": [
+      "Free Wi-Fi",
+      "Air conditioning"
+    ],
+    "property_token": "ChoIvuqF0JmAvaH-ARoNL2cvMTFuZnZzZDlsZBAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIvuqF0JmAvaH-ARoNL2cvMTFuZnZzZDlsZBAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Soo Song Guest House",
+    "description": "Unassuming rooms in a modest hotel offering a rooftop terrace & free Wi-Fi, plus city views.",
+    "link": "http://www.soosong.kr/",
+    "gps_coordinates": {
+      "latitude": 37.5730311,
+      "longitude": 126.98110129999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$76",
+      "extracted_lowest": 76,
+      "before_taxes_fees": "$63",
+      "extracted_before_taxes_fees": 63
+    },
+    "total_rate": {
+      "lowest": "$535",
+      "extracted_lowest": 535,
+      "before_taxes_fees": "$442",
+      "extracted_before_taxes_fees": 442
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 40 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "2-star hotel",
+    "extracted_hotel_class": 2,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipML1bKf2UoYOpTv8rzb4uIBbpfbFD_2ZlzPujUT=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipML1bKf2UoYOpTv8rzb4uIBbpfbFD_2ZlzPujUT=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/kTYPT_PZyKOoqwf9hG6JliIvLvY1o9fmdqbREVqo8hsh5bw1fE_UwMm_f3IZ3mKOm6SBHgonsIwbkyfY5alei4HjpP9yQaSAcxDuEKWR5di8epkWdxvZaqrzReQyaNdOAnCKtPML4qwX9ucl5xMRg9pwQOLwoA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/15/31/1531b0885467f455c0f7387160b674c6a8c652d1.jpeg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPSk6xdCGGFK0tSW3a7cCUIdOGnIGc4h7ilZvGZ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPSk6xdCGGFK0tSW3a7cCUIdOGnIGc4h7ilZvGZ=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPzPZBHfF0JpLqKxvXLuRFUJq-NpoT7YN23UbA0=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPzPZBHfF0JpLqKxvXLuRFUJq-NpoT7YN23UbA0=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/F1XcTs4UBQNiSr3SXZZXwGWHDrXSLywMmShKUFF4WrRyV8pRCw8ZopPprpXOXSnWyvjg1ChjK7XTIiq_P3LyOmGEcfzv1IiSoz0xUHmhqU8Hq7o6F96vrdhRsMu0JU7mvQpMeaShjgNHlBngZ5cBbs3r7xQFsA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/72000000/71620000/71613900/71613878/947aba39_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOpEcIQxt1mTYscuaWQOz5kePZtV0w6las0-ayf=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOpEcIQxt1mTYscuaWQOz5kePZtV0w6las0-ayf=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOdGVMbF9ig0F98PmjXPt6eaozxrE1Y2HA9R7GU=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOdGVMbF9ig0F98PmjXPt6eaozxrE1Y2HA9R7GU=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP764xrFRO-FySS9x2JGWc-yNr6Fl5WigsodLca=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP764xrFRO-FySS9x2JGWc-yNr6Fl5WigsodLca=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMGGorfv6r-IbDhSGt8V7LFu198ZdrrEGE9HLAx=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMGGorfv6r-IbDhSGt8V7LFu198ZdrrEGE9HLAx=s10000"
+      }
+    ],
+    "overall_rating": 4.3,
+    "reviews": 104,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 65
+      },
+      {
+        "stars": 4,
+        "count": 15
+      },
+      {
+        "stars": 3,
+        "count": 17
+      },
+      {
+        "stars": 2,
+        "count": 2
+      },
+      {
+        "stars": 1,
+        "count": 5
+      }
+    ],
+    "location_rating": 4.1,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 35,
+        "positive": 29,
+        "negative": 3,
+        "neutral": 3
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 34,
+        "positive": 32,
+        "negative": 2,
+        "neutral": 0
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 13,
+        "positive": 10,
+        "negative": 2,
+        "neutral": 1
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 25,
+        "positive": 21,
+        "negative": 3,
+        "neutral": 1
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 20,
+        "positive": 20,
+        "negative": 0,
+        "neutral": 0
+      },
+      {
+        "name": "Transit",
+        "description": "Public transit",
+        "total_mentioned": 9,
+        "positive": 6,
+        "negative": 0,
+        "neutral": 3
+      }
+    ],
+    "amenities": [
+      "Free Wi-Fi",
+      "Air conditioning",
+      "Restaurant",
+      "Smoke-free property"
+    ],
+    "property_token": "ChgI6ezX4sOFt7GIARoLL2cvMXRkMWd5Yl8QAQ",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChgI6ezX4sOFt7GIARoLL2cvMXRkMWd5Yl8QAQ&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Star Hostel Seoul Dongdeamun",
+    "description": "Simple rooms, some with bunk beds, in a modest hostel offering complimentary breakfast & Wi-Fi.",
+    "link": "https://www.facebook.com/star.seoul",
+    "gps_coordinates": {
+      "latitude": 37.571549999999995,
+      "longitude": 127.00340899999998
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$60",
+      "extracted_lowest": 60,
+      "before_taxes_fees": "$54",
+      "extracted_before_taxes_fees": 54
+    },
+    "total_rate": {
+      "lowest": "$419",
+      "extracted_lowest": 419,
+      "before_taxes_fees": "$381",
+      "extracted_before_taxes_fees": 381
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 21 min"
+          }
+        ]
+      },
+      {
+        "name": "Silla galbi"
+      }
+    ],
+    "hotel_class": "2-star hotel",
+    "extracted_hotel_class": 2,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/f_lvyoIaQ05CpHZZoijBnLC2p2IUI1oOt4s8Qxt0dewtW1q2ihKydC7Kh9Rk-B0rEbpaSl8HbdLq4u_EXiMNCZazgJbYdWKdSUYbnkQM9IHtqTlNT1wDIiidXAQtSuJt7zXTYXeoGxrg9AroEgGC_rw_tDszGB0=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/9000000/8460000/8457300/8457278/02e786e6_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/iYo_gFZux44Ov3qkvleO-zeHFzByV18i9qFLmwvM4-nuS84-78TBSSot4gJTztZ6O0hlDGB4_B2dQKk4ZDkVzdVvGnRdBa0_QCsuXRsekXl2BVxoxhS9W8a5Zihz03APOEmeP1RMH5BzAFSlWyV4f4SlAzilWso=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/83/ed/d9/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/7Gw1FVtqWTxlt-WtyFZU4cdUTI3Jp3wH-vGJczn9jaGnD5TUKS1gyGNKX1PIjEY8GDnVGMcYML-IeOjKNKn-jVN4rwzzAzgqENmbc1lcpXOntOKWeUoksf_sfI33t2FVTan9m4C174A_xPLvWjROg4DOkX4TjZA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/83/ed/d5/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/AlMRLdJvshPYEu9eNEFk-PGcVT8lDghwYe-c4vrJ2xi9lcszr0Vxx9vLY8ZDWJovBjcWHouccxR0iZxxVSzfcz6tAXoSw6YE2EN4Uo0iMXP-HC3KFQfWJSolu0vxBpiEXs0tUVLfEBPFg7rmJZZolhCr0OW_Yw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/0b/53/0b531f531046c646bea5918e4a81a046cd00bcb7.jpeg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/oXFdReuy0wBgHrUBvt2AcUKlkZkxYiVaI0qz6XBv-RsZXw50hcg_3jOCgJ6v0OZT2wPZhu8R_iMK4UbL4UE93VwxhNpEtb7FkGa0JUn1mJNPi-i_c5LSYbmAvXzTgD6U6Si4UAJHB4CjPdqfSF7P-j_i01Zo9A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/49/88/498819d1ae9757e057325ec84f02cf808de960ec.jpeg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/U4CushzzAfoTyUOcRSKs63WzQTJJmiD9JldA_7ojjo7DizdkCVxx9KFC7H6QsvJ8yiQNnLfeIkXNWFRQDaLiEO3Y0YL_hwY7FfZ48LU9yy9pwYBdfsD0iew1DzaJNeaQJYwGDeFkgwJpw9dRL87jzqZHPaDPmQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/83/ec/46/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/dr2DWuvvx_-bSRIGN56I6HVbCmzTLvRoaimX72twMQoR6mC54yzoc9_A8cNvmwleO620khv8RB2N6urNCXBey-GNbrAGs6oPN-f6Yj3zqMff_nmMmoovvrfxBz1IuH7WCmOzrkYOJlTM5izb6hvTDwmDpc-JpGM=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/c1/90/c190f8ca8d6826f64af83625da17fc39b5ec2fce.jpeg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/o1wTb1MVczfvx2ZXLwKFYhpmG1WA3il8fqWlZQfBM1r3kxTf4TQyUupIIoBXXI74PIaV8jPT_A10lKeqdciXWJYOPa30WCq2EmNfbjL3z2LmjQWeP_7M5W6IAX1E06gbTm6wZIrekSTUS_MGx5o7sI6uSEMnlQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/bc/f4/bcf4eae4c740ebe51f522e5bf0c00326773d3266.jpeg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/V_1cSuttcZBKvB1VE3RG8L1qU7yKV4lVNpgfXJ86uzCsZQg2kp-PMe_ExdnlJPTKYhge3Ax7-IOZCDbQ1938OiqNokD-3dipjLVkYzBKyYmkEw9n_HSETNIvA37oL33eEn4U967KTATA9irnPsotStzzeb2UJEk=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://cdn.worldota.net/t/1024x768/content/f5/a3/f5a3fb3b60325af63c4ef7624b6e4c73e954ec38.jpeg"
+      }
+    ],
+    "overall_rating": 3.2,
+    "reviews": 100,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 25
+      },
+      {
+        "stars": 4,
+        "count": 20
+      },
+      {
+        "stars": 3,
+        "count": 25
+      },
+      {
+        "stars": 2,
+        "count": 8
+      },
+      {
+        "stars": 1,
+        "count": 22
+      }
+    ],
+    "location_rating": 4.3,
+    "reviews_breakdown": [
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 17,
+        "positive": 1,
+        "negative": 12,
+        "neutral": 4
+      },
+      {
+        "name": "Sleep",
+        "description": "Sleep",
+        "total_mentioned": 15,
+        "positive": 1,
+        "negative": 12,
+        "neutral": 2
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 19,
+        "positive": 10,
+        "negative": 5,
+        "neutral": 4
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 19,
+        "positive": 2,
+        "negative": 13,
+        "neutral": 4
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 21,
+        "positive": 12,
+        "negative": 7,
+        "neutral": 2
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 22,
+        "positive": 5,
+        "negative": 15,
+        "neutral": 2
+      }
+    ],
+    "amenities": [
+      "Breakfast",
+      "Free Wi-Fi",
+      "Air conditioning",
+      "Restaurant",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoIrr2DlpepzqfZARoNL2cvMTFiNXF0MXEwMRAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIrr2DlpepzqfZARoNL2cvMTFiNXF0MXEwMRAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Hilton Garden Inn Seoul Gangnam",
+    "description": "High-end hotel offering polished rooms & suites, plus a restaurant, a gym & an outdoor pool.",
+    "link": "https://www.hilton.com/en/hotels/selgigi-hilton-garden-inn-seoul-gangnam/?SEO_id=GMB-APAC-GI-SELGIGI",
+    "gps_coordinates": {
+      "latitude": 37.485883099999995,
+      "longitude": 127.03276349999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 27 min"
+          }
+        ]
+      },
+      {
+        "name": "이올로화덕피자"
+      }
+    ],
+    "hotel_class": "4-star hotel",
+    "extracted_hotel_class": 4,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOHuOzp6bqDlBjD-12GW1BH5NHQKVFxjHjd3PQi=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOHuOzp6bqDlBjD-12GW1BH5NHQKVFxjHjd3PQi=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOpO0lPz0TJToZpFzf6ldqvV1ZAITQh3O83CFbW=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOpO0lPz0TJToZpFzf6ldqvV1ZAITQh3O83CFbW=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipN-vtBej1Qbl17s1M7pL2lMeYX-CZ32s1Rcee1G=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipN-vtBej1Qbl17s1M7pL2lMeYX-CZ32s1Rcee1G=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPNzybBga7Zk55Mdmj1ZPsVmohf9gvlxSBqNhnS=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPNzybBga7Zk55Mdmj1ZPsVmohf9gvlxSBqNhnS=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM71wECWdZdmefH_WAKFJuEISjGRICvAH7NfIRS=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM71wECWdZdmefH_WAKFJuEISjGRICvAH7NfIRS=s10000"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/ujDkIuJ06XNUjlXhLVZNOKzLAVsHW3etH1loLZ3sUnjmvU0nj7Wb2MGx6kX4SUPVfX_YfcMGk7ltRuCTxl0k7LXfio04g0tFf9oyz9cap87pOFv289P718LE5MLkuIUgBeyTtyWzeCn4XgrI5jA9_obdjPLXOXI=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/88/882043/882043a_hb_a_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOnFJlGNZts4IUXhnnNbozzCwDIZHovo7vXLS7F=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOnFJlGNZts4IUXhnnNbozzCwDIZHovo7vXLS7F=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipN3JmW0clwZe-ZADct-ThZnyR7uEBqK9F_n0f-i=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipN3JmW0clwZe-ZADct-ThZnyR7uEBqK9F_n0f-i=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNIie4FABCDhYL5RQLGoDSk50FfdZOP2SmuQgNW=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNIie4FABCDhYL5RQLGoDSk50FfdZOP2SmuQgNW=s10000"
+      }
+    ],
+    "overall_rating": 4.4,
+    "reviews": 838,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 525
+      },
+      {
+        "stars": 4,
+        "count": 203
+      },
+      {
+        "stars": 3,
+        "count": 55
+      },
+      {
+        "stars": 2,
+        "count": 25
+      },
+      {
+        "stars": 1,
+        "count": 30
+      }
+    ],
+    "location_rating": 3.1,
+    "reviews_breakdown": [
+      {
+        "name": "Fitness",
+        "description": "Fitness",
+        "total_mentioned": 65,
+        "positive": 50,
+        "negative": 10,
+        "neutral": 5
+      },
+      {
+        "name": "Pool",
+        "description": "Pool",
+        "total_mentioned": 50,
+        "positive": 40,
+        "negative": 7,
+        "neutral": 3
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 78,
+        "positive": 51,
+        "negative": 19,
+        "neutral": 8
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 110,
+        "positive": 91,
+        "negative": 16,
+        "neutral": 3
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 102,
+        "positive": 85,
+        "negative": 4,
+        "neutral": 13
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 101,
+        "positive": 74,
+        "negative": 14,
+        "neutral": 13
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Parking ($)",
+      "Outdoor pool",
+      "Air conditioning",
+      "Fitness centre",
+      "Bar",
+      "Restaurant",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoIt-v07LmmgL6TARoNL2cvMTFweDh4bWR2axAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIt-v07LmmgL6TARoNL2cvMTFweDh4bWR2axAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Hotel Doma Myeongdong",
+    "description": "Bright & contemporary hotel featuring complimentary Wi-Fi & a fast-food restaurant.",
+    "gps_coordinates": {
+      "latitude": 37.561347999999995,
+      "longitude": 126.99582
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "nearby_places": [
+      {
+        "name": "Myeong-dong",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "7 min"
+          }
+        ]
+      },
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 43 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "3-star hotel",
+    "extracted_hotel_class": 3,
+    "images": [
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/qPOHmG-73Zovr1UTIuexJkUYNLHXbsWZU-CfWUpYudrkvF9EjeAcFSEIkc5mC0hCq78DjPQxwG0rmxvIAHdXSmC8LmTWA3oQJO656UwEM3Xv59Zi5DqoGB25FFx-WPQ1dMerDD3Ae7InuptUZ0uA4OQpZzZRm1o=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a4/f4/95/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/Bk-i08piivw9qDBePoIZKIPWnza_N82j5vEEnFcTVC6DEJXr07HuMAQT2sxvyycEmegydmndlw5jEHggMC798OizXkBpV7VRypDakN-g7JGVb-aWmdHRseWiqt9yM55jzKo7NP3W5SZpRmLJ-3WSGB9A5fhBVw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a4/ef/01/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNNquGZhDVrtEe-HzkckT9xXiBGBO_eBhplLpcD=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNNquGZhDVrtEe-HzkckT9xXiBGBO_eBhplLpcD=s10000"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/1s4xJQDzwvpqVaWZlNI_kwjUdrM95Ld1X-0TapVeQgAMcVJ5tRus3bsZhJ_3ZT9_VPXai2yPLAxSCwSdZIDdqBeYn2YeZkgAnVyOaOof4JzKTWlpg9h4rS_4e1A67poHCMYGOz816rdT-iELuoVVbMjZjULo9Q=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a4/ef/ca/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipM3uWLry1ty8ZEydHbcyoHx_U64jx10-JS8n04B=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipM3uWLry1ty8ZEydHbcyoHx_U64jx10-JS8n04B=s10000"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/1L1cnLT3pqrNplHSgi7sbfYbqoLUqfrnPe4CRPwrKd1hKlFeT3PZb7prkMIaYn2BlhbRRC6iDZr6eBdf4F0QHTSTGmAqvpolbQPt4iaj53e7dg1kODdQXSbR6whFcxaCuKY8kZa0CZGE3xeAQLdkYVTOecmCNw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a4/eb/b6/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipN-11ouONbUv8tEWTexZzkX1dz1jay8iwE4yJ9-=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipN-11ouONbUv8tEWTexZzkX1dz1jay8iwE4yJ9-=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipO7JmFv3zCaAzHzKtm4imRAfQZkKAjGaCKFM3Bj=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipO7JmFv3zCaAzHzKtm4imRAfQZkKAjGaCKFM3Bj=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPJKLIzWwS2s3DD6i8HLDuNK4XuM0Tb8YcU0GFd=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPJKLIzWwS2s3DD6i8HLDuNK4XuM0Tb8YcU0GFd=s10000"
+      }
+    ],
+    "overall_rating": 4,
+    "reviews": 243,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 99
+      },
+      {
+        "stars": 4,
+        "count": 81
+      },
+      {
+        "stars": 3,
+        "count": 37
+      },
+      {
+        "stars": 2,
+        "count": 9
+      },
+      {
+        "stars": 1,
+        "count": 17
+      }
+    ],
+    "location_rating": 4.1,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 50,
+        "positive": 42,
+        "negative": 1,
+        "neutral": 7
+      },
+      {
+        "name": "Transit",
+        "description": "Public transit",
+        "total_mentioned": 28,
+        "positive": 21,
+        "negative": 1,
+        "neutral": 6
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 46,
+        "positive": 39,
+        "negative": 6,
+        "neutral": 1
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 44,
+        "positive": 32,
+        "negative": 6,
+        "neutral": 6
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 20,
+        "positive": 11,
+        "negative": 7,
+        "neutral": 2
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 28,
+        "positive": 24,
+        "negative": 3,
+        "neutral": 1
+      }
+    ],
+    "amenities": [
+      "Free Wi-Fi",
+      "Hot tub",
+      "Air conditioning",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoI7I_w3LXAmYCGARoNL2cvMTFidHY2OF9fehAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoI7I_w3LXAmYCGARoNL2cvMTFidHY2OF9fehAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "LOTTE HOTEL SEOUL",
+    "description": "Scenic, modern quarters in a refined hotel offering 5 eateries, an indoor pool & a spa.",
+    "link": "https://www.lottehotel.com/seoul-hotel/en.html",
+    "gps_coordinates": {
+      "latitude": 37.5653,
+      "longitude": 126.98097899999999
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "12:00 PM",
+    "rate_per_night": {
+      "lowest": "$512",
+      "extracted_lowest": 512,
+      "before_taxes_fees": "$423",
+      "extracted_before_taxes_fees": 423
+    },
+    "total_rate": {
+      "lowest": "$3,586",
+      "extracted_lowest": 3586,
+      "before_taxes_fees": "$2,963",
+      "extracted_before_taxes_fees": 2963
+    },
+    "nearby_places": [
+      {
+        "name": "Deoksugung",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "10 min"
+          }
+        ]
+      },
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 29 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "5-star hotel",
+    "extracted_hotel_class": 5,
+    "images": [
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/4byAiUYcOV9V8gxhHH-48hDPHSjCbrQlMoYT9hS5ZetA4smtISP3tq3dy0xzWKH8yH6VHhqow6I8O7U2x65hlvPZZ-LON6jUQcgoc3apLozi8AZP3jAZ76oIMMiB3_QEvkqyyPsl-0leJvqXBYa77kj8NFXN3qo=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/086055/086055a_hb_p_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/oWGgPz9jvRtPjrrQUWeN17bQnBPkpjqjlVCMy50eO9d5mfOOA_wmCP0IeaNSMaftu3e3VUAAapjN4_urI9KYr7-ZaeiUVNoMj6u5Xr1i-hDftmSDWQqrGEN2SpvqZESsuPQdW51Ze-6xxPLEA2XPIWwNX1j4jw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://d2hyz2bfif3cr8.cloudfront.net/imageRepo/7/0/157/623/747/deluxe_Twin_S.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/oLyWmToIZgBnUbyBQz8MT4YCU-qk1Du-knTkMI4N_TK-Hv-yd8z8sN_zRVIuClgXD7_N_Xqz8Ed45ONG4h9maoGrAl1Tlw3g_FPEzT6kbiQMzWgf7COMysM5Jr7Wgf2Q5zSo2uVhbAjGzoXGvaA8dYun6NRNdWU=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/1000000/450000/445300/445260/3f09f6a3_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/SHkpV319HBvHOlbzo6dNQu8sC38NrYHmSaHija2LdP7Ru-oIy-yHbUxGeV2yqFJSfmCTICYKaY1JxO9OHdqIqD9qt_Iyex3ymdn79k3oqwL7xZgs6b81U1mYzxEo7ivqjaQVDKLJ3MJbhjhK4daQzZtv-afjpWU=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/086055/086055a_hb_ro_007.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/sayaI7en3czfRXIQKfpybNcHm7cbYHmXEgyIBQKa6cqROszpm2_Wy7_wpa1sViZ1WV82PH6mV2p1riNOS3s4vtgNaOg9yk8gyaSGzqG1oUNjMFRHq3EZFtM0pzGU8Q1VK_6Z7Jg6Q3VO2lNoiXtfRlFD4KK1vA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/086055/086055a_hb_a_011.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/K541LAUrQDdTmNBlLmMmu0WxocUYmxbimLH9lFM0uhapy3jNAZWd3e5bextMDfborj4kdnNCVQJc1X06ENxVDzb5qEYqJXrGni5uKVBg_FtrcoMbw-IFbVdClZJySPBDc6qjDC0K6CpAZ28rs3kl0nKhe9cbcw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/04/94/a2/pierre-gagnaire-a-seoul.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/UdxiTS_LrzuiemUcK1dmVj8ti25QQ3Xse6s0cfn-qOHkHSYXZ1kMFykbQXf1F_gHUHyZUSnULqzoWGcI4dTgicr3rLE0BajfAXsge5d-snhyWPG92qx5H-KpxsyNguDpm4UaxN_Mg8m0FA8Ulopb5hwAERLeem8=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/25000000/24420000/24417400/24417376/f16f0d0c_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/GOI7nr0yZhXtT2gw-WqAWdun5OjAgAtWozZ208_wv6RhMUQt8mesQWkBZS6PnGIpgE24FIUPHQIhymQAm1FBPxbOJY68ug0fcViH89QMwKYs9gOxIAiEP6beTUXlPbtEQ3Yhj7qYmLeK6DaSLaehgPi4VtdpiAQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/086055/086055a_hb_ro_061.JPG"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/yIZWB8JjZs2s6o4AH2OmJpGuTw2XaoMTkCE9JxYrQFr4zcy_NxIrbQITO9Wn7XsgmfB9ylb5uocEUOkqz9zdKteBIkH8HG3wVTxs2qNS82pr9V3YUeBdIUzF7SIh9pM6obWcAU4mIAlTo2PBulZdqAaTWJf2H_Y=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/08/086055/086055a_hb_ro_002.jpg"
+      }
+    ],
+    "overall_rating": 4.5,
+    "reviews": 8059,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 5234
+      },
+      {
+        "stars": 4,
+        "count": 1981
+      },
+      {
+        "stars": 3,
+        "count": 577
+      },
+      {
+        "stars": 2,
+        "count": 108
+      },
+      {
+        "stars": 1,
+        "count": 159
+      }
+    ],
+    "location_rating": 4.5,
+    "reviews_breakdown": [
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 1009,
+        "positive": 901,
+        "negative": 72,
+        "neutral": 36
+      },
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 683,
+        "positive": 598,
+        "negative": 26,
+        "neutral": 59
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 942,
+        "positive": 762,
+        "negative": 88,
+        "neutral": 92
+      },
+      {
+        "name": "Dining",
+        "description": "Food and Beverage",
+        "total_mentioned": 358,
+        "positive": 260,
+        "negative": 51,
+        "neutral": 47
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 284,
+        "positive": 230,
+        "negative": 31,
+        "neutral": 23
+      },
+      {
+        "name": "Bar",
+        "description": "Bar or lounge",
+        "total_mentioned": 171,
+        "positive": 116,
+        "negative": 30,
+        "neutral": 25
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Free parking",
+      "Hot tub",
+      "Air conditioning",
+      "Fitness centre",
+      "Spa",
+      "Restaurant",
+      "Room service",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChkI2a6Pr_7jhK07Gg0vZy8xMWJ3MjcxMDZ2EAE",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI2a6Pr_7jhK07Gg0vZy8xMWJ3MjcxMDZ2EAE&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Family House Hongdae",
+    "gps_coordinates": {
+      "latitude": 37.559576299999996,
+      "longitude": 126.923348
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$75",
+      "extracted_lowest": 75,
+      "before_taxes_fees": "$68",
+      "extracted_before_taxes_fees": 68
+    },
+    "total_rate": {
+      "lowest": "$523",
+      "extracted_lowest": 523,
+      "before_taxes_fees": "$476",
+      "extracted_before_taxes_fees": 476
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 11 min"
+          }
+        ]
+      },
+      {
+        "name": "Pho Ga Le"
+      }
+    ],
+    "hotel_class": "1-star hotel",
+    "extracted_hotel_class": 1,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMTiGMNnduh9n4X4uGthvEY48HcsXJVpcTFldHX=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMTiGMNnduh9n4X4uGthvEY48HcsXJVpcTFldHX=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipP7tEOl03xQKvX5haVyOgMtaWL1Ic_gOVDZtnUp=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipP7tEOl03xQKvX5haVyOgMtaWL1Ic_gOVDZtnUp=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipO9b5DgocZ_U-_NmM08zKkcPOxpmEH0Y0AKVoYS=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipO9b5DgocZ_U-_NmM08zKkcPOxpmEH0Y0AKVoYS=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/3VQhhnuC2A3wT0RSt_e9a_VmbbSItOhD86_hRmPR_xGLDI6JlUQq6zQQGWJGmRYq8xNMmvHkWYazHH_7OYvIPhbkon4D3pEUwazG4LCQQ2aDs8JKddUiSYcQYmdyr5TA6ciKBYmufxtEGpgH0YyA2BmQeHkznQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/1c/78/e6/family-house-tel.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/EyUA8vV8jxrRh7Bh0329s0lGgZy732QtiFvr30FY5lJKuaSgG_oPGRDa5Z3ln3VipXhWC_tISvgYE21b7ETUcHWywxa8f4ylT5dwNyOyPCJzgabL2tMdLC0915BnNnfsdAWOT2R0F_Ccq6NsncdVS7y7EEUH8Kw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/1a/a8/24/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/JEaHzavKP5kSWmK_J3OQiPEIy_Q39Tt09i3R12EbnLHrlDVEQCmYWEZiPN23DtE4OXZkF-udSuSxmq0egFreydn1vx4Q4GdkCd_7l4rruwIxExglZZHQu84QLSVMS1C838Ztwbq0sfNyoG6Yti2JpkRcdwVrrw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/1c/78/fa/family-house-tel.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/Eqmw9Fo4iBzTWkm1KkwZJ6-qQixoknQss6FHOZ1OuxV5TheU6FngXT_R49jr8mzTYYm8zCVujM66r7I-sgkANhOzknH1W5nBBYZ1KZKC-bezNA9ADpczGrr1iWwnaYVXl3F0seCIkbtwQzCKjq3Q7evfWrecbsg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/1c/78/9c/family-house-tel.jpg"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/GXlSNLe5C6Fni2G72I1GnxgxXdOJI-GpD94LYpLoPD3IkiFmR8N-GqwO1m_u0R-wKTNEZAVSZhZyXKEXIOhPRov4EZ-RC4WvkEQNiJ75fIr5ezwuiV1Lat1SK_ao9LuMcwpqMUMNjqBz3JZ7Vg2-zkzjFdWb7A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/9d/72/8e/caption.jpg"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/Af_d0JkCHDYDkQ_T48lSjaCFIUprTLJsVgyqHayf3Pnot0suv9pk9p9MmQLRmYp2vcF60D5DryESv8YdHFhiYlY9kwpJx59MB2OYIOvMN3s-VXKuDAe1sjENUbAp-sHYGCkD2KOEBRnYiz4jDYLSwWf_Gtf-vQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/b3/9d/5f/caption.jpg"
+      }
+    ],
+    "overall_rating": 4.3,
+    "reviews": 67,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 39
+      },
+      {
+        "stars": 4,
+        "count": 14
+      },
+      {
+        "stars": 3,
+        "count": 9
+      },
+      {
+        "stars": 2,
+        "count": 4
+      },
+      {
+        "stars": 1,
+        "count": 1
+      }
+    ],
+    "location_rating": 4.2,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 12,
+        "positive": 11,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Transit",
+        "description": "Public transit",
+        "total_mentioned": 9,
+        "positive": 8,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 6,
+        "positive": 3,
+        "negative": 2,
+        "neutral": 1
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 9,
+        "positive": 7,
+        "negative": 0,
+        "neutral": 2
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 10,
+        "positive": 9,
+        "negative": 1,
+        "neutral": 0
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 10,
+        "positive": 8,
+        "negative": 2,
+        "neutral": 0
+      }
+    ],
+    "amenities": [
+      "Breakfast",
+      "Free Wi-Fi",
+      "Air conditioning",
+      "Restaurant",
+      "Kitchen in some rooms",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChkI6YSErK71wN_2ARoML2cvMTF4Yjl5dmoxEAE",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI6YSErK71wN_2ARoML2cvMTF4Yjl5dmoxEAE&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Hotel Skypark Central Myeongdong",
+    "description": "Relaxed rooms & suites, some with bright decor, at a downtown hotel offering a free local shuttle.",
+    "link": "http://www.skyparkhotel.com/",
+    "gps_coordinates": {
+      "latitude": 37.5646118,
+      "longitude": 126.98522829999999
+    },
+    "check_in_time": "2:00 PM",
+    "check_out_time": "12:00 PM",
+    "nearby_places": [
+      {
+        "name": "Myeong-dong",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "9 min"
+          }
+        ]
+      },
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 22 min"
+          }
+        ]
+      },
+      {
+        "name": "Thai Garden",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "8 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "4-star hotel",
+    "extracted_hotel_class": 4,
+    "images": [
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/VOL5-ZFhJI0oH7KgUQK0bVP9AuPAHkjorxJiHdsefL5ArzYmrpNq9wh53z66s7VJeiEv0LdjiszQRidgnmJtoctUE0VY8QqjvtK7dIQ4e-4kcEqom7Q6TViazBuevQwKWIISJuBbDyBZl0IImplxlDYJ3IYs3g=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_a_003.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/dN3rlcvqRHgeKigszsz5OQtdS13c1wmt1FrajHq_6wpgsTV7tKu2pIckguSMB5wAkfkbfEc8DYFqITUBTuK7Wex2E21XshPivR5IwmDpT7TyV7X5Gtk05HqWNtILFGIXijSwQvuqAD3JvHuGYNlSgE3sVsdhj-A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_r_003.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/wejKexDXsLHJjR21WXj_HOjFBuEJq2MaM6EyWswLWACvo_PcOYl38hxqShkOMOx2Pg2qiN5GiRdqxMgBjCJyq1bG3i1ZwzVHNsMnqpcN5DI7S2YULiRDrkHy1oAimfWI82_FYt8MTWqCkJSL8kqoVMnX1NxTX78=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_l_004.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/aDn4zq_4CekWO1wK5Y7bnL6eOxh-iEHJ5sIWuhFlWOecQAGMy31_mDdh9d2gVctg5Jnzx7qcndBxiG59wj0V9rZpOTELHPEg_pq30ewxYeSOeAFO4ae3NDgsXS92QjpNdUsUQCICr7aqEiVeC4TUMka_jL2CKg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_w_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/N1hP2bnSVyYFudc1CEnTY9HYT1JoLCpSwZZZxQyGVT1ld0sJxjrBy6R0FkEqUkAro3eta6bs2PBvSQsaV0-OZbrkDuHmWbBXN0AhuHSkzWOoUhSbf_6CcXG21Awc26gkAMu2SHDbkOc3zXeScJm61-afUym_aN4=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_r_001.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/6YGtRv5Q1dIRNzC36pfcoOoI8PKw1VU9TgV19IL13jh28f-SMo1Zn6pI8sfn76QgzZkZia9V_wmplnDWioRK6bgqoGToTgSFe9zwRvihEh2PzTww1XlilOMrM_urS8lHu4P4zSSQZVkbFQVPUSAvq7pyEF3ke1A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_l_005.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/aod7RHUKWcBXCAdPQ-SKfo0TRppMpdLRvL7GxLAP4BXKLL1v6G1pAnT0JRSp1wr3TRW1W12qGtIKtUEjXRbu82FLXNRXPI9I7_-nBAKshG9eP-0E9Y5U2Z1O7MjsmTGC9tzhzPDypxsfer3yR0IMdVZImH-TrQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://images.trvl-media.com/lodging/6000000/5450000/5441000/5440963/2bd3dda5_z.jpg"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/MtePBM_g4Ro7HeiBQuG6_QghVKF_QLukiFVCRWzfIEvksX3B_7j4mBhYafdK6l4gcufrt-bKXXVLLMMC45eI2HSZwa4KFpG1qUQNl_UbNseB090L7hA6BtVqrEA0DBc7isfPBjHUG4wnr5_j_amlmlHZ_7npIw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_ro_004.jpg"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/A7WhVMUF-oXyGR-0ocXe6ySCdExxc3YKwT_bQ7P8KrtR0aJg7u1yNpql7O0XHRNqfvnYos4MNKni23HL0gRefjSZVUMYL4h9tWeRJy8vIJY2P06HrPUumXWCNLfuJ4AKzkblOqZuqPV2IKbWFXgB1dSspnT1HEs=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://photos.hotelbeds.com/giata/original/18/182460/182460a_hb_a_001.jpg"
+      }
+    ],
+    "overall_rating": 4,
+    "reviews": 1264,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 510
+      },
+      {
+        "stars": 4,
+        "count": 432
+      },
+      {
+        "stars": 3,
+        "count": 214
+      },
+      {
+        "stars": 2,
+        "count": 36
+      },
+      {
+        "stars": 1,
+        "count": 72
+      }
+    ],
+    "location_rating": 4.5,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 256,
+        "positive": 222,
+        "negative": 14,
+        "neutral": 20
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 143,
+        "positive": 100,
+        "negative": 31,
+        "neutral": 12
+      },
+      {
+        "name": "Transit",
+        "description": "Public transit",
+        "total_mentioned": 75,
+        "positive": 55,
+        "negative": 9,
+        "neutral": 11
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 149,
+        "positive": 90,
+        "negative": 39,
+        "neutral": 20
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 106,
+        "positive": 88,
+        "negative": 13,
+        "neutral": 5
+      },
+      {
+        "name": "Bathroom",
+        "description": "Bathroom and toiletries",
+        "total_mentioned": 58,
+        "positive": 19,
+        "negative": 29,
+        "neutral": 10
+      }
+    ],
+    "amenities": [
+      "Breakfast ($)",
+      "Free Wi-Fi",
+      "Parking",
+      "Hot tub",
+      "Air conditioning",
+      "Restaurant",
+      "Full-service laundry",
+      "Accessible",
+      "Business centre",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChoImvKA36K_yICFARoNL2cvMTFjNV94c19ubBAB",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoImvKA36K_yICFARoNL2cvMTFjNV94c19ubBAB&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "hotel",
+    "name": "Insa Hostel in Seoul",
+    "description": "Down-to-earth rooms in a casual hostel offering breakfast & a rooftop deck with city views.",
+    "gps_coordinates": {
+      "latitude": 37.574906399999996,
+      "longitude": 126.98463690000001
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$130",
+      "extracted_lowest": 130,
+      "before_taxes_fees": "$118",
+      "extracted_before_taxes_fees": 118
+    },
+    "total_rate": {
+      "lowest": "$907",
+      "extracted_lowest": 907,
+      "before_taxes_fees": "$825",
+      "extracted_before_taxes_fees": 825
+    },
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 24 min"
+          }
+        ]
+      }
+    ],
+    "hotel_class": "2-star hotel",
+    "extracted_hotel_class": 2,
+    "images": [
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOjdYTszORwXCP9B5utDkpp-lPrApW7PMgVU7Fj=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOjdYTszORwXCP9B5utDkpp-lPrApW7PMgVU7Fj=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNpq5-xkvsKahyN_zDbCg-4ljGOlBvYy7_aykWR=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNpq5-xkvsKahyN_zDbCg-4ljGOlBvYy7_aykWR=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipPVvTv-CM3UrGX3E9rxUVNLrs4HO90NyHPP_A-W=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipPVvTv-CM3UrGX3E9rxUVNLrs4HO90NyHPP_A-W=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipOm3hs4birFlM48rhGMPNh9u2Mjk9eWdcXEB7uz=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipOm3hs4birFlM48rhGMPNh9u2Mjk9eWdcXEB7uz=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipN1RDcBRMw74_5Oujsznh827d0RVaKhMxjBP5Bn=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipN1RDcBRMw74_5Oujsznh827d0RVaKhMxjBP5Bn=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipO34UoJYeUIHFDPFiQnT_SPLoGWmESrShM7hXkE=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipO34UoJYeUIHFDPFiQnT_SPLoGWmESrShM7hXkE=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipNxf8b3slesV_4YAYyGeo00SZoprm9vOCg6XSzP=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipNxf8b3slesV_4YAYyGeo00SZoprm9vOCg6XSzP=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMsddYKSUsOG9HXEZz75hd045EqotOk_rCHo862=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMsddYKSUsOG9HXEZz75hd045EqotOk_rCHo862=s10000"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/p/AF1QipMKTd_vhDZXF_hGxktUAzx6Cqv6m8VwX_vSPaDL=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://lh5.googleusercontent.com/p/AF1QipMKTd_vhDZXF_hGxktUAzx6Cqv6m8VwX_vSPaDL=s10000"
+      }
+    ],
+    "overall_rating": 4.4,
+    "reviews": 178,
+    "ratings": [
+      {
+        "stars": 5,
+        "count": 113
+      },
+      {
+        "stars": 4,
+        "count": 35
+      },
+      {
+        "stars": 3,
+        "count": 18
+      },
+      {
+        "stars": 2,
+        "count": 6
+      },
+      {
+        "stars": 1,
+        "count": 6
+      }
+    ],
+    "location_rating": 4.5,
+    "reviews_breakdown": [
+      {
+        "name": "Location",
+        "description": "Location",
+        "total_mentioned": 50,
+        "positive": 45,
+        "negative": 2,
+        "neutral": 3
+      },
+      {
+        "name": "Service",
+        "description": "Service",
+        "total_mentioned": 55,
+        "positive": 51,
+        "negative": 3,
+        "neutral": 1
+      },
+      {
+        "name": "Pets",
+        "description": "Pets",
+        "total_mentioned": 8,
+        "positive": 7,
+        "negative": 0,
+        "neutral": 1
+      },
+      {
+        "name": "Breakfast",
+        "description": "Breakfast",
+        "total_mentioned": 25,
+        "positive": 20,
+        "negative": 2,
+        "neutral": 3
+      },
+      {
+        "name": "Property",
+        "description": "Property",
+        "total_mentioned": 44,
+        "positive": 33,
+        "negative": 10,
+        "neutral": 1
+      },
+      {
+        "name": "Cleanliness",
+        "description": "Cleanliness",
+        "total_mentioned": 30,
+        "positive": 26,
+        "negative": 4,
+        "neutral": 0
+      }
+    ],
+    "amenities": [
+      "Free breakfast",
+      "Free Wi-Fi",
+      "Parking ($)",
+      "Air conditioning",
+      "Airport shuttle",
+      "Child-friendly",
+      "Smoke-free property"
+    ],
+    "property_token": "ChkIzveJrsXcjoj4ARoML2cvMWptY3JsbGMxEAE",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkIzveJrsXcjoj4ARoML2cvMWptY3JsbGMxEAE&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "vacation rental",
+    "name": "Sophia Hanok Guesthouse - Family Room with Private Bathroom",
+    "link": "https://www.bluepillow.com/search?p_id=589df47f7c00cb10c8da47f9&dest=bkng&cat=House&accomodationids=5943858e7c00cb0e6433208b",
+    "gps_coordinates": {
+      "latitude": 37.57884979248047,
+      "longitude": 126.98177337646484
+    },
+    "check_in_time": "3:00 PM",
+    "check_out_time": "10:00 AM",
+    "rate_per_night": {
+      "lowest": "$180",
+      "extracted_lowest": 180,
+      "before_taxes_fees": "$163",
+      "extracted_before_taxes_fees": 163
+    },
+    "total_rate": {
+      "lowest": "$1,259",
+      "extracted_lowest": 1259,
+      "before_taxes_fees": "$1,144",
+      "extracted_before_taxes_fees": 1144
+    },
+    "prices": [
+      {
+        "source": "Bluepillow.com",
+        "logo": "https://www.gstatic.com/travel-hotels/branding/190ff319-d0fd-4c45-bfc8-bad6f5f395f2.png",
+        "num_guests": 5,
+        "rate_per_night": {
+          "lowest": "$180",
+          "extracted_lowest": 180,
+          "before_taxes_fees": "$163",
+          "extracted_before_taxes_fees": 163
+        },
+        "free_cancellation": true,
+        "free_cancellation_until_date": "Jun 30",
+        "free_cancellation_until_time": "11:59 PM"
+      }
+    ],
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 38 min"
+          }
+        ]
+      },
+      {
+        "name": "꼬치와 나무꾼"
+      }
+    ],
+    "images": [
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/ERKfvUU3QWxN_16ky_1zHUmcy6-pJGMfXNijT08b1bdLm0Eiyt04p4ogS0isVk8_OMdPFElo7OGuoYpxV7NQI8k_mt-1T8Vx30mTvzglznuM0RvzG7xjibGFddPkRStL8JUFWZRJddfmeanDbC_U4Yk_ERChqwI=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1440x1080/104928018.jpg?k=b11ea731e95b47fb086b4a879546300a8bb6742f993d0cfb02f553aeedf3a1aa&o="
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/lLkEmvvb6GT7RoMWWTyZr3mO2M9X_finbro1H31OMx05kfGuXUeuFDuj74KV8ogwGLEFU69m9ikeD4rTr6dHioSpEEyW8hIIXCRbV5QnzUXO4aUrT_zQlPAhrfNK7oqlYypKvYj1lq1B2IV4zunfLLj8g2-ISQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1440x1080/104928117.jpg?k=aaa5fa80d9539ec7a0339dbf3c0900c249558de7dc5e769ed10a8c6866345c61&o="
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/JZsZutrQ6qwXG-pw4zwhNo4UIBNNp1bqj5YNvz-NQhSsp-KjN2T-gnsOuol35PX56ezxzsGtXM_eog_-1bP9LJuatRqsmzZ_GD9xToudqslmf5A-i4KpvS-ylqhgeUFrVS2QnCZVQiqw6DEMx_QfHU7dYYJeHA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/104928117.jpg?k=aaa5fa80d9539ec7a0339dbf3c0900c249558de7dc5e769ed10a8c6866345c61&o="
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/WED2n1NDFo9l-Yf2meyyTkGKJxJVOElAseTqUz9l7f2nY0o7VyP6u2XMTkNqIgRDpcyRdn9oBRly1sYzkPCSFTLu1E6cwVWyLW-Ev5IW5yLgRli5Bnn4v1x-9cJanl7lTNwiAplZk7tP0btoIPwPHSvUrUuPkw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1440x1080/104928112.jpg?k=c55c557c747a91304f6ee5dcd3682d9fea9408f98460a6c6dd6262f2c023bff0&o="
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/6wd9gisibvPhsvJ45OvXK-_0O4v7v_PXYX_x0b9lhMyXfJOIbf1NG34LpPgArBkxfFEeOv1SYFAuVe1VeZLDmdLOaEOZFyx1uUFqdiPiL3o3K-CGFziFeZx6pdCAYnXIJhs5PWFNY5xXfaAOcaa4XF8WsSEJyOw=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/104928118.jpg?k=1e6abfbae35891937355dded5ef9a7f12aac2e0e417d57de73233e5fcb748f31&o="
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/68jcDe4feyQ26c_UxvI4P3zqgLk2wt_bM467M43YVf49-y5KZ4Wc3iTbDoM-dzm89kJ42Wl9K3Skqp2RyE4N5WZlarCaf7j2J_nMkexDSSq-TP994HZa8GTJqQlFEpHGj-vhC0bmUFWiCjWGxjKjgMCZ-qXYC-8=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1440x1080/104928116.jpg?k=5b3e488d83fd499fb8316a690f5d9c59b1166faa9e23ab4e8d063f1c33e37c27&o="
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/qdGvWhsMAcgGw3MSACKKWY-26TxgySK9DQD-9pbAPrQOlU9eVXulwk3zKPpTBNfzHiQPC9F32MO04BwicFZpA-f6j8iIX8GTyIzf_7Ujjnw4rW7dT19xNF0m2AHcpk3r0uhSGM3gvUyc7NntJ14VBuSETqCtPg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/104928114.jpg?k=3e166191a60dc5b5955a34b334982e137a227c74963e8fc1bbbf523b3db63a22&o="
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/47k7Tt5v76OaXRefCJMtRL5TQcc7MVxa7p7W_n7-j4HIfmKG4KJebp0O6_NDBAQPLPpyl1It0SW3U-7SQ5heYBU_MUTwQkdGsKF1fpWkSVUO4EdnnnSjxt6_fM5xKAdIxHfm2jVDn9BabxHDgxHQgCKzB9kJwA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1440x1080/104928163.jpg?k=3e0e9bf13ef1a42c0e93a679b92ee44d96a158d74441bd345b99363e488cb7d7&o="
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/13Uku-7sikiM5aAAOiH5CJULQClv1-p7_O7C8dj1VHEdtdlZRU1bOUnotNKrqKs0P66pNCKGgFf7RRI5qHOkcDeSjYgYusswXS9cKoIWR451oRZ5NhsfZAN42vubQb0R4aiprF2Obe3dsP0tLMSvmPEZy43olu8=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/104928444.jpg?k=21dc94351ba52b27ffcdd9be38ff40186541eaaf453a8f4889791e06ccbf53b8&o="
+      }
+    ],
+    "overall_rating": 3.7000003,
+    "reviews": 47,
+    "location_rating": 4.1,
+    "amenities": [
+      "Air conditioning",
+      "Kid-friendly",
+      "Crib",
+      "Heating",
+      "Smoke-free",
+      "Cable TV",
+      "Wheelchair accessible",
+      "Free Wi-Fi"
+    ],
+    "excluded_amenities": [
+      "No airport shuttle",
+      "No balcony",
+      "No beach access",
+      "No elevator",
+      "No fireplace",
+      "No fitness center",
+      "No hot tub",
+      "No indoor pool",
+      "No ironing board",
+      "No kitchen",
+      "No microwave",
+      "No outdoor grill",
+      "No outdoor pool",
+      "No oven stove",
+      "No patio",
+      "Not pet-friendly",
+      "No washer",
+      "No parking"
+    ],
+    "essential_info": [
+      "Entire house",
+      "Sleeps 5",
+      "1 bedroom",
+      "1 bathroom",
+      "5 beds"
+    ],
+    "property_token": "ChoQ16D7gPv20bDIARoNL2cvMTFrajVwM3N5YxAC",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoQ16D7gPv20bDIARoNL2cvMTFrajVwM3N5YxAC&q=Seoul%2C+South+Korea"
+  },
+  {
+    "type": "vacation rental",
+    "name": "Seoul station / Perfect For family or Friend",
+    "gps_coordinates": {
+      "latitude": 37.55343246459961,
+      "longitude": 126.97665405273438
+    },
+    "check_in_time": "4:00 PM",
+    "check_out_time": "11:00 AM",
+    "rate_per_night": {
+      "lowest": "$198",
+      "extracted_lowest": 198,
+      "before_taxes_fees": "$176",
+      "extracted_before_taxes_fees": 176
+    },
+    "total_rate": {
+      "lowest": "$1,386",
+      "extracted_lowest": 1386,
+      "before_taxes_fees": "$1,233",
+      "extracted_before_taxes_fees": 1233
+    },
+    "prices": [
+      {
+        "source": "Bluepillow.com",
+        "logo": "https://www.gstatic.com/travel-hotels/branding/190ff319-d0fd-4c45-bfc8-bad6f5f395f2.png",
+        "num_guests": 5,
+        "rate_per_night": {
+          "lowest": "$198",
+          "extracted_lowest": 198,
+          "before_taxes_fees": "$176",
+          "extracted_before_taxes_fees": 176
+        },
+        "free_cancellation": true,
+        "free_cancellation_until_date": "Jun 2",
+        "free_cancellation_until_time": "11:59 PM"
+      }
+    ],
+    "nearby_places": [
+      {
+        "name": "Incheon International Airport",
+        "transportations": [
+          {
+            "type": "Public transport",
+            "duration": "1 hr 5 min"
+          }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/1hq8RkZqRtkjqka6NKAXBIQWM3TeFer2-SP8E117Uz9Dkpraclg_mYokgV5LwdaCa6Q9zGv3I48oZaHur3jrNfQHIl5mFErmj0Wt2kofDod6GKjhfejpHVTVJLPeihekPGMm_K7-jEgHZFGimh4IHFZ7IS18mg=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/5561943ca4e4e0d89c5d2cb78419b176.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/ngHgMj1arzXNekFYgyLHHQ7a_iSvBypbcPljl1iHoVfbszx0mrjVTdENUSgXRyLwIugGT6nUn0VSbegtCodmX5fcjRArtCzORJl83TCX3_opDAlDTsgGypxCPy40ooVjFvdCQwA33KWn6czHsSbPUeGK5ktT_g=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/d4473d2da83a9f6b5fc46cc919d506c8.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/w1XcRY5aSfq1CHD7nt3KWUMMSuCC7AawHcSAlu1HgL8G6NYuYw56QxCy6Je11yKGTTzb6SyN4fgXshz4gcI5DryhzZ1JN6BCsdgf0ihr9h8U_SrcbdZz0-IQ2KSw41xVZzj1qaTp9pegpa-NaYmxWPo4IuVk_w=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/89bf062cbda4de97cb1349bcea2c1f12.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/XgJcEdTYwc2NMbUUa9seHs1B2Gw2qsGfmSHoKzFBUaaA0-PfLijLS_VbjipVng2w0stzMo7aHxOUmwXquKulZa2xQ_81uGB-9HkxlEHmpEP_wQakbNn2gicBhWN8zlbovPGnOcn3fr-McVVYyhtyy9ieV1TN4A=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/6b599f75e4e1417b1a75ca846810b3e6.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh5.googleusercontent.com/proxy/LaF-2RvGZUT_nCHiEb8orRltZE3RhPP2CvLk_BF7zeuUy9l02Zc2Wv90ikGuIwZACIVzHTOooSfA293KRmQSpb7raLXPOlmkYLDtlJ9x70BLVM7R3RXTt1jEet2byERjlh-LeQbuy4_pmTiG_JX0oymbr0grug=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/f2db7188dde12f852502be5459032978.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh6.googleusercontent.com/proxy/5G65_7De4dEwtJfyZGuJvpJ3-aiau343JY1hFWHdGQRy31Dxw1BpxY-RjgPa8aJoiGktPpGROKRUIdlehlU6idoDK-MybmlbuZRyXfMTtpR56_K6yv9J2pn4Y8O93Y_u7YKfsE54eHLes9NKKdZYRhhC9ZggUDQ=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/73ec8917ec9681da100cc2d4cb637045.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/epUxO8Nxx8BOjZRwEzp58pRWmLR-oS-wH6LZsqO9jQp3rwaxRz-5nki1A_DW3FMxcbhWvi0qR_uKaIHXYVBpFjqD5YHBwAnupoIdOmpVseNOjVpGACAwjvWe_GFVjVO2kC0oDaBkb5xPaPJX5USgYBcWOVVu82o=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/745bafc696ac5112c507257dc03ca8ce.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/G5w_KlOglmx9ifH1nFiaFgni3cqG6y1DIG84cEgbF1l1EKx6zkuE5EtUWzhVd4zX5a7BgBZ4l2eSe2UwMAY8iQYVx40_bzfPI3VxUKnN_79lQcIgxGEZcoFfu-sSHEGyOsmIIM6a8CnvS6_oKf9YtJmeo2_RCPA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/5f21cab9a94eb42a0bfebf2549a0fd28.jpg?ca=27&ce=0"
+      },
+      {
+        "thumbnail": "https://lh3.googleusercontent.com/proxy/f4Ou_tRNTKS4S4m78ZyDRcv0HeSZRDoFOfcgJ-InYRFTjtd4TQoYEPC1wUKGRrmg39SHO9Ot8Ud9uXKRSAhiy4PYDwn-NAeeTn7wjZpE4KH-h670R7P9c1QgE9ls1kwaM5Tb_5AojOnwfVFV4xtChk-NXO1WHA=s287-w287-h192-n-k-no-v1",
+        "original_image": "https://pix8.agoda.net/hotelImages/30799154/0/cfacdd7b74a1de0d43e08c8f4daa1091.jpg?ca=27&ce=0"
+      }
+    ],
+    "location_rating": 3.7,
+    "amenities": [
+      "Air conditioning",
+      "Kid-friendly",
+      "Crib",
+      "Fitness center",
+      "Heating",
+      "Ironing board",
+      "Kitchen",
+      "Microwave",
+      "Smoke-free",
+      "Cable TV",
+      "Washer",
+      "Wheelchair accessible",
+      "Free Wi-Fi"
+    ],
+    "excluded_amenities": [
+      "No airport shuttle",
+      "No beach access",
+      "No elevator",
+      "No fireplace",
+      "No indoor pool",
+      "No outdoor grill",
+      "No outdoor pool",
+      "No oven stove",
+      "No patio",
+      "Not pet-friendly",
+      "No parking"
+    ],
+    "essential_info": [
+      "Entire villa",
+      "Sleeps 4",
+      "3 bedrooms",
+      "2 bathrooms",
+      "5 beds",
+      "89 sq ft"
+    ],
+    "property_token": "ChkQ0sCztoLIjpc0Gg0vZy8xMXR4cW5jYnpjEAI",
+    "serpapi_property_details_link": "https://serpapi.com/search.json?adults=2&check_in_date=2024-07-15&check_out_date=2024-07-22&children=3&children_ages=8%2C8%2C8&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkQ0sCztoLIjpc0Gg0vZy8xMXR4cW5jYnpjEAI&q=Seoul%2C+South+Korea"
+  }
+]

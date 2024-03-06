@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from './firebase-config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './SignUp.css';
 import xpedition from './XPEDITION.png';
 
@@ -9,6 +11,7 @@ const SignUp = () => {
     const [lastname, setLastname] = useState('');
     const [contact, setContact] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleFirstNameChange = (e) => {
         setFirstname(e.target.value);
@@ -22,12 +25,35 @@ const SignUp = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    const handleSignupClick = () => {
-        // signup logic
-        navigate('/describe');
-    };
     const handleLogInClick = () => {
         navigate('/login');
+    }
+    const handleSignupClick = async () => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, contact, password);
+            console.log(userCredential.user)
+            navigate('/describe');
+        } catch (error) {
+            console.error("Error signing up:", error.message)
+            if (error.code === 'auth/invalid-email') {
+                setErrorMessage('Please provide a valid email.');
+            }
+            else if (error.code === 'auth/weak-password') {
+                setErrorMessage('Password is too short. Minimum length is 6 characters.')
+            }
+            else if (error.code === 'auth/missing-password') {
+                setErrorMessage('Password is missing. Please enter a password.');
+            }
+            else if (error.code === 'auth/missing-email') {
+                setErrorMessage('Email is missing. Please enter an email.');
+            }
+            else if (error.code === 'auth/email-already-in-use') {
+                setErrorMessage('Email already in use.')
+            }
+             else {
+                setErrorMessage('Failed to sign up. Please try again.');
+            }
+        }
     };
     return (
         <div className="signup">
@@ -71,6 +97,7 @@ const SignUp = () => {
                                 placeholder='  New Password' >
                             </input>
                         </div>
+                        {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
                         <div className='signuppageButton'>
                             <button className='signuppagebutton' onClick={handleSignupClick}> <p>Get Started</p> </button>
                         </div>

@@ -124,3 +124,9 @@
     margin: 0 auto;
     margin-bottom: 30px;
 }
+  .errorMessage {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  

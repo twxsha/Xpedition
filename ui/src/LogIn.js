@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from './firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import './LogIn.css';
 import xpedition from './XPEDITION.png';
 
@@ -7,6 +9,7 @@ const LogIn = () => {
     const navigate = useNavigate();
     const [contact, setContact] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleContactChange = (e) => {
         setContact(e.target.value);
@@ -14,11 +17,26 @@ const LogIn = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    const handleLogInClick = () => {
-        navigate('/describe');
+    const handleLogInClick = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, contact, password);
+            navigate('/describe');
+        } catch (error) {
+            console.error("Error Logging In:", error.message);
+            if (error.code === 'auth/invalid-credential') {
+                setErrorMessage('Email or password is incorrect.');
+            } 
+            else if (error.code === 'auth/invalid-email') {
+                setErrorMessage('Please provide a valid email.');
+            } 
+            else if (error.code === 'auth/missing-password') {
+                setErrorMessage('Password is missing. Please enter a password.');
+            } else {
+                setErrorMessage('Failed to login. Please try again.');
+            }
+        }
     };
     const handleSignUpClick = () => {
-        // signup logic
         navigate('/signup');
     };
     return (
@@ -44,6 +62,7 @@ const LogIn = () => {
                                 placeholder='  New Password' >
                             </input>
                         </div>
+                        {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
                         <div className='loginpageButton'>
                             <button className='loginpagebutton' onClick={handleLogInClick}> <p>Get Started</p> </button>
                         </div>
