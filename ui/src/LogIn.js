@@ -59,7 +59,7 @@ const LogIn = () => {
                                 id="password"
                                 value={password}
                                 onChange={handlePasswordChange}
-                                placeholder='  New Password' >
+                                placeholder='  Password' >
                             </input>
                         </div>
                         {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
