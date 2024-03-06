@@ -51,7 +51,7 @@ const LogIn = () => {
                                 id="contact"
                                 value={contact}
                                 onChange={handleContactChange}
-                                placeholder=' Mobile Number or Email ' >
+                                placeholder=' Email ' >
                             </input>
                         </div>
                         <div className='passwordInput'>
