@@ -3,6 +3,7 @@ import Landing from './Landing';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 import Home from './Home';
+import Describe from './Describe';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/X" element={<Home />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<LogIn />} />
+      <Route path="/describe" element={<Describe />} />
     </Routes>
   </Router>
 

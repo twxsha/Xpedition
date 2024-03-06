@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from './logo.png';
+import xpedition from './XPEDITION.png';
 import './Home.css';
 
 const Home = () => {
-    const navigate = useNavigate();
     const [input, setInput] = useState('');
     const [flights, setFlights] = useState('');
     const [stay, setStay] = useState('');
@@ -41,10 +40,10 @@ const Home = () => {
     return (
         <div className="home">
             <header className="header">
-                <img src={logo} alt="logo" className="home_logo" />
+                <img src={xpedition} className="describelogo" alt="logo" />
                 <div className="description">
                     <div className="input-group">
-                        <label className="input-label">Describe Your Vacation</label>
+                        <label className="input-label">Edit Your Xpedition</label>
                         <input
                             type="text"
                             value={input}

@@ -1,4 +1,15 @@
-  .home {
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.home {
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -16,7 +27,10 @@
   }
   
   .home_logo {
-    max-height: 15vh;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 22px;
   }
   
   .description {
@@ -24,6 +38,7 @@
     align-items: center;
     height: 10vh;
     width: 98%;
+    margin-top: 40px;
   }
   
   .input-description {
@@ -37,6 +52,10 @@
     font-size: 15px;
   }
   
+  .input-description::placeholder {
+    color: #D4D4D4;
+  }
+
   .run-button {
     background: transparent;
     border: 2px solid #FFFFFF;
@@ -44,6 +63,10 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
+    transition: background-color 0.3s ease
+  }
+  .run-button:active {
+    animation: buttonClick 0.3s ease;
   }
   
   .main-content {
