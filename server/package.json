@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "run_packing": "node app_packing.js"
+    "run_packing": "node app_packing.js",
+    "run_activities": "node app_activities.js"
   },
   "author": "",
   "license": "ISC",
