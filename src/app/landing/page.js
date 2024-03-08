@@ -1,10 +1,11 @@
-'use client';
+'use client'; 
+
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import './Landing.css';
 import xpedition from '@/public/XPEDITION.png';
 
-const page = () => {
+const Landing = () => {
     const navigate = useRouter();
     const handleSignupClick = () => {
         navigate.push('/signup');
@@ -16,7 +17,6 @@ const page = () => {
         <div className="landing">
             <header className="landingheader">
                 <img src={xpedition.src} className="landinglogo" alt="logo" />
-                {/* <img src={plane} className="airplane" alt="logo" /> */}
                 <button className='landingloginbutton' onClick={handleLogInClick}> <p>Log In</p> </button>
                 <p className='landingText'>Fastest Travel Planning  <br/> Experience Ever</p>
                 <p className='landingSubText'>AI-powered travel tool built for effortless trips. <br/> Save hours of planning.</p>
@@ -28,4 +28,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Landing;
