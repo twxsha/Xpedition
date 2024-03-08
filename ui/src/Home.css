@@ -90,7 +90,7 @@
   display: flex;
   align-items: center; 
   padding: 5px;
-  margin: 5px 20px 20px 20px;
+  margin: 5px 20px 0px 20px;
 }
 
 .input-description {
@@ -145,15 +145,6 @@
     .home {
       padding: 0 20px; /* Add some padding to the sides for smaller screens */
     }
-  
-<<<<<<< HEAD
-   
-=======
-    .input-description {
-      margin-bottom: 10px;
-      margin-right: 0;
-    }
->>>>>>> main
   
     .row {
       flex-direction: column;
