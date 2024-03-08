@@ -1,0 +1,173 @@
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@font-face {
+  font-family: "Josephine Sans";
+  src: local("Josephine Sans"),
+    url(/_next/static/media/JosefinSans-VariableFont_wght.94ef13d1.ttf)
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home {
+    background: linear-gradient(211.75deg, #2965FF 19.11%, #5AC69F 106.79%);
+    color: white;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Josefin Sans';
+  }
+  
+  .homeheader {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .home_logo {
+    top: 20px;
+    left: 20px;
+    height: 22px;
+    margin-bottom: 50px;
+  }
+  
+  .description {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    width: 98%;
+    margin-top: 40px;
+    font-family: 'Josefin Sans';
+  }
+  
+  .input-description {
+    flex-grow: 1;
+    margin-right: 10px;
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Josefin Sans';
+  }
+  
+  .input-description::placeholder {
+    color: #D4D4D4;
+    font-family: 'Josefin Sans';
+  }
+
+  .run-button {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  .run-button:active {
+    animation: buttonClick 0.3s ease;
+  }
+  
+  .main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    font-family: 'Josefin Sans';
+  }
+    
+  .input-group {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    padding: 5px;
+}
+
+.description-group {
+  display: flex;
+  align-items: center; 
+  padding: 5px;
+  margin: 5px 20px 0px 20px;
+}
+
+.input-description {
+  margin: 5px 20px 20px 20px;
+}
+  
+  .input-label {
+    font-size: 25px;
+    align-self: flex-start;
+    color: white;
+    margin-top: 40px;
+    font-family: 'Josefin Sans';
+  }
+  .top-label {
+    font-size: 25px;
+    align-self: flex-start;
+    color: white;
+    margin: 5px 20px 20px 20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 20px; */
+  }
+  
+  .input-large,
+  .input-small {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    flex: 1;
+  }
+  
+  .input-large {
+    margin-right: 10px;
+    min-height: 200px;
+  }
+  
+  .input-small {
+    min-height: 200px;
+  }
+  
+  .row .input-small:last-child {
+    margin-right: 0;
+  }
+  
+  /* Adjustments for responsive design */
+  @media (max-width: 768px) {
+    .home {
+      padding: 0 20px; /* Add some padding to the sides for smaller screens */
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .input-large,
+    .input-small {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .row .input-small:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
