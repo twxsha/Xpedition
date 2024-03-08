@@ -113,7 +113,7 @@ async function retrieve_flight_options(user_prompt) {
   return best_response
 }
 
-async function return_flight_options() {
+async function getFlightOptions() {
   const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
   var someObject = require('./flights.json')
   flight_retrieval_results = someObject// await retrieve_flight_options(initial_prompt);
@@ -161,7 +161,7 @@ async function return_flight_options() {
   }
 }
 
-return_flight_options()
+export default getFlightOptions;
 
 
 
