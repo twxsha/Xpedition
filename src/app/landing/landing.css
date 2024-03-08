@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Josephine Sans';
+  src: local('Josephine Sans'), url('../../../public/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(+20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flyCurve {
+  0% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(620%, -370%);
+  }
+}
+
+.airplane {
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  animation: flyCurve 1.5s linear forwards;
+}
+
+.landing {
+  text-align: center;
+}
+
+.landingheader {
+  background: linear-gradient(211.75deg, #2965FF 19.11%, #5AC69F 106.79%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.landinglogo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 22px;
+}
+
+.landingbuttons{
+  position: absolute;
+  justify-content: center;
+  top:70vh;
+}
+
+.landingsignupbutton {
+  box-sizing: border-box;
+  width: 240px;
+  height: 84px;
+  border: 2px solid #FFFFFF;
+  box-shadow: 2px 5px 5px rgba(255, 255, 255, 0.49);
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-family: "Josephine Sans";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease
+}
+
+.landingloginbutton:active,
+.landingsignupbutton:active {
+  animation: buttonClick 0.3s ease;
+}
+
+
+.landingText {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  margin-top: 20vh;
+  justify-content: center;
+  font-family: 'Josephine Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 90px;
+  text-align: center;
+  color: #FFFFFF;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.landingSubText {
+  top: 50vh;
+  width: 70%;
+  height: 70%;
+  margin-top: 10vh;
+  justify-content: center;
+  font-family: 'Josephine Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.75vw;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.landingloginbutton {
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 168px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid #FFFFFF;
+  font-family: "Josephine Sans";
+  box-shadow: 2px 5px 5px rgba(255, 255, 255, 0.49);
+  border-radius: 10px;
+  transition: background-color 0.3s ease
+}
+
