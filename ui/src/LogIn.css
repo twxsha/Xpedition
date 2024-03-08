@@ -42,11 +42,10 @@
     padding-right: 40px;
   }
 
-  .trect {
-    position: absolute;
+  .logintrect {
     justify-content: center;
     width: 35%;
-    height: 75vh;
+    height: 75%;
     background: rgba(255, 255, 255, 0.12);
     border-radius: 15px;
   }

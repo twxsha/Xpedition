@@ -43,7 +43,7 @@ const LogIn = () => {
         <div className="login">
             <header className="loginheader">
                 <img src={xpedition} className="loginlogo" alt="logo" />
-                <div className="trect">
+                <div className="logintrect">
                     <p className='loginText'>Log In</p>
                     <div className='loginform'>
                         <div className='contactInput'>

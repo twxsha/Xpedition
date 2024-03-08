@@ -59,7 +59,7 @@ const SignUp = () => {
         <div className="signup">
             <header className="header">
                 <img src={xpedition} className="signuplogo" alt="logo" />
-                <div className="trect">
+                <div className="signuptrect">
                     <p className='signupText'>Sign Up</p>
                     <div className='form'>
                         <div className='names'>

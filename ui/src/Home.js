@@ -41,17 +41,15 @@ const Home = () => {
         <div className="home">
             <header className="homeheader">
                 <img src={xpedition} className="home_logo" alt="logo" />
-                <label className="input-label">Edit Your Xpedition</label>
+                <label className="top-label"> Your Xpedition </label>
                 <div className="description-group">
                     <input
                         type="text"
                         value={input}
                         onChange={handleInputChange}
-                        placeholder="Tell us details that will help us plan! For example, city you are starting from, place you want to go, dates you want to visit, number of people, etc..."
                         className="input-description"
+                        readOnly={true}
                     />
-                    <button onClick={handleRunClick} className="run-button">Run</button>
-                    
                 </div>
 
                 <main className="main-content">
@@ -63,6 +61,7 @@ const Home = () => {
                                 value={flights}
                                 onChange={handleflightsChange}
                                 placeholder="..."
+                                readOnly={true}
                             ></textarea>
                         </div>
                         <div className="input-group">
@@ -72,6 +71,7 @@ const Home = () => {
                                 value={stay}
                                 onChange={handleStayChange}
                                 placeholder="..."
+                                readOnly={true}
                             ></textarea>
                         </div>
                     </div>
@@ -83,6 +83,7 @@ const Home = () => {
                                 value={weather}
                                 onChange={handleWeatherChange}
                                 placeholder="..."
+                                readOnly={true}
                             ></textarea>
                         </div>
                         <div className="input-group">
@@ -92,6 +93,7 @@ const Home = () => {
                                 value={activities}
                                 onChange={handleActivitiesClick}
                                 placeholder="..."
+                                readOnly={true}
                             ></textarea>
                         </div>
                         <div className="input-group">
@@ -101,6 +103,7 @@ const Home = () => {
                                 value={packlist}
                                 onChange={handlePacklistClick}
                                 placeholder="..."
+                                readOnly={true}
                             ></textarea>
                         </div>
                     </div>
