@@ -39,21 +39,19 @@ const Home = () => {
 
     return (
         <div className="home">
-            <header className="header">
-                <img src={xpedition} className="describelogo" alt="logo" />
-                <div className="description">
-                    <div className="input-group">
-                        <label className="input-label">Edit Your Xpedition</label>
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={handleInputChange}
-                            placeholder="Tell us details that will help us plan! For example, city you are starting from, place you want to go, dates you want to visit, number of people, etc..."
-                            className="input-description"
-                        />
-                    </div>
-
+            <header className="homeheader">
+                <img src={xpedition} className="home_logo" alt="logo" />
+                <label className="input-label">Edit Your Xpedition</label>
+                <div className="description-group">
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={handleInputChange}
+                        placeholder="Tell us details that will help us plan! For example, city you are starting from, place you want to go, dates you want to visit, number of people, etc..."
+                        className="input-description"
+                    />
                     <button onClick={handleRunClick} className="run-button">Run</button>
+                    
                 </div>
 
                 <main className="main-content">
