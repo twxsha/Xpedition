@@ -1,7 +1,6 @@
 const { OpenAI } = require("openai");
-require('dotenv').config()
 
-const openai = new OpenAI();
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
 async function getPackingList() {
     initial_prompt = "Help me plan a trip for Hawaii"
