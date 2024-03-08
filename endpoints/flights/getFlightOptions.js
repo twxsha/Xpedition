@@ -1,81 +1,167 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { OpenAI } = require("openai");
 const { getJson } = require("serpapi");
+require('dotenv').config();
 
+const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 
+async function create_flight_request_parameters(initial_prompt, err = "") {
+  const gptResponse = await openai.chat.completions.create({
+      model: "gpt-4-turbo-preview",
+      messages: [
+          {
+              role: "system",
+              content: "Given a prompt, create a new flight itinerary. Fill in as much as possible and for any items that you can't fill, fill it with any realistic sample information. FYI the year is 2024, and all dates must be in the future."
+          },
+          {
+              role: "user", 
+              content: "Create an itinerary for this prompt " + initial_prompt + " " + err
+          }
+      ],
+      functions: [
+        {
+            name: "createFlightItinerary",
+            parameters: {
+                type: "object",
+                properties: {
+                    departure_id: {
+                        type: "string",
+                        description: "The departure airport code, must be 3 digit airport code referring to specific airport "
+                    },
+                    arrival_id: {
+                        type: "string",
+                        description: "The arrival airport code, must be 3 digit airport code referring to specific airport "
+                    },
+                    type: {
+                        type: "integer",
+                        description: "Parameter defines the type of the flights. Flight type should always be round trip unless otherwise specified. Available options: 1 - Round trip (default), 2 - One way "
+                    },
+                    outbound_date: {
+                        type: Date
+                    },
+                    return_date: {
+                        type: Date,
+                    },
+                    travel_class: {
+                        type: "integer",
+                        description: "Parameter defines the travel class. Travel class should always be economy unless otherwise specified. Available options: 1 - Economy (default), 2 - Premium economy, 3 - Business, 4 - First"
+                    },
+                    adults: {
+                      type: "integer",
+                      description: "The number of adults. Default to 1"
+                    },
+                    children: {
+                      type: "integer",
+                      description: "The number of children. Default to 0"
+                    }
+                },
+                required: ["departure_id", "arrival_id", "type", "travel_class", "adults", "outbound_date"]
+            }
+        }
+    ],
+    function_call: { name: "createFlightItinerary" }
+  });
 
-require('dotenv').config()
-// Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const functionCall = gptResponse.choices[0].message.function_call;
 
-// ...
-async function gen_flight_params(initial_prompt, error = "") {
+  return functionCall;
+}
+
+function generate_flight_request_params(generated_params_string) {
   params = {
-    "api_key": "a7bc1e4262ffc5be0e120add2387a1ae68f7c04ca7d249cc728dec73368d3d29",
-    "engine": "google_flights",
-    "departure_id": "",
-    "arrival_id": "",
-    "outbound_date": "",
-    "return_date": "",
+      "api_key": "b07e0633f36f0cf83db573912528c3436d74a42f2a49a9e9715ce3f9c32391f7",
+      "engine": "google_flights",
+      "hl": "en",
+      "gl": "us",
+      "departure_id": "",
+      "arrival_id": "",
+      "outbound_date": "",
+      "return_date": "",
   }
-
-  // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-
-  prompt = "Given this prompt: " + initial_prompt + ", fill out the following JSON parameters:" +
-     "departure_id: String - uppercase 3-letter airport code." +
-     "arrival_id: String -  uppercase 3-letter airport code" +
-     "outbound_date: Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. 2024-02-14" +
-     "return_date: Parameter defines the return date. The format is YYYY-MM-DD. e.g. 2024-02-20"
-  
-  if (error != ""){
-    prompt += "Please note that these errors were given and fix it the response" + error
-  }
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-
-
-  let trimmed_json_string = text.substring(text.indexOf('{'), text.indexOf('}')+1);
-  let trimmed_json = JSON.parse(trimmed_json_string)
-  Object.keys(trimmed_json).forEach(key => params[key] = trimmed_json[key])
-
+  generated_params_string = generated_params_string['arguments']
+  let generated_params = JSON.parse(generated_params_string)
+  Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
+  // console.log(params)
   return params
 }
 
-async function run(){
-  const initial_prompt = "Give me flight options from los angeles to jfk on feb 23 to feb 27 in 2024"
-  let error_msg = ""
+async function retrieve_flight_options(user_prompt) {
+  const initial_prompt = user_prompt;
+  let error_msg = "";
   let best_response = {}
 
   let i = 0
-  while(i < 5){
-    params = await gen_flight_params(initial_prompt, error_msg)
-    console.log(params)
-    //const response = await getJson(params);
-    try{
-      const response = await getJson(params);
+  while(i < 3){
+      try {
+          const generated_params = await create_flight_request_parameters(initial_prompt, error_msg);
+          params = generate_flight_request_params(generated_params)
+         // console.log('final_params', params)
+    
+          const response = await getJson(params)
+         // console.log(response)
+          if (response["error"]){
+              throw new Error("\n \n There is something wrong with the JSON you provided last time I made this query.");
+          } 
+          best_response = response;
+          break;
 
-      if (response["error"]){
-        throw new Error("\n \n There is something wrong with the JSON you provided last time I made this query. Have you considered that the airport codes you are using don't actually exist? This has to be an airport code corresponding to exactly one airport, not a destination code that simply refers to a region with multiple airports.");
-      } 
-      best_response = response;
-      break;  
-    }
-    catch(e){
-      error_msg += e
-      console.log(e)
-    }
-    i++;
+      } catch(e) {
+          error_msg += e
+          console.error(e);
+      }
+      i++;
   }
-  if (i==5){
-    //have some functionality to tell user to give a better prompt
-
-  }
-  
-
-
+  return best_response
 }
 
+async function getFlightOptions() {
+  const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
+  var someObject = require('./flights.json')
+  flight_retrieval_results = someObject// await retrieve_flight_options(initial_prompt);
 
-// ...
+  try {
+    let summarizedFlightData = []
+    flightData = flight_retrieval_results.best_flights.slice(0,3);
+   // console.log("dataaa", flightData)
+    flightData.forEach((option) => {
+       // console.log("option", option)
+        let summarizedOption = {}
+        summarizedOption.flights = []
+        num_stops = -1
+        option.flights.forEach((flight) => {
+            num_stops = num_stops + 1
+            let summarizedFlight = {}
+            summarizedFlight['departure_code'] = flight.departure_airport.id
+            summarizedFlight['departure_time'] = flight.departure_airport.time
+            summarizedFlight['arrival_code'] = flight.arrival_airport.id
+            summarizedFlight['arrival_time'] = flight.arrival_airport.time
+            summarizedFlight['duration'] = flight.duration
+            summarizedFlight['airline'] = flight.airline
+            summarizedFlight['airline_logo'] = flight.airline_logo
+            summarizedFlight['travel_class'] = flight.travel_class
+            summarizedFlight['flight_number'] = flight.flight_number
+            summarizedOption.flights.push(summarizedFlight)
+        });
+        summarizedOption['departure_code'] = option.flights[0].departure_airport.id
+        summarizedOption['departure_time'] = option.flights[0].departure_airport.time
+        summarizedOption['arrival_code'] = option.flights.slice(-1)[0].arrival_airport.id
+        summarizedOption['arrival_time'] = option.flights.slice(-1)[0].arrival_airport.time
+        summarizedOption['travel_class'] = option.flights[0].travel_class
+        summarizedOption['airline'] = option.flights[0].airline
+        summarizedOption['num_stops'] = num_stops
+        summarizedOption['total_duration'] = option.total_duration
+        summarizedOption['price'] = option.price
+        summarizedOption['airline_logo'] = option.airline_logo
+        summarizedFlightData.push(summarizedOption)
+    });
+    return summarizedFlightData
+    //console.log(summarizedFlightData)
+  }
+  catch(error){
+    console.error("Error", error)
+  }
+}
+
+export default getFlightOptions;
+
+
+
