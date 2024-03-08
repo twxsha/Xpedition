@@ -6,6 +6,7 @@ import { auth } from '../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import './LogIn.css';
 import xpedition from '@/public/XPEDITION.png';
+import SerpCallout from '../components/serp_callout/serp_callout.js';
 
 const LogIn = () => {
     const navigate = useRouter();
@@ -43,6 +44,7 @@ const LogIn = () => {
     };
     return (
         <div className="login">
+            <SerpCallout/>
             <header className="loginheader">
                 <img src={xpedition.src} className="loginlogo" alt="logo" />
                 <div className="logintrect">
