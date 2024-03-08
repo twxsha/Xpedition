@@ -38,8 +38,8 @@ async function retrievePackingList() {
 
     const functionCall = gptResponse.choices[0].message.function_call;
 
-    console.log(functionCall);
-    return functionCall;
+    console.log(functionCall['arguments']);
+    return functionCall['arguments'];
 }
 
 retrievePackingList();
