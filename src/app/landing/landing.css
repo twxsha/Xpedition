@@ -1,19 +1,10 @@
 @font-face {
-  font-family: 'Josephine Sans';
-  src: local('Josephine Sans'), url('../../../public/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('woff');
+  font-family: "Josephine Sans";
+  src: local("Josephine Sans"),
+    url(/_next/static/media/JosefinSans-VariableFont_wght.94ef13d1.ttf)
+      format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-@keyframes fadeInDown {
-  from {
-      opacity: 0;
-      transform: translateY(+20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
 }
 
 @keyframes buttonClick {
@@ -26,22 +17,6 @@
   100% {
     transform: scale(1);
   }
-}
-
-@keyframes flyCurve {
-  0% {
-    transform: translate(0, 100%);
-  }
-  100% {
-    transform: translate(620%, -370%);
-  }
-}
-
-.airplane {
-  position: absolute;
-  top: 150px;
-  left: 10px;
-  animation: flyCurve 1.5s linear forwards;
 }
 
 .landing {
@@ -104,7 +79,7 @@
   font-family: 'Josephine Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 5vw;
+  font-size: 70px;
   line-height: 90px;
   text-align: center;
   color: #FFFFFF;
@@ -112,7 +87,7 @@
 }
 
 .landingSubText {
-  top: 50vh;
+  margin-top: 50px;
   width: 70%;
   height: 70%;
   margin-top: 10vh;
@@ -120,7 +95,7 @@
   font-family: 'Josephine Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.75vw;
+  font-size: 30px;
   line-height: 35px;
   text-align: center;
   color: #FFFFFF;
@@ -140,4 +115,3 @@
   border-radius: 10px;
   transition: background-color 0.3s ease
 }
-

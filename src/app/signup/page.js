@@ -1,10 +1,10 @@
-'use client';
+'use client'; 
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '../firebase-config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import './signup.css';
+import './SignUp.css';
 import xpedition from '@/public/XPEDITION.png';
 
 const SignUp = () => {
@@ -61,7 +61,7 @@ const SignUp = () => {
         <div className="signup">
             <header className="header">
                 <img src={xpedition.src} className="signuplogo" alt="logo" />
-                <div className="trect">
+                <div className="signuptrect">
                     <p className='signupText'>Sign Up</p>
                     <div className='form'>
                         <div className='names'>
