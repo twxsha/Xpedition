@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import xpedition from '@/public/XPEDITION.png';
 import './home.css';
 
-const Home = () => {
+const page = () => {
     const [input, setInput] = useState('');
     const [flights, setFlights] = useState('');
     const [stay, setStay] = useState('');
@@ -114,4 +114,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default page;
