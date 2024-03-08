@@ -126,7 +126,7 @@ const getHotelOptions = async () => {
                 link: hotel.link
             };
         });
-
+        console.log(summarizedHotels)
         return summarizedHotels;
 
     } catch (error) {
