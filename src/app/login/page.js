@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { auth } from '../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import logo from '@/public/logo.png';
 import './login.css';
-import { useRouter } from 'next/navigation';
+import xpedition from '@/public/XPEDITION.png';
 
-const Page = () => {
+const LogIn = () => {
     const navigate = useRouter();
     const [contact, setContact] = useState('');
     const [password, setPassword] = useState('');
@@ -22,9 +22,9 @@ const Page = () => {
     const handleLogInClick = async () => {
         try {
             await signInWithEmailAndPassword(auth, contact, password);
-            navigate.push('/');
+            navigate.push('/describe');
         } catch (error) {
-            console.error("Error signing in:", error.message);
+            console.error("Error Logging In:", error.message);
             if (error.code === 'auth/invalid-credential') {
                 setErrorMessage('Email or password is incorrect.');
             } 
@@ -38,37 +38,42 @@ const Page = () => {
             }
         }
     };
+    const handleSignUpClick = () => {
+        navigate.push('/signup');
+    };
     return (
         <div className="login">
-            <header className="header">
-                <div className='form'>
-                    <div className='logo'>
-                        <img src={logo.src} alt="logo" />
+            <header className="loginheader">
+                <img src={xpedition.src} className="loginlogo" alt="logo" />
+                <div className="trect">
+                    <p className='loginText'>Log In</p>
+                    <div className='loginform'>
+                        <div className='contactInput'>
+                            <input type="text"
+                                id="contact"
+                                value={contact}
+                                onChange={handleContactChange}
+                                placeholder=' Email ' >
+                            </input>
+                        </div>
+                        <div className='passwordInput'>
+                            <input type="password"
+                                id="password"
+                                value={password}
+                                onChange={handlePasswordChange}
+                                placeholder='  Password' >
+                            </input>
+                        </div>
+                        {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
+                        <div className='loginpageButton'>
+                            <button className='loginpagebutton' onClick={handleLogInClick}> <p>Get Started</p> </button>
+                        </div>
                     </div>
-                    <div className='contactInput'>
-                        <input type="text"
-                            id="contact"
-                            value={contact}
-                            onChange={handleContactChange} 
-                            placeholder='  Email' > 
-                        </input>
-                    </div>
-                    <div className='passwordInput'>
-                        <input type="password"
-                            id="password"
-                            value={password}
-                            onChange={handlePasswordChange} 
-                            placeholder='  Password' > 
-                        </input>
-                    </div>
-                    {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
-                    <div className='signupButton'>
-                        <button className='signupbutton' onClick={handleLogInClick}> <p>Log In</p> </button>
-                    </div>
+                    <button className='loginsignupbutton' onClick={handleSignUpClick} >Don't have an account? <u>Sign Up</u></button>
                 </div>
             </header>
         </div>
     );
 };
 
-export default Page;
+export default LogIn;

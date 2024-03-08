@@ -1,12 +1,10 @@
 'use client';
-
 import React from 'react';
-import './landing.css';
 import { useRouter } from 'next/navigation';
-import logo from '@/public/logo.png';
-import Link from 'next/link';
+import './Landing.css';
+import xpedition from '@/public/XPEDITION.png';
 
-const Page = () => {
+const page = () => {
     const navigate = useRouter();
     const handleSignupClick = () => {
         navigate.push('/signup');
@@ -16,15 +14,18 @@ const Page = () => {
     };
     return (
         <div className="landing">
-            <header className="header">
-                <img src={logo.src} className="flex items-center justify-center mb-40" alt="logo" />
-                <div className='buttons'>
-                <Link href='signup'><button className='signupbutton' onClick={handleSignupClick}> <p>Sign Up</p> </button></Link>
-                <Link href='login'><button className='loginbutton' onClick={handleLogInClick}> <p>Log In</p> </button></Link>
+            <header className="landingheader">
+                <img src={xpedition.src} className="landinglogo" alt="logo" />
+                {/* <img src={plane} className="airplane" alt="logo" /> */}
+                <button className='landingloginbutton' onClick={handleLogInClick}> <p>Log In</p> </button>
+                <p className='landingText'>Fastest Travel Planning  <br/> Experience Ever</p>
+                <p className='landingSubText'>AI-powered travel tool built for effortless trips. <br/> Save hours of planning.</p>
+                <div className='landingbuttons'>
+                    <button className='landingsignupbutton' onClick={handleSignupClick}> Get Started </button>
                 </div>
             </header>
         </div>
     );
 };
 
-export default Page;
+export default page;

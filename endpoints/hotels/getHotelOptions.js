@@ -127,7 +127,7 @@ const getHotelOptions = async () => {
             };
         });
 
-        console.log(summarizedHotels);
+        return summarizedHotels;
 
     } catch (error) {
         console.error('Error reading or processing file:', error);
