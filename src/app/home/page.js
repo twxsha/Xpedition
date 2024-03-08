@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import xpedition from '@/public/XPEDITION.png';
-import './Home.css';
+import SerpCallout from '../components/serp_callout/serp_callout.js';
+import './home.css';
 
 const Home = () => {
     const [input, setInput] = useState('');
@@ -40,6 +41,7 @@ const Home = () => {
 
     return (
         <div className="home">
+            <SerpCallout/>
             <header className="homeheader">
                 <img src={xpedition.src} className="home_logo" alt="logo" />
                 <label className="top-label"> Your Xpedition </label>

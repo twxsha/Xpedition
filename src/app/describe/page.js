@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import SerpCallout from '../components/serp_callout/serp_callout.js';
 import './describe.css';
 import xpedition from '@/public/XPEDITION.png';
 
@@ -19,6 +20,7 @@ const Describe = () => {
 
     return (
         <div className="describe">
+            <SerpCallout/>
             <header className="describeheader">
                 <img src={xpedition.src} className="describelogo" alt="logo" />
                 <p className='describeText'>Describe Your Xpedition</p>
