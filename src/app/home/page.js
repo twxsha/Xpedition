@@ -47,36 +47,32 @@ const Home = () => {
     const handlePlusClick = () => {
         navigate.push('/describe');
     };
+    
     useEffect(() => {
-        // Fetch the initial hotel options when the component mounts
-        const fetchHotels = async () => {
-            const res = await getHotelOptions();
-            setStay(res);
+        // Wrap all fetch calls in a single async function
+        const fetchData = async () => {
+            // Use Promise.all to run fetch functions in parallel
+            const results = await Promise.all([
+                getHotelOptions(),
+                getPackingList(),
+                getActivitiesList(),
+                getWeather(),
+            ]);
+    
+            // Destructure the results array to get individual responses
+            const [hotelsRes, packingListRes, activitiesListRes, weatherRes] = results;
+    
+            // Update state for each response
+            setStay(hotelsRes);
+            setPacklist(packingListRes.packing_list);
+            setActivities(activitiesListRes.activities_list);
+            setWeather(weatherRes);
         };
-
-        fetchHotels();
-
-        const fetchPackingList = async () => {
-            const res = await getPackingList();
-
-            setPacklist(res.packing_list);
-        };
-
-        fetchPackingList();
-
-        const fetchActivitiesList = async () => {
-            const res = await getActivitiesList();
-            setActivities(res.activities_list);
-        }
-        fetchActivitiesList();
-
-        const fetchWeather = async () => {
-            const res = await getWeather();
-            setWeather(res);
-        }
-        fetchWeather();
-
+    
+        fetchData();
+    
     }, []);
+    
 
 
     return (
