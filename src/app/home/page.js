@@ -13,6 +13,8 @@ import HotelCard from '../components/HotelCard';
 
 import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
+import { getActivitiesList } from '@/endpoints/activities';
+import { get } from 'http';
 
 const Home = () => {
     const navigate = useRouter();
@@ -57,8 +59,15 @@ const Home = () => {
             const res = await getPackingList();
 
             setPacklist(res.packing_list);
-        }
+        };
+
         fetchPackingList();
+
+        const fetchActivitiesList = async () => {
+            const res = await getActivitiesList();
+            setActivities(res.activities_list);
+        }
+        fetchActivitiesList();
 
     }, []);
 
@@ -125,13 +134,17 @@ const Home = () => {
                         </div>
                         <div className="input-group">
                             <label className="input-label">Activities</label>
-                            <textarea
-                                className="input-small"
-                                value={activities}
-                                onChange={handleActivitiesClick}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <div className="activities-container">
+                                {activities && activities.length > 0 ? (
+                                    activities.map((item, index) => (
+                                        <div key={index} className="activities-item">
+                                            {item}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>Loading activities...</p>
+                                )}
+                            </div>
                         </div>
                         <div className="input-group">
                             <label className="input-label">Packing List</label>

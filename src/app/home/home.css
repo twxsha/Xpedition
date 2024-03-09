@@ -273,3 +273,55 @@ Improve scrolling appearance on WebKit browsers
     flex-direction: column;
   }
 }
+
+.activities-container,
+.packing-list-container {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  margin: 10px 0;
+  max-height: 200px; /* Or any fixed height you prefer */
+  min-height: 200px; /* Same as max-height to prevent collapsing */
+  overflow-y: auto; /* Allow scrolling for long lists */
+}
+
+/* ... other styles ... */
+
+.activities-item,
+.packing-list-item {
+  background: rgba(255, 255, 255, 0.1); /* Slight white overlay for activities */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.activities-item:hover,
+.packing-list-item:hover {
+  background: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+}
+
+/* Improve scrolling appearance on WebKit browsers for both containers */
+.activities-container::-webkit-scrollbar,
+.packing-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activities-container::-webkit-scrollbar-thumb,
+.packing-list-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff00; /* Fully transparent thumb */
+  border-radius: 3px;
+}
+
+/* Adjust container flex direction for responsiveness */
+@media (max-width: 768px) {
+  .activities-container,
+  .packing-list-container {
+    flex-direction: column;
+    overflow-y: auto;
+    height: auto; /* Adjust height for mobile */
+  }
+}
