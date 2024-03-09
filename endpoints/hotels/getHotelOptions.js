@@ -1,8 +1,9 @@
+'use server';
+
 const { OpenAI } = require("openai");
 const { getJson } = require("serpapi");
-require('dotenv').config()
 
-const openai = new OpenAI();
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
 
 async function create_hotel_request_parameters(initial_prompt, err = "") {
@@ -59,7 +60,7 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
 }
 
 function generate_hotel_request_params(generated_params_string) {
-    params = {
+    let params = {
         "api_key": "b07e0633f36f0cf83db573912528c3436d74a42f2a49a9e9715ce3f9c32391f7",
         "engine": "google_hotels",
         "q": "",
@@ -87,7 +88,7 @@ async function retrieve_hotel_options(user_prompt) {
     while(i < 3){
         try {
             const generated_params = await create_hotel_request_parameters(initial_prompt, error_msg);
-            params = generate_hotel_request_params(generated_params)
+            let params = generate_hotel_request_params(generated_params)
             console.log('final_params', params)
             const response = await getJson(params)
 
@@ -110,11 +111,11 @@ async function retrieve_hotel_options(user_prompt) {
 const getHotelOptions = async () => {
     const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
 
-    hotel_retrieval_results = await retrieve_hotel_options(initial_prompt);
+    let hotel_retrieval_results = await retrieve_hotel_options(initial_prompt);
 
     try {
         
-        hotelData = hotel_retrieval_results['properties'].slice(0,5);
+        let hotelData = hotel_retrieval_results['properties'].slice(0,5);
     
         const summarizedHotels = hotelData.map(hotel => {
             return {
@@ -133,6 +134,5 @@ const getHotelOptions = async () => {
         console.error('Error reading or processing file:', error);
     }
 };
-
 
 export default getHotelOptions;
