@@ -10,11 +10,12 @@ import history from '@/public/history.png';
 
 import './home.css';
 import HotelCard from '../components/HotelCard';
+import WeatherDisplay from '../components/WeatherCard';
 
 import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
 import { getActivitiesList } from '@/endpoints/activities';
-import { get } from 'http';
+import { getWeather } from '@/endpoints/weather';
 
 const Home = () => {
     const navigate = useRouter();
@@ -68,6 +69,12 @@ const Home = () => {
             setActivities(res.activities_list);
         }
         fetchActivitiesList();
+
+        const fetchWeather = async () => {
+            const res = await getWeather();
+            setWeather(res);
+        }
+        fetchWeather();
 
     }, []);
 
@@ -124,13 +131,7 @@ const Home = () => {
                     <div className="row">
                         <div className="input-group">
                             <label className="input-label">Weather</label>
-                            <textarea
-                                className="input-small"
-                                value={weather}
-                                onChange={handleWeatherChange}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <WeatherDisplay weather={weather} />
                         </div>
                         <div className="input-group">
                             <label className="input-label">Activities</label>

@@ -325,3 +325,39 @@ Improve scrolling appearance on WebKit browsers
     height: auto; /* Adjust height for mobile */
   }
 }
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  margin: 10px 0;
+  max-height: 200px;
+  min-height: 200px; /* Same as activities and packing list for uniformity */
+  overflow-y: auto;
+}
+
+.weather-item {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.weather-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.weather-label {
+  font-weight: bold;
+}
+
+.weather-value {
+  text-align: right;
+}
