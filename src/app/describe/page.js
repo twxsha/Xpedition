@@ -1,11 +1,32 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase-config';
 import './describe.css';
 import xpedition from '@/public/XPEDITION.png';
 
 const Describe = () => {
+
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              // User is signed in, see docs for a list of available properties
+              // https://firebase.google.com/docs/reference/js/firebase.User
+              const uid = user.uid;
+              // ...
+              console.log("uid", uid)
+            } else {
+              // User is signed out
+              // ...
+              console.log("user is logged out")
+            }
+          });
+         
+    }, [])
+
+
     const navigate = useRouter();
     const [description, setDescription] = useState('');
 

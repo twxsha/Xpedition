@@ -162,6 +162,3 @@ async function getFlightOptions() {
 }
 
 export default getFlightOptions;
-
-
-
