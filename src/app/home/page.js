@@ -1,6 +1,7 @@
 'use client'; 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import xpedition from '@/public/XPEDITION.png';
 import { useRouter } from 'next/navigation';
 import save from '@/public/save.png';
@@ -9,6 +10,10 @@ import upload from '@/public/upload.png';
 import history from '@/public/history.png';
 
 import './home.css';
+import HotelCard from '../components/HotelCard';
+// import styles from '../styles/YourPage.module.css';
+import { getHotelOptions } from '@/endpoints/hotels';
+
 
 const Home = () => {
     const navigate = useRouter();
@@ -39,7 +44,39 @@ const Home = () => {
     };
     const handlePlusClick = () => {
         navigate.push('/describe');
+
+    const handleRunClick = async () => {
+        // Implement the logic for when the run button is clicked
+        // You might want to navigate to another page with the data or send it to an API
+        console.log('Running with the following details:', { input, flights, stay, weather, activities, packlist });
+        let res = await getHotelOptions();
+        console.log(res)
+        setStay(res);
+        
+        // navigate('/some-result-page');
     };
+    
+    useEffect(() => {
+        // Fetch the initial hotel options when the component mounts
+        const fetchHotels = async () => {
+          const res = await getHotelOptions();
+          setStay(res);
+        };
+    
+        fetchHotels();
+      }, []);
+
+      
+    // const HotelCards = () => {
+    //     return (
+    //       <div className={"hotelScroll"}>
+    //         {stay.forEach((hotel, index) => (
+    //           <HotelCard key={index} hotel={hotel} />
+    //         ))}
+    //       </div>
+    //     );
+    //   };
+    
 
     return (
         <div className="home">
@@ -76,8 +113,9 @@ const Home = () => {
                                 readOnly={true}
                             ></textarea>
                         </div>
-                        <div className="input-group">
+                        {/* <div className="input-group">
                             <label className="input-label">Stays</label>
+                            
                             <textarea
                                 className="input-large"
                                 value={stay}
@@ -85,6 +123,18 @@ const Home = () => {
                                 placeholder="..."
                                 readOnly={true}
                             ></textarea>
+                        </div> */}
+                        <div className="input-group">
+                            <label className="input-label">Stays</label>
+                            <div className="hotel-cards-container">
+                                {stay && stay.length > 0 ? (
+                                    stay.map((hotel, index) => (
+                                    <HotelCard key={index} hotel={hotel} />
+                                    ))
+                                ) : (
+                                    <p>Loading hotels...</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                     <div className="row">

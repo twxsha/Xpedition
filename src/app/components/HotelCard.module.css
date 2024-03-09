@@ -1,0 +1,79 @@
+.card {
+    border-radius: 10px;
+    /* overflow: hidden; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    flex-direction: column;
+    min-width: 180px !important;
+    height: 350px;
+
+}
+
+.imageWrapper {
+    padding: 10px;
+    padding-bottom: 0px;
+    max-width: 1000px;
+    /* flex-grow: 1; */
+    
+}
+
+.image {
+    width: 220px;
+    height: 120px;
+    /* object-fit: cover; */
+}
+
+.details {
+    padding: 0.5rem;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.price {
+    color: #0070f3;
+    margin-bottom: 0.5rem;
+}
+
+.amenities {
+    flex-grow: 1;
+}
+
+.amenity {
+    display: inline-block;
+    background: #eaeaea;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.25rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+.rating {
+    background: #ffd700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
+    margin-top: auto; 
+    /* position: absolute;
+    width: 173px;
+    height: 25px;
+    left: 869px;
+    top: 912px;
+
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #FFFFFF; */
+}

@@ -1,4 +1,9 @@
 .DS_Store
 **/.env
 **/node_modules
+<<<<<<< HEAD
 **/.next
+=======
+**/.next
+.next
+>>>>>>> 66dc5a3b (Added front end visual for all hotels. Front End and Back End are connected)
