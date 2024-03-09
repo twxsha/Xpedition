@@ -32,7 +32,7 @@
   .loginheader {
     background: linear-gradient(211.75deg, #2965FF 19.11%, #5AC69F 106.79%);
     min-height: 100vh;
-    width: 100hw;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;

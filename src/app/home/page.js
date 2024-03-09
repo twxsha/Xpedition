@@ -2,9 +2,16 @@
 
 import React, { useState } from 'react';
 import xpedition from '@/public/XPEDITION.png';
-import './Home.css';
+import { useRouter } from 'next/navigation';
+import save from '@/public/save.png';
+import plus from '@/public/plus.png';
+import upload from '@/public/upload.png';
+import history from '@/public/history.png';
+
+import './home.css';
 
 const Home = () => {
+    const navigate = useRouter();
     const [input, setInput] = useState('');
     const [flights, setFlights] = useState('');
     const [stay, setStay] = useState('');
@@ -30,18 +37,22 @@ const Home = () => {
     const handlePacklistClick = (e) => {
         setPacklist(e.target.value);
     };
-
-    const handleRunClick = () => {
-        // Implement the logic for when the run button is clicked
-        // You might want to navigate to another page with the data or send it to an API
-        console.log('Running with the following details:', { input, flights, stay, weather, activities, packlist });
-        // navigate('/some-result-page');
+    const handlePlusClick = () => {
+        navigate.push('/describe');
     };
 
     return (
         <div className="home">
             <header className="homeheader">
-                <img src={xpedition.src} className="home_logo" alt="logo" />
+                <div className='navbar'>
+                    <img src={xpedition.src} className="home_logo" alt="logo" />
+                    <div className="navbuttons">
+                        <img src={save.src} className="save" alt="logo" />
+                        <button onClick={handlePlusClick}><img src={plus.src} className="plus" alt="logo" /> </button>
+                        <img src={history.src} className="history" alt="logo" />
+                        <img src={upload.src} className="upload" alt="logo" />
+                    </div> 
+                </div>
                 <label className="top-label"> Your Xpedition </label>
                 <div className="description-group">
                     <input
