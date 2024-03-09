@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
@@ -11,9 +11,15 @@ import {Tooltip} from "@nextui-org/tooltip";
 import {Button} from "@nextui-org/button";
 import './home.css';
 import HotelCard from '../components/HotelCard';
+import WeatherDisplay from '../components/WeatherCard';
+
+import { getHotelOptions } from '@/endpoints/hotels';
+import { getPackingList } from '@/endpoints/packing';
+import { getActivitiesList } from '@/endpoints/activities';
+import { getWeather } from '@/endpoints/weather';
 import { doc, collection, setDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
-import { getHotelOptions } from '@/endpoints/hotels';
+
 
 const Home = () => {
     const navigate = useRouter();
@@ -83,6 +89,7 @@ const Home = () => {
     const handlePlusClick = () => {
         navigate.push('/describe');
     };
+    
     const handleNameChange = (e) => {
         setXpeditionName(e.target.value);
     }
@@ -100,21 +107,38 @@ const Home = () => {
         setSharePopup(false);
         setHistoryPopup(false);
     }
+
     useEffect(() => {
-        // Fetch the initial hotel options when the component mounts
-        const fetchHotels = async () => {
-        const res = await getHotelOptions();
-          setStay(res);
+        // Wrap all fetch calls in a single async function
+        const fetchData = async () => {
+            // Use Promise.all to run fetch functions in parallel
+            const results = await Promise.all([
+                getHotelOptions(),
+                getPackingList(),
+                getActivitiesList(),
+                getWeather(),
+            ]);
+    
+            // Destructure the results array to get individual responses
+            const [hotelsRes, packingListRes, activitiesListRes, weatherRes] = results;
+    
+            // Update state for each response
+            setStay(hotelsRes);
+            setPacklist(packingListRes.packing_list);
+            setActivities(activitiesListRes.activities_list);
+            setWeather(weatherRes);
         };
     
-        fetchHotels();
+        fetchData();
+    
     }, []);
+    
     return (
         <div className="home">
             <header className="homeheader">
                 <div className='navbar'>
                     <img src={xpedition.src} className="home_logo" alt="logo" />
-                    <div className="navbuttons">
+                    <div>
                         <Tooltip showArrow={true} className="custom-tooltip" content="Save Xpedition" placement="bottom">
                             <Button onClick={handleSaveClick}><img src={save.src} className="save" alt="logo" /></Button>
                         </Tooltip>
@@ -196,10 +220,10 @@ const Home = () => {
                             <div className="hotel-cards-container">
                                 {stay && stay.length > 0 ? (
                                     stay.map((hotel, index) => (
-                                    <HotelCard key={index} hotel={hotel} />
+                                        <HotelCard key={index} hotel={hotel} />
                                     ))
                                 ) : (
-                                    <p>Loading hotels...</p>
+                                    <p> Loading hotels...</p>
                                 )}
                             </div>
                         </div>
@@ -208,34 +232,37 @@ const Home = () => {
                     <div className="row">
                         <div className="input-group">
                             <label className="input-label">Weather</label>
-                            <textarea
-                                className="input-small"
-                                value={weather}
-                                onChange={handleWeatherChange}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <WeatherDisplay weather={weather} />
                         </div>
                         <div className="input-group">
                             <label className="input-label">Activities</label>
-                            <textarea
-                                className="input-small"
-                                value={activities}
-                                onChange={handleActivitiesClick}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <div className="activities-container">
+                                {activities && activities.length > 0 ? (
+                                    activities.map((item, index) => (
+                                        <div key={index} className="activities-item">
+                                            {item}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p> Loading activities...</p>
+                                )}
+                            </div>
                         </div>
                         <div className="input-group">
                             <label className="input-label">Packing List</label>
-                            <textarea
-                                className="input-small"
-                                value={packlist}
-                                onChange={handlePacklistClick}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <div className="packing-list-container">
+                                {packlist && packlist.length > 0 ? (
+                                    packlist.map((item, index) => (
+                                        <div key={index} className="packing-list-item">
+                                            {item}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>Loading list...</p>
+                                )}
+                            </div>
                         </div>
+
                     </div>
                 </main>
             </header>

@@ -1,9 +1,11 @@
+'use server';
+
 const { OpenAI } = require("openai");
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
-async function getWeather() {
-    initial_prompt = "Help me plan a trip to Hawaii from July 25 to August 10"
+const getWeather = async () => {
+    let initial_prompt = "Help me plan a trip to Hawaii from July 25 to August 10"
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
@@ -47,7 +49,7 @@ async function getWeather() {
 
     console.log(weather);
     
-    return weather;
+    return JSON.parse(weather);
 }
 
 export default getWeather;

@@ -161,16 +161,6 @@
 }
 
 .hotel-cards-container {
-  background: transparent;
-  border: 2px solid #FFFFFF;
-  border-radius: 15px;
-  padding: 10px;
-  color: white;
-  font-size: 16px;
-  flex: 1;
-}
-
-.hotel-cards-container {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -178,6 +168,13 @@
   /* Adjust the gap as necessary */
   padding: 1rem 0;
   width: 46vw;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  flex: 1;
   /* max-width: 50%; */
 }
 
@@ -307,4 +304,135 @@
   .row .input-small:last-child {
     margin-bottom: 0;
   }
+}
+
+.packing-list-container {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  max-height: 200px; /* Adjust based on your preference */
+  overflow-y: auto; /* Allow scrolling for long lists */
+}
+
+.packing-list-item {
+  margin: 5px 0; /* Give some space between items */
+}
+
+Improve scrolling appearance on WebKit browsers
+.packing-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.packing-list-container::-webkit-scrollbar-thumb {
+  background-color: #5AC69F;
+  border-radius: 3px;
+}
+
+/* Adjust container flex direction for responsiveness */
+@media (max-width: 768px) {
+  .hotel-cards-container, .packing-list-container {
+    flex-direction: column;
+  }
+}
+
+.activities-container,
+.packing-list-container {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  margin: 10px 0;
+  max-height: 200px; /* Or any fixed height you prefer */
+  min-height: 200px; /* Same as max-height to prevent collapsing */
+  overflow-y: auto; /* Allow scrolling for long lists */
+}
+
+/* ... other styles ... */
+
+.activities-item,
+.packing-list-item {
+  background: rgba(255, 255, 255, 0.1); /* Slight white overlay for activities */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.activities-item:hover,
+.packing-list-item:hover {
+  background: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+}
+
+/* Improve scrolling appearance on WebKit browsers for both containers */
+.activities-container::-webkit-scrollbar,
+.packing-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activities-container::-webkit-scrollbar-thumb,
+.packing-list-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff00; /* Fully transparent thumb */
+  border-radius: 3px;
+}
+
+/* Adjust container flex direction for responsiveness */
+@media (max-width: 768px) {
+  .activities-container,
+  .packing-list-container {
+    flex-direction: column;
+    overflow-y: auto;
+    height: auto; /* Adjust height for mobile */
+  }
+}
+
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for high, average, low */
+  gap: 10px;
+  background: transparent;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  margin: 10px 0;
+  max-height: 200px;
+  min-height: 200px;
+}
+
+.weather-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.weather-icon {
+  font-size: 32px;
+  margin-right: 15px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.weather-value {
+  font-size: 20px;
+  font-weight: bold;
 }

@@ -1,15 +1,17 @@
+'use server';
+
 const { OpenAI } = require("openai");
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
-async function getActivitiesList() {
-    initial_prompt = "Help me plan a Maui, Hawaii"
+const getActivitiesList = async () => {
+    let initial_prompt = "Help me plan a Maui, Hawaii"
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
             {
                 role: "system",
-                content: "Given a prompt, create a activity list for this trip"
+                content: "Given a prompt, create a activity list for this trip. Add emojis for each activity."
             },
             {
                 role: "user", 
@@ -38,9 +40,9 @@ async function getActivitiesList() {
     const functionCall = gptResponse.choices[0].message.function_call;
     const activities_list = functionCall['arguments'];
 
-    console.log(activities_list);
+    // console.log(activities_list);
     
-    return activities_list;
+    return JSON.parse(activities_list);
 }
 
 export default getActivitiesList;
