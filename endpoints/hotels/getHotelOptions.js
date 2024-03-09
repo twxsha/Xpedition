@@ -15,7 +15,7 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
                 content: "Given a prompt, create a new hotel itinerary. Fill in as much as possible and for any items that you can't fill, fill it with any realistic sample information. FYI the year is 2024, and all dates must be in the future. The number of children_ages should match the number of children."
             },
             {
-                role: "user", 
+                role: "user",
                 content: "Create an itinerary for this prompt " + initial_prompt + " " + err
             }
         ],
@@ -27,13 +27,13 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
                     properties: {
                         q: {
                             type: "string",
-                            description: "A search query for hotels. Example: Downtown Los Angeles"  
+                            description: "A search query for hotels. Example: Downtown Los Angeles"
                         },
                         check_in_date: {
-                            type: "string", 
+                            type: "string",
                         },
                         check_out_date: {
-                            type: "string", 
+                            type: "string",
                         },
                         adults: {
                             type: "integer",
@@ -61,11 +61,13 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
 
 function generate_hotel_request_params(generated_params_string) {
     let params = {
-        "api_key": "b07e0633f36f0cf83db573912528c3436d74a42f2a49a9e9715ce3f9c32391f7",
+        "api_key": "cdebf55856b24c4812ca566ce4b33047eadcffe9872ec7dba7c98285281a586e",
         "engine": "google_hotels",
         "q": "",
         "hl": "en",
         "gl": "us",
+        "min_price": "1",
+        "rating": "7",
         "check_in_date": "",
         "check_out_date": "",
         "adults": "",
@@ -85,20 +87,20 @@ async function retrieve_hotel_options(user_prompt) {
     let best_response = {}
 
     let i = 0
-    while(i < 3){
+    while (i < 3) {
         try {
             const generated_params = await create_hotel_request_parameters(initial_prompt, error_msg);
             let params = generate_hotel_request_params(generated_params)
             console.log('final_params', params)
             const response = await getJson(params)
 
-            if (response["error"]){
+            if (response["error"]) {
                 throw new Error("\n \n There is something wrong with the JSON you provided last time I made this query.");
-            } 
+            }
             best_response = response;
             break;
 
-        } catch(e) {
+        } catch (e) {
             error_msg += e
             console.error(e);
         }
@@ -109,26 +111,63 @@ async function retrieve_hotel_options(user_prompt) {
 
 
 const getHotelOptions = async () => {
-    const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
+    const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
 
-    let hotel_retrieval_results = await retrieve_hotel_options(initial_prompt);
+    const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
 
     try {
-        
-        let hotelData = hotel_retrieval_results['properties'].slice(0,5);
-    
-        const summarizedHotels = hotelData.map(hotel => {
+
+        let filteredHotels = [];
+        let hotelData = hotelRetrievalResults['properties'];
+        hotelData.forEach((hotel) => {
+            // Ensure overall_rating is a number and fix it to 2 decimal places
+            hotel.overall_rating = parseFloat(hotel.overall_rating).toFixed(2);
+            if (hotel.link) {
+                filteredHotels.push(hotel);
+            }
+        });
+        filteredHotels = filteredHotels.slice(0, 7);
+
+        const summarizedHotels = filteredHotels.map(hotel => {
+            // If the name is longer than 50 characters, slice it and add an ellipsis
+            const formattedName = hotel.name.length > 50 ? hotel.name.slice(0, 50) + '...' : hotel.name;
+
             return {
-                name: hotel.name,
+                name: formattedName,
                 rating: hotel.overall_rating,
                 description: hotel.description,
-                thumbnail: hotel.images[0].thumbnail, 
-                amenities: hotel.amenities.slice(0, 3), 
-                link: hotel.link
+                // Use optional chaining for thumbnail to handle cases where images may not exist
+                thumbnail: hotel.images?.[0]?.thumbnail,
+                amenities: hotel.amenities.slice(0, 3),
+                link: hotel.link,
+                // Use optional chaining for price to handle cases where rate_per_night may not exist
+                price: hotel.rate_per_night?.lowest
             };
         });
-        console.log(summarizedHotels)
+
+
+        // console.
         return summarizedHotels;
+
+        // 
+        // const hotelData = hotelRetrievalResults['properties'];
+        // console.log(hotelData);
+        // const summarizedHotels = hotelData.reduce((filtered, hotel) => {
+        //     // Only add hotels with links and stop once we have 7
+        //     if (hotel.link && filtered.length < 7) {
+        //         filtered.push({
+        //             name: hotel.name,
+        //             rating: hotel.overall_rating,
+        //             description: hotel.description,
+        //             thumbnail: hotel.images?.[0]?.thumbnail, // Use optional chaining in case images array is not present
+        //             amenities: hotel.amenities.slice(0, 3),
+        //             link: hotel.link,
+        //             price: hotel.rate_per_night?.extracted_lowest,
+        //         });
+        //     }
+        //     // console.log(filtered)
+        //     return filtered;
+        // }, []);
 
     } catch (error) {
         console.error('Error reading or processing file:', error);
