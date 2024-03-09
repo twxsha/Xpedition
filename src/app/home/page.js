@@ -118,7 +118,7 @@ const Home = () => {
                                         <HotelCard key={index} hotel={hotel} />
                                     ))
                                 ) : (
-                                    <p>Loading hotels...</p>
+                                    <p> Loading hotels...</p>
                                 )}
                             </div>
                         </div>
@@ -139,7 +139,7 @@ const Home = () => {
                                         </div>
                                     ))
                                 ) : (
-                                    <p>Loading activities...</p>
+                                    <p> Loading activities...</p>
                                 )}
                             </div>
                         </div>

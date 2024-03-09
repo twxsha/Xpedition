@@ -128,16 +128,6 @@
 }
 
 .hotel-cards-container {
-  background: transparent;
-  border: 2px solid #FFFFFF;
-  border-radius: 15px;
-  padding: 10px;
-  color: white;
-  font-size: 16px;
-  flex: 1;
-}
-
-.hotel-cards-container {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -145,6 +135,13 @@
   /* Adjust the gap as necessary */
   padding: 1rem 0;
   width: 46vw;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  flex: 1;
   /* max-width: 50%; */
 }
 
@@ -372,4 +369,3 @@ Improve scrolling appearance on WebKit browsers
   font-size: 20px;
   font-weight: bold;
 }
-
