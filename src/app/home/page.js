@@ -9,11 +9,10 @@ import upload from '@/public/upload.png';
 import history from '@/public/history.png';
 import {Tooltip} from "@nextui-org/tooltip";
 import {Button} from "@nextui-org/button";
-
-
 import './home.css';
 import HotelCard from '../components/HotelCard';
-
+import { doc, collection, setDoc } from "firebase/firestore";
+import { db, auth } from "../firebase-config";
 import { getHotelOptions } from '@/endpoints/hotels';
 
 const Home = () => {
@@ -44,6 +43,39 @@ const Home = () => {
     const handleWeatherChange = (e) => {
         setWeather(e.target.value);
     };
+
+    const handleSaveClick = async () => {
+
+        try {
+            //console.log(auth.currentUser.email);
+            if(!auth.currentUser) {
+                navigate.push("/login");
+            }
+            // Create a reference to the user's document under the "Xpeditions" collection
+            const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
+            // Create a reference to a new collection within the user's document
+            const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
+        
+            // Add a document to the new collection
+            await setDoc(doc(subCollectionRef), {
+                name: "this is a placeholder name",
+                hotels: stay,
+                flights: "Lovelace",
+                activities: 1815,
+                packing: "",
+                weather: "weathers"
+            });
+        
+            console.log("Document added to subcollection successfully!");
+        } catch (error) {
+            console.error("Error adding document to subcollection:", error);
+        }
+
+
+
+        console.log("hi")
+    };
+
     const handleActivitiesClick = (e) => {
         setActivities(e.target.value);
     };
@@ -73,7 +105,7 @@ const Home = () => {
     useEffect(() => {
         // Fetch the initial hotel options when the component mounts
         const fetchHotels = async () => {
-          const res = await getHotelOptions();
+        const res = await getHotelOptions();
           setStay(res);
         };
     
