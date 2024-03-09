@@ -1,9 +1,11 @@
+'use server';
+
 const { OpenAI } = require("openai");
 
 const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
-async function getPackingList() {
-    initial_prompt = "Help me plan a trip for Hawaii"
+const getPackingList = async () => {
+    let initial_prompt = "Help me plan a trip for Hawaii"
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
@@ -38,9 +40,9 @@ async function getPackingList() {
     const functionCall = gptResponse.choices[0].message.function_call;
     const packing_list = functionCall['arguments'];
 
-    console.log(packing_list);
+    // console.log(packing_list);
 
-    return packing_list;
+    return JSON.parse(packing_list);
 }
 
 export default getPackingList;

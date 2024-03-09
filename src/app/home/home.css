@@ -241,3 +241,35 @@
     margin-bottom: 0;
   }
 }
+
+.packing-list-container {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  max-height: 200px; /* Adjust based on your preference */
+  overflow-y: auto; /* Allow scrolling for long lists */
+}
+
+.packing-list-item {
+  margin: 5px 0; /* Give some space between items */
+}
+
+Improve scrolling appearance on WebKit browsers
+.packing-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.packing-list-container::-webkit-scrollbar-thumb {
+  background-color: #5AC69F;
+  border-radius: 3px;
+}
+
+/* Adjust container flex direction for responsiveness */
+@media (max-width: 768px) {
+  .hotel-cards-container, .packing-list-container {
+    flex-direction: column;
+  }
+}
