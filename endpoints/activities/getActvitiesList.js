@@ -4,8 +4,8 @@ const { OpenAI } = require("openai");
 
 const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
-const getActivitiesList = async () => {
-    let initial_prompt = "Help me plan a Maui, Hawaii"
+const getActivitiesList = async (initial_prompt) => {
+    // let initial_prompt = "Help me plan a Maui, Hawaii"
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
