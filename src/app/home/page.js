@@ -44,8 +44,7 @@ const Home = () => {
         setWeather(e.target.value);
     };
 
-    const handleSaveClick = async () => {
-
+    const handleSavePopupClick = async () => {
         try {
             //console.log(auth.currentUser.email);
             if(!auth.currentUser) {
@@ -70,9 +69,8 @@ const Home = () => {
         } catch (error) {
             console.error("Error adding document to subcollection:", error);
         }
-
-
-
+        setSavePopup(false);
+        setXpeditionName('');
         console.log("hi")
     };
 
@@ -141,7 +139,7 @@ const Home = () => {
                             onChange={handleNameChange}
                             className="save-description"
                         />
-                        <button className='save-button'>Save</button>
+                        <button onClick={handleSavePopupClick} className='save-button'>Save</button>
                     </div>
                 </div> }
                 { sharePopup && <div className='saveBox'>
