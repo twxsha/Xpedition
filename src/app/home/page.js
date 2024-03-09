@@ -1,6 +1,6 @@
 'use client'; 
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import xpedition from '@/public/XPEDITION.png';
 import save from '@/public/save.png';
@@ -26,8 +26,11 @@ const Home = () => {
     const [packlist, setPacklist] = useState('');
     const [savePopup, setSavePopup] = useState(false);
     const [sharePopup, setSharePopup] = useState(false);
+    const [historyPopup, setHistoryPopup] = useState(false);
     const [XpeditionName, setXpeditionName] = useState('');
     const [XpeditionLink, setXpeditionLink] = useState('');
+    const [History, setHistory] = useState('');
+    const popupRef = useRef(null);
     
     const handleInputChange = (e) => {
         setInput(e.target.value);
@@ -53,6 +56,20 @@ const Home = () => {
     const handleNameChange = (e) => {
         setXpeditionName(e.target.value);
     }
+    const handleSaveClick = () => {
+        setSavePopup(true);
+    };
+    const handleShareClick = () => {
+        setSharePopup(true);
+    };
+    const handleHistoryClick = () => {
+        setHistoryPopup(true);
+    };
+    const handleXclick = (e) => {
+        setSavePopup(false);
+        setSharePopup(false);
+        setHistoryPopup(false);
+    }
     useEffect(() => {
         // Fetch the initial hotel options when the component mounts
         const fetchHotels = async () => {
@@ -62,12 +79,6 @@ const Home = () => {
     
         fetchHotels();
     }, []);
-    const handleSaveClick = () => {
-        setSavePopup(true);
-    };
-    const handleShareClick = () => {
-        setSharePopup(true);
-    };
     return (
         <div className="home">
             <header className="homeheader">
@@ -81,7 +92,7 @@ const Home = () => {
                             <Button onClick={handlePlusClick}><img src={plus.src} className="plus" alt="logo" /></Button>
                         </Tooltip>
                         <Tooltip showArrow={true} className="custom-tooltip" content="History">
-                            <Button onClick={handlePlusClick}><img src={history.src} className="history" alt="logo" /></Button>
+                            <Button onClick={handleHistoryClick}><img src={history.src} className="history" alt="logo" /></Button>
                         </Tooltip>
                         <Tooltip showArrow={true} className="custom-tooltip" content="Share Expedition">
                             <Button onClick={handleShareClick}> <img src={upload.src} className="upload" alt="logo" /></Button>
@@ -89,6 +100,7 @@ const Home = () => {
                     </div> 
                 </div>
                 { savePopup && <div className='saveBox'>
+                    <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Enter Xpedition Name: </label>
                     <div className="description-group">
                         <input
@@ -97,15 +109,29 @@ const Home = () => {
                             onChange={handleNameChange}
                             className="save-description"
                         />
-                        <button className='save-button'> Go </button>
+                        <button className='save-button'>Save</button>
                     </div>
                 </div> }
                 { sharePopup && <div className='saveBox'>
+                    <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Share Xpedition: </label>
                     <div className="description-group">
                         <input
                             type="text"
                             value={XpeditionLink}
+                            onChange={handleNameChange}
+                            className="save-description"
+                            readOnly={true}
+                        />
+                    </div>
+                </div> }
+                { historyPopup && <div className='saveBox'>
+                    <button onClick={handleXclick} className='x-button'>x</button>
+                    <label className="save-label"> History </label>
+                    <div className="description-group">
+                        <input
+                            type="text"
+                            value={History}
                             onChange={handleNameChange}
                             className="save-description"
                             readOnly={true}

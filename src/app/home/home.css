@@ -112,6 +112,15 @@
   width: 20%;
 }
 
+.x-button {
+  left: 10px;
+  top: 5px;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-family:  "Josephine Sans";
+}
+
 .input-description::placeholder {
   color: #D4D4D4;
   font-family:  "Josephine Sans";
