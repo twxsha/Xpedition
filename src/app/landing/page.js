@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import './Landing.css';
+import './landing.css';
 import xpedition from '@/public/XPEDITION.png';
 
 const Landing = () => {
