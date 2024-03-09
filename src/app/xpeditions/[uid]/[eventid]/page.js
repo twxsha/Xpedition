@@ -24,6 +24,7 @@ const Home = ({ params }) => {
                 console.log("Document exists:", eventDoc.data());
                 let data = eventDoc.data();
                 setStay(data.hotels);
+                setInput(data.name);
               } else {
                 console.log("Document doesn't exist");
                 return null;
