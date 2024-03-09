@@ -109,29 +109,38 @@ const Home = () => {
     }
 
     useEffect(() => {
-        // Wrap all fetch calls in a single async function
-        const fetchData = async () => {
-            // Use Promise.all to run fetch functions in parallel
-            const results = await Promise.all([
-                getHotelOptions(),
-                getPackingList(),
-                getActivitiesList(),
-                getWeather(),
-            ]);
-    
-            // Destructure the results array to get individual responses
-            const [hotelsRes, packingListRes, activitiesListRes, weatherRes] = results;
-    
-            // Update state for each response
-            setStay(hotelsRes);
-            setPacklist(packingListRes.packing_list);
-            setActivities(activitiesListRes.activities_list);
-            setWeather(weatherRes);
-        };
-    
-        fetchData();
-    
+        const storedDescription = sessionStorage.getItem('description');
+        if (storedDescription) {
+            setInput(storedDescription);
+        }
     }, []);
+
+    useEffect(() => {
+        // Wrap all fetch calls in a single async function
+        if (input) {
+            const fetchData = async () => {
+                // Use Promise.all to run fetch functions in parallel
+                const results = await Promise.all([
+                    getHotelOptions(input),
+                    getPackingList(input),
+                    getActivitiesList(input),
+                    getWeather(input),
+                ]);
+        
+                // Destructure the results array to get individual responses
+                const [hotelsRes, packingListRes, activitiesListRes, weatherRes] = results;
+        
+                // Update state for each response
+                setStay(hotelsRes);
+                setPacklist(packingListRes.packing_list);
+                setActivities(activitiesListRes.activities_list);
+                setWeather(weatherRes);
+            };
+        
+            fetchData();
+        }
+    
+    }, [input]);
     
     return (
         <div className="home">

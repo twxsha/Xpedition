@@ -61,7 +61,7 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
 
 function generate_hotel_request_params(generated_params_string) {
     let params = {
-        "api_key": "cdebf55856b24c4812ca566ce4b33047eadcffe9872ec7dba7c98285281a586e",
+        "api_key": "9a40a3b526e8d4902542f87dfc19ea8592445674fab293c8d60d9d0d6ccf34c1",
         "engine": "google_hotels",
         "q": "",
         "hl": "en",
@@ -76,7 +76,9 @@ function generate_hotel_request_params(generated_params_string) {
     }
     generated_params_string = generated_params_string['arguments']
     let generated_params = JSON.parse(generated_params_string)
-    generated_params['children_ages'] = generated_params['children_ages'].join(",")
+    if(generated_params['children_ages']) {
+        generated_params['children_ages'] = generated_params['children_ages'].join(",")
+    }
     Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
     // console.log(params)
     return params
@@ -110,8 +112,8 @@ async function retrieve_hotel_options(user_prompt) {
 }
 
 
-const getHotelOptions = async () => {
-    const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
+const getHotelOptions = async (initial_prompt) => {
+    // const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
 
     const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
 

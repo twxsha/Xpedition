@@ -35,6 +35,7 @@ const Describe = () => {
     };
 
     const handleGoClick = () => {
+        sessionStorage.setItem('description', description);
         navigate.push('/home');
     };
 
