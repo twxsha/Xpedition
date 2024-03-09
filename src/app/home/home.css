@@ -26,7 +26,7 @@
   max-width: 100%;
   height: 100%;
   min-height: 100vh;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
 }
 
 .homeheader {
@@ -73,7 +73,7 @@
   align-items: center;
   height: 10%;
   width: 98%;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
 }
 
 .input-description {
@@ -85,12 +85,45 @@
   padding: 10px;
   color: white;
   font-size: 15px;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
+}
+
+.save-description {
+  margin-right: 20px;
+  background: #81A4FF;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  font-family:  "Josephine Sans";
+  width: 100%;
+}
+
+.save-button {
+  margin-right: 20px;
+  background: #81A4FF;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  font-family:  "Josephine Sans";
+  width: 20%;
+}
+
+.x-button {
+  left: 10px;
+  top: 5px;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-family:  "Josephine Sans";
 }
 
 .input-description::placeholder {
   color: #D4D4D4;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
 }
 
 .run-button {
@@ -151,7 +184,7 @@
   flex-direction: column;
   width: 100%;
   height: 70%;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
 }
 
 .input-group {
@@ -159,6 +192,13 @@
   flex-direction: column;
   width: 100%;
   padding: 5px;
+}
+
+.description-group {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 0px 20px 0px 20px;
 }
 
 .description-group {
@@ -176,7 +216,7 @@
   font-size: 25px;
   align-self: flex-start;
   color: white;
-  font-family: 'Josefin Sans';
+  font-family:  "Josephine Sans";
 }
 
 .top-label {
@@ -184,6 +224,14 @@
   align-self: flex-start;
   color: white;
   margin: 0px 20px 20px 20px;
+}
+
+.save-label {
+  font-size: 20px;
+  align-self: flex-start;
+  color: white;
+  font:  "Josephine Sans";
+  margin: 0px 20px 50px 20px;
 }
 
 .row {
@@ -201,6 +249,25 @@
   color: white;
   font-size: 16px;
   flex: 1;
+}
+
+.saveBox {
+  position: absolute;
+  background: #5B89FF;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  flex: 1;
+  width: 400px;
+  height: auto;
+  right: 10px;
+  top: 70px;
+}
+
+.custom-tooltip {
+  color: white;
 }
 
 .input-large {
