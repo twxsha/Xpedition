@@ -18,7 +18,7 @@ import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
 import { getActivitiesList } from '@/endpoints/activities';
 import { getWeather } from '@/endpoints/weather';
-import { doc, collection, setDoc } from "firebase/firestore";
+import { doc, collection, setDoc, getDocs } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 import { getFlightOptions } from '@/endpoints/flights';
@@ -71,9 +71,10 @@ const Home = () => {
         
             // Add a document to the new collection
             await setDoc(doc(subCollectionRef), {
+                id: XpeditionName,
                 name: input,
-                hotels: stay,
-                flights: "tbd",
+                //hotels: stay,
+                flights: flights,
                 activities: activities,
                 packing: packlist, 
                 weather: weather
@@ -108,6 +109,30 @@ const Home = () => {
         setSharePopup(true);
     };
     const handleHistoryClick = () => {
+        // go to database and get history
+        // [domain].com/xpeditions/user/eventid
+        let userid = auth.currentUser.uid;
+        const fetchEventByUID = async () => {
+            const eventsRef = collection(db, "xpeditions", userid, "events");
+            const eventsSnapshot = await getDocs(eventsRef);
+
+            const eventsData = [];
+            eventsSnapshot.forEach((doc) => {
+            if (doc.exists()) {
+                console.log("Document exists:", doc.id, doc.data());
+                let data = doc.data();
+                eventsData.push([
+                    data.id,
+                    "/xpeditions/" + userid + "/" + doc.id
+                ]);
+            } else {
+                console.log("Document doesn't exist");
+            }
+            setHistory(eventsData);
+            console.log(eventsData);
+            });
+        }
+        fetchEventByUID();
         setHistoryPopup(true);
     };
     const handleXclick = (e) => {
@@ -117,41 +142,42 @@ const Home = () => {
     }
 
     useEffect(() => {
+        const storedDescription = sessionStorage.getItem('description');
+        if (storedDescription) {
+          setInput(storedDescription);
+        } else {
+          navigate.push('/describe');
+        }
+      }, [navigate]);
+    
+      useEffect(() => {
         const fetchData = async () => {
-            const storedDescription = sessionStorage.getItem('description');
-            if (storedDescription) {
-                setInput(storedDescription);
-                try {
-                    const results = await Promise.all([
-                        getHotelOptions(input),
-                        getFlightOptions(input),
-                        getPackingList(input),
-                        getActivitiesList(input),
-                        getWeather(input),
-                    ]);
-    
-                    const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
-    
-                    setStay(hotelsRes);
-                    setFlights(flightsRes);
-                    setPacklist(packingListRes.packing_list);
-                    setActivities(activitiesListRes.activities_list);
-                    setWeather(weatherRes);
-                    setBackendLoading(false);
-                } catch (error) {
-                    // Handle error
-                    console.error('Error fetching data:', error);
-                }
-                sessionStorage.removeItem('description');
-            } else {
-                // If no description is found in sessionStorage, navigate back to '/describe'
-                navigate.push('/describe');
+          if (input) {
+            try {
+              const results = await Promise.all([
+                getHotelOptions(input),
+                getFlightOptions(input),
+                getPackingList(input),
+                getActivitiesList(input),
+                getWeather(input),
+              ]);
+      
+              const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
+      
+              setStay(hotelsRes);
+              setFlights(flightsRes);
+              setPacklist(packingListRes.packing_list);
+              setActivities(activitiesListRes.activities_list);
+              setWeather(weatherRes);
+              setBackendLoading(false);
+            } catch (error) {
+              console.error('Error fetching data:', error);
             }
+          }
         };
     
         fetchData();
-    }, []);
-    
+      }, [input]);
 
     
     useEffect(() => {
@@ -240,19 +266,24 @@ const Home = () => {
                         />
                     </div>
                 </div> }
-                { historyPopup && <div className='saveBox'>
-                    <button onClick={handleXclick} className='x-button'>x</button>
-                    <label className="save-label"> History </label>
-                    <div className="description-group">
-                        <input
-                            type="text"
-                            value={History}
-                            onChange={handleNameChange}
-                            className="save-description"
-                            readOnly={true}
-                        />
+                {historyPopup && (
+                    <div className='saveBox'>
+                        <button onClick={handleXclick} className='x-button'>x</button>
+                        <label className="save-label">History</label>
+                        <div className="description-group">
+                        {console.log(history)}
+                        {console.log(typeof history)}
+                        {history && history.map((obj) => (
+                            <div key={obj[0]}>
+                                <a href={obj[1]} target="_blank" rel="noopener noreferrer">
+                                    {obj[0]}
+                                </a>
+                            </div>
+                        ))}
+                        </div>
                     </div>
-                </div> }
+                    )}
+
                 <label className="top-label"> Your Xpedition </label>
                 <div className="description-group">
                     <input
