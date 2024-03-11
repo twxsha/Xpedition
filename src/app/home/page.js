@@ -270,10 +270,8 @@ const Home = () => {
                     <div className='saveBox'>
                         <button onClick={handleXclick} className='x-button'>x</button>
                         <label className="save-label">History</label>
-                        <div className="description-group">
-                        {console.log(history)}
-                        {console.log(typeof history)}
-                        {history && history.map((obj) => (
+                        <div className="history-name">
+                        {History && History.map((obj) => (
                             <div key={obj[0]}>
                                 <a href={obj[1]} target="_blank" rel="noopener noreferrer">
                                     {obj[0]}
