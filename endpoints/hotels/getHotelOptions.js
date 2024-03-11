@@ -5,7 +5,12 @@ const { getJson } = require("serpapi");
 
 const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
-
+/**
+ * uses OpenAI function call to give structured parameters to use for SerpAPI
+ * @param {*} initial_prompt Initial user prompt for their prompt
+ * @param {*} err Error string if SERP call failed
+ * @returns Chat GPT function call response in format of SerpAPI paramters
+ */
 async function create_hotel_request_parameters(initial_prompt, err = "") {
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
@@ -58,6 +63,11 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
     return functionCall;
 }
 
+/**
+ * takes the OpenAI response and formats it into parameters for SerpAPI hotels call
+ * @param {*} generated_params_string Param object filled in by OpenAI function call
+ * @returns Param object formatted for Serp API 
+ */
 function generate_hotel_request_params(generated_params_string) {
     let params = {
         "api_key": process.env.SERP_API_KEY, 
@@ -81,6 +91,12 @@ function generate_hotel_request_params(generated_params_string) {
     Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
     return params
 }
+
+/**
+ * executes feedback loop between SerpAPI and OpenAI in order to get best hotels API response
+ * @param {*} user_prompt The prompt provided by the user
+ * @returns The SerpAPI hotel response json
+ */
 async function retrieve_hotel_options(user_prompt) {
     const initial_prompt = user_prompt;
     let error_msg = "";
@@ -108,7 +124,11 @@ async function retrieve_hotel_options(user_prompt) {
     return best_response
 }
 
-
+/**
+ * Top level function that retrieves the SerpAPI hotel results using the prompt and summarizes the data to return to the frontend
+ * @param {*} initial_prompt The prompt provided by the user
+ * @returns Summarized hotel data JSON 
+ */
 async function getHotelOptions(initial_prompt) {
     try {
         const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
