@@ -4,8 +4,12 @@ const { OpenAI } = require("openai");
 const { getJson } = require("serpapi");
 
 const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
-
-
+/**
+ * uses OpenAI function call to give structured parameters to use for SerpAPI
+ * @param {*} initial_prompt Initial user prompt for their prompt
+ * @param {*} err Error string if SERP call failed
+ * @returns Chat GPT function call response in format of SerpAPI paramters
+ */
 async function create_flight_request_parameters(initial_prompt, err = "") {
   const gptResponse = await openai.chat.completions.create({
       model: "gpt-4-turbo-preview",
