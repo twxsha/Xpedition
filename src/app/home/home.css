@@ -29,6 +29,28 @@
   font-family:  "Josephine Sans";
 }
 
+.loadingText {
+  position: fixed; /* Position fixed to keep it fixed on the screen */
+  top: 50%; /* Position at the vertical center of the viewport */
+  left: 50%; /* Position at the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+  width: 70%;
+  max-width: 500px; /* Adjust as needed */
+  height: 70%;
+  display: flex; /* Enable flexbox layout */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  font-family: "Josephine Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 90px;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+
 .homeheader {
   justify-content: center;
   align-items: center;
