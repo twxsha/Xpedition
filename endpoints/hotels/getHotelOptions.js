@@ -55,13 +55,12 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
 
     const functionCall = gptResponse.choices[0].message.function_call;
 
-    // console.log(functionCall);
     return functionCall;
 }
 
 function generate_hotel_request_params(generated_params_string) {
     let params = {
-        "api_key": "9a40a3b526e8d4902542f87dfc19ea8592445674fab293c8d60d9d0d6ccf34c1",
+        "api_key": process.env.SERP_API_KEY, 
         "engine": "google_hotels",
         "q": "",
         "hl": "en",
@@ -80,7 +79,6 @@ function generate_hotel_request_params(generated_params_string) {
         generated_params['children_ages'] = generated_params['children_ages'].join(",")
     }
     Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
-    // console.log(params)
     return params
 }
 async function retrieve_hotel_options(user_prompt) {
@@ -95,7 +93,6 @@ async function retrieve_hotel_options(user_prompt) {
             let params = generate_hotel_request_params(generated_params)
             console.log('final_params', params)
             const response = await getJson(params)
-
             if (response["error"]) {
                 throw new Error("\n \n There is something wrong with the JSON you provided last time I made this query.");
             }
@@ -114,7 +111,6 @@ async function retrieve_hotel_options(user_prompt) {
 
 const getHotelOptions = async (initial_prompt) => {
     // const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
-
     const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
 
     try {
@@ -148,28 +144,8 @@ const getHotelOptions = async (initial_prompt) => {
         });
 
 
-        // console.
         return summarizedHotels;
 
-        // 
-        // const hotelData = hotelRetrievalResults['properties'];
-        // console.log(hotelData);
-        // const summarizedHotels = hotelData.reduce((filtered, hotel) => {
-        //     // Only add hotels with links and stop once we have 7
-        //     if (hotel.link && filtered.length < 7) {
-        //         filtered.push({
-        //             name: hotel.name,
-        //             rating: hotel.overall_rating,
-        //             description: hotel.description,
-        //             thumbnail: hotel.images?.[0]?.thumbnail, // Use optional chaining in case images array is not present
-        //             amenities: hotel.amenities.slice(0, 3),
-        //             link: hotel.link,
-        //             price: hotel.rate_per_night?.extracted_lowest,
-        //         });
-        //     }
-        //     // console.log(filtered)
-        //     return filtered;
-        // }, []);
 
     } catch (error) {
         console.error('Error reading or processing file:', error);
