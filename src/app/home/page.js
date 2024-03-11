@@ -19,10 +19,12 @@ import { getActivitiesList } from '@/endpoints/activities';
 import { getWeather } from '@/endpoints/weather';
 import { doc, collection, setDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
+import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 
 
 const Home = () => {
     const navigate = useRouter();
+    const [user] = useAuthState(auth); // Get current user
     const [input, setInput] = useState('');
     const [flights, setFlights] = useState('');
     const [stay, setStay] = useState('');
@@ -36,7 +38,8 @@ const Home = () => {
     const [XpeditionLink, setXpeditionLink] = useState('');
     const [History, setHistory] = useState('');
     const popupRef = useRef(null);
-    
+    const [backendLoading, setBackendLoading] = useState(true);
+
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -63,12 +66,12 @@ const Home = () => {
         
             // Add a document to the new collection
             await setDoc(doc(subCollectionRef), {
-                name: "this is a placeholder name",
+                name: input,
                 hotels: stay,
-                flights: "Lovelace",
-                activities: 1815,
-                packing: "",
-                weather: "weathers"
+                flights: "tbd",
+                activities: activities,
+                packing: packlist, 
+                weather: weather
             });
         
             console.log("Document added to subcollection successfully!");
@@ -135,6 +138,7 @@ const Home = () => {
                 setPacklist(packingListRes.packing_list);
                 setActivities(activitiesListRes.activities_list);
                 setWeather(weatherRes);
+                setBackendLoading(false);
             };
         
             fetchData();
@@ -142,6 +146,28 @@ const Home = () => {
     
     }, [input]);
     
+    useEffect(() => {
+        // Redirect to login if user is not authenticated
+        if (!user) {
+            navigate.push("/login");
+        }
+    }, [user, navigate]);
+
+    if(backendLoading) {
+        return (
+            <div className="home">
+                <header className="homeheader">
+                    <div className='navbar'>
+                        <img src={xpedition.src} className="home_logo" alt="logo" />
+                    </div>
+                </header>
+                <div>
+                    <p className='loadingText'>Creating your Xpedition...</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="home">
             <header className="homeheader">
