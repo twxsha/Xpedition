@@ -41,7 +41,10 @@ const Home = () => {
     const [History, setHistory] = useState('');
     const popupRef = useRef(null);
     const [backendLoading, setBackendLoading] = useState(true);
-
+    const [loadingText, setLoadingText] = useState('Creating your Xpedition');
+    const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
+    const [messageIndex, setMessageIndex] = useState(0);
+    
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -151,6 +154,24 @@ const Home = () => {
     }, [input]);
     
     useEffect(() => {
+        if (backendLoading) {
+          setLoadingText(loadingMessages[messageIndex]);
+        }
+      }, [backendLoading, messageIndex]);
+  
+    useEffect(() => {
+    let intervalId;
+    if (backendLoading) {
+        intervalId = setInterval(() => {
+        setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
+        }, 1000);
+    }
+
+    return () => clearInterval(intervalId);
+    }, [backendLoading, loadingMessages.length]);
+
+
+    useEffect(() => {
         // Redirect to login if user is not authenticated
         if (!user) {
             navigate.push("/login");
@@ -166,7 +187,7 @@ const Home = () => {
                     </div>
                 </header>
                 <div>
-                    <p className='loadingText'>Creating your Xpedition...</p>
+                    <p className='loadingText'> {loadingText} </p>
                 </div>
             </div>
         );
