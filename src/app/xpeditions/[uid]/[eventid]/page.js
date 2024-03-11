@@ -27,6 +27,7 @@ const Home = ({ params }) => {
                 console.log("Document exists:", eventDoc.data());
                 let data = eventDoc.data();
                 setStay(data.hotels);
+                setFlights(data.flights);
                 setWeather(data.weather);
                 setPacklist(data.packing);
                 setActivities(data.activities);
