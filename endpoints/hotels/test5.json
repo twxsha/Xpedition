@@ -1,0 +1,50 @@
+{
+    "search_metadata": {
+      "id": "test3",
+      "status": "Success",
+      "total_time_taken": 1.2
+    },
+    "search_parameters": {
+      "q": "Diverse City Accommodations",
+      "adults": 2,
+      "children": 2,
+      "check_in_date": "2024-06-05",
+      "check_out_date": "2024-06-07"
+    },
+    "properties": [
+      {
+        "type": "hostel",
+        "name": "Central City Hostel",
+        "gps_coordinates": {
+          "latitude": -8.5142,
+          "longitude": 115.2635
+        },
+        "rate_per_night": {
+          "lowest": "$30",
+          "extracted_lowest": 30
+        },
+        "amenities": [
+          "Shared kitchen",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "type": "hotel",
+        "name": "Suburban Hotel",
+        "gps_coordinates": {
+          "latitude": -8.7000,
+          "longitude": 115.2000
+        },
+        "rate_per_night": {
+          "lowest": "$60",
+          "extracted_lowest": 60
+        },
+        "overall_rating": 3.8,
+        "amenities": [
+          "Free parking",
+          "Breakfast included"
+        ]
+      }
+    ]
+  }
+  
