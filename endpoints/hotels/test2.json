@@ -1,0 +1,34 @@
+{
+    "search_metadata": {
+      "id": "test2",
+      "status": "Success",
+      "total_time_taken": 2.0
+    },
+    "search_parameters": {
+      "q": "Luxury Resorts",
+      "adults": 2,
+      "check_in_date": "2024-05-20",
+      "check_out_date": "2024-05-25"
+    },
+    "properties": [
+      {
+        "type": "hotel",
+        "name": "Deluxe Beach Resort",
+        "gps_coordinates": {
+          "latitude": -8.8429,
+          "longitude": 115.1217
+        },
+        "rate_per_night": {
+          "lowest": "$400",
+          "extracted_lowest": 400
+        },
+        "overall_rating": 5.0,
+        "amenities": [
+          "Spa",
+          "Beach access",
+          "Free breakfast"
+        ]
+      }
+    ]
+  }
+  
