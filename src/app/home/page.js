@@ -41,7 +41,10 @@ const Home = () => {
     const [History, setHistory] = useState('');
     const popupRef = useRef(null);
     const [backendLoading, setBackendLoading] = useState(true);
-
+    const [loadingText, setLoadingText] = useState('Creating your Xpedition');
+    const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
+    const [messageIndex, setMessageIndex] = useState(0);
+    
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -114,42 +117,61 @@ const Home = () => {
     }
 
     useEffect(() => {
-        const storedDescription = sessionStorage.getItem('description');
-        if (storedDescription) {
-            setInput(storedDescription);
-        }
+        const fetchData = async () => {
+            const storedDescription = sessionStorage.getItem('description');
+            if (storedDescription) {
+                setInput(storedDescription);
+                try {
+                    const results = await Promise.all([
+                        getHotelOptions(input),
+                        getFlightOptions(input),
+                        getPackingList(input),
+                        getActivitiesList(input),
+                        getWeather(input),
+                    ]);
+    
+                    const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
+    
+                    setStay(hotelsRes);
+                    setFlights(flightsRes);
+                    setPacklist(packingListRes.packing_list);
+                    setActivities(activitiesListRes.activities_list);
+                    setWeather(weatherRes);
+                    setBackendLoading(false);
+                } catch (error) {
+                    // Handle error
+                    console.error('Error fetching data:', error);
+                }
+                sessionStorage.removeItem('description');
+            } else {
+                // If no description is found in sessionStorage, navigate back to '/describe'
+                navigate.push('/describe');
+            }
+        };
+    
+        fetchData();
     }, []);
+    
 
+    
     useEffect(() => {
-        // Wrap all fetch calls in a single async function
-        if (input) {
-            const fetchData = async () => {
-                // Use Promise.all to run fetch functions in parallel
-                const results = await Promise.all([
-                    getHotelOptions(input),
-                    getFlightOptions(input),
-                    getPackingList(input),
-                    getActivitiesList(input),
-                    getWeather(input),
-                ]);
-        
-                // Destructure the results array to get individual responses
-                const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
-        
-                // Update state for each response
-                setStay(hotelsRes);
-                setFlights(flightsRes);
-                setPacklist(packingListRes.packing_list);
-                setActivities(activitiesListRes.activities_list);
-                setWeather(weatherRes);
-                setBackendLoading(false);
-            };
-        
-            fetchData();
+        if (backendLoading) {
+          setLoadingText(loadingMessages[messageIndex]);
         }
-    
-    }, [input]);
-    
+      }, [backendLoading, messageIndex]);
+  
+    useEffect(() => {
+    let intervalId;
+    if (backendLoading) {
+        intervalId = setInterval(() => {
+        setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
+        }, 1000);
+    }
+
+    return () => clearInterval(intervalId);
+    }, [backendLoading, loadingMessages.length]);
+
+
     useEffect(() => {
         // Redirect to login if user is not authenticated
         if (!user) {
@@ -166,7 +188,7 @@ const Home = () => {
                     </div>
                 </header>
                 <div>
-                    <p className='loadingText'>Creating your Xpedition...</p>
+                    <p className='loadingText'> {loadingText} </p>
                 </div>
             </div>
         );
