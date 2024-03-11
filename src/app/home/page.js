@@ -11,6 +11,7 @@ import {Tooltip} from "@nextui-org/tooltip";
 import {Button} from "@nextui-org/button";
 import './home.css';
 import HotelCard from '../components/HotelCard';
+import FlightCard from '../components/FlightCard';
 import WeatherDisplay from '../components/WeatherCard';
 
 import { getHotelOptions } from '@/endpoints/hotels';
@@ -20,6 +21,7 @@ import { getWeather } from '@/endpoints/weather';
 import { doc, collection, setDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
+import { getFlightOptions } from '@/endpoints/flights';
 
 
 const Home = () => {
@@ -125,16 +127,18 @@ const Home = () => {
                 // Use Promise.all to run fetch functions in parallel
                 const results = await Promise.all([
                     getHotelOptions(input),
+                    getFlightOptions(input),
                     getPackingList(input),
                     getActivitiesList(input),
                     getWeather(input),
                 ]);
         
                 // Destructure the results array to get individual responses
-                const [hotelsRes, packingListRes, activitiesListRes, weatherRes] = results;
+                const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
         
                 // Update state for each response
                 setStay(hotelsRes);
+                setFlights(flightsRes);
                 setPacklist(packingListRes.packing_list);
                 setActivities(activitiesListRes.activities_list);
                 setWeather(weatherRes);
@@ -242,13 +246,15 @@ const Home = () => {
                     <div className="row">
                         <div className="input-group">
                             <label className="input-label">Flights</label>
-                            <textarea
-                                className="input-large"
-                                value={flights}
-                                onChange={handleflightsChange}
-                                placeholder="..."
-                                readOnly={true}
-                            ></textarea>
+                            <div className="flight-cards-container">
+                                {flights && flights.length > 0 ? (
+                                    flights.map((flight, index) => (
+                                        <FlightCard key={index} flight={flight} />
+                                    ))
+                                ) : (
+                                    <p> Loading Flights...</p>
+                                )}
+                            </div>
                         </div>
                         <div className="input-group">
                             <label className="input-label">Stays</label>

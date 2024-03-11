@@ -1,8 +1,10 @@
+'use server'
+
 const { OpenAI } = require("openai");
 const { getJson } = require("serpapi");
-require('dotenv').config();
 
-const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
+
 
 async function create_flight_request_parameters(initial_prompt, err = "") {
   const gptResponse = await openai.chat.completions.create({
@@ -67,8 +69,8 @@ async function create_flight_request_parameters(initial_prompt, err = "") {
 }
 
 function generate_flight_request_params(generated_params_string) {
-  params = {
-      "api_key": "b07e0633f36f0cf83db573912528c3436d74a42f2a49a9e9715ce3f9c32391f7",
+  let params = {
+      "api_key": process.env.SERP_API_KEY,
       "engine": "google_flights",
       "hl": "en",
       "gl": "us",
@@ -80,7 +82,7 @@ function generate_flight_request_params(generated_params_string) {
   generated_params_string = generated_params_string['arguments']
   let generated_params = JSON.parse(generated_params_string)
   Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
-  // console.log(params)
+  //console.log(params)
   return params
 }
 
@@ -93,7 +95,7 @@ async function retrieve_flight_options(user_prompt) {
   while(i < 3){
       try {
           const generated_params = await create_flight_request_parameters(initial_prompt, error_msg);
-          params = generate_flight_request_params(generated_params)
+          let params = generate_flight_request_params(generated_params)
          // console.log('final_params', params)
     
           const response = await getJson(params)
@@ -113,20 +115,23 @@ async function retrieve_flight_options(user_prompt) {
   return best_response
 }
 
-async function getFlightOptions() {
-  const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
-  var someObject = require('./flights.json')
-  flight_retrieval_results = someObject// await retrieve_flight_options(initial_prompt);
+async function getFlightOptions(initial_prompt) {
+ // const initial_prompt = "Help me plan a trip for Korea. I have 3 triplets and will travel with my husband";
+
+  let flight_retrieval_results = await retrieve_flight_options(initial_prompt);
 
   try {
     let summarizedFlightData = []
-    flightData = flight_retrieval_results.best_flights.slice(0,3);
+    let flightData = flight_retrieval_results.best_flights.slice(0,3);
+    flightData = flightData.concat(flight_retrieval_results.other_flights.slice(0,3));
+    flightData = flightData.slice(0,3)
+    let link = flight_retrieval_results.search_metadata.google_flights_url
    // console.log("dataaa", flightData)
     flightData.forEach((option) => {
        // console.log("option", option)
         let summarizedOption = {}
         summarizedOption.flights = []
-        num_stops = -1
+        let num_stops = -1
         option.flights.forEach((flight) => {
             num_stops = num_stops + 1
             let summarizedFlight = {}
@@ -151,10 +156,12 @@ async function getFlightOptions() {
         summarizedOption['total_duration'] = option.total_duration
         summarizedOption['price'] = option.price
         summarizedOption['airline_logo'] = option.airline_logo
+        summarizedOption['type'] = option.type
+        summarizedOption['link'] = link
         summarizedFlightData.push(summarizedOption)
     });
-    return summarizedFlightData
     //console.log(summarizedFlightData)
+    return summarizedFlightData
   }
   catch(error){
     console.error("Error", error)
