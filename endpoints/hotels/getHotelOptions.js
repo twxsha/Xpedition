@@ -55,13 +55,12 @@ async function create_hotel_request_parameters(initial_prompt, err = "") {
 
     const functionCall = gptResponse.choices[0].message.function_call;
 
-    // console.log(functionCall);
     return functionCall;
 }
 
 function generate_hotel_request_params(generated_params_string) {
     let params = {
-        "api_key": "9a40a3b526e8d4902542f87dfc19ea8592445674fab293c8d60d9d0d6ccf34c1",
+        "api_key": process.env.SERP_API_KEY, 
         "engine": "google_hotels",
         "q": "",
         "hl": "en",
@@ -80,7 +79,6 @@ function generate_hotel_request_params(generated_params_string) {
         generated_params['children_ages'] = generated_params['children_ages'].join(",")
     }
     Object.keys(generated_params).forEach(key => params[key] = generated_params[key])
-    // console.log(params)
     return params
 }
 async function retrieve_hotel_options(user_prompt) {
@@ -95,7 +93,6 @@ async function retrieve_hotel_options(user_prompt) {
             let params = generate_hotel_request_params(generated_params)
             console.log('final_params', params)
             const response = await getJson(params)
-
             if (response["error"]) {
                 throw new Error("\n \n There is something wrong with the JSON you provided last time I made this query.");
             }
@@ -112,68 +109,53 @@ async function retrieve_hotel_options(user_prompt) {
 }
 
 
-const getHotelOptions = async (initial_prompt) => {
-    // const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
-
-    const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
-
+async function getHotelOptions(initial_prompt) {
     try {
+        const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
 
         let filteredHotels = [];
         let hotelData = hotelRetrievalResults['properties'];
-        hotelData.forEach((hotel) => {
-            // Ensure overall_rating is a number and fix it to 2 decimal places
-            hotel.overall_rating = parseFloat(hotel.overall_rating).toFixed(2);
-            if (hotel.link) {
-                filteredHotels.push(hotel);
+
+        if (Array.isArray(hotelData)) {
+            hotelData.forEach((hotel) => {
+                hotel.overall_rating = parseFloat(hotel.overall_rating).toFixed(2);
+                if (hotel.link) {
+                    filteredHotels.push(hotel);
+                }
+            });
+
+            if (filteredHotels.length > 0) {
+                filteredHotels = filteredHotels.slice(0, 7);
             }
-        });
-        filteredHotels = filteredHotels.slice(0, 7);
+        }
 
         const summarizedHotels = filteredHotels.map(hotel => {
             // If the name is longer than 50 characters, slice it and add an ellipsis
             const formattedName = hotel.name.length > 50 ? hotel.name.slice(0, 50) + '...' : hotel.name;
 
+            const amenities = Array.isArray(hotel.amenities) && hotel.amenities.length > 0 
+                ? hotel.amenities.slice(0, 3) 
+                : [];
+
             return {
                 name: formattedName,
                 rating: hotel.overall_rating,
-                description: hotel.description,
-                // Use optional chaining for thumbnail to handle cases where images may not exist
+                description: hotel.description, 
                 thumbnail: hotel.images?.[0]?.thumbnail,
-                amenities: hotel.amenities.slice(0, 3),
+                amenities: amenities,
                 link: hotel.link,
-                // Use optional chaining for price to handle cases where rate_per_night may not exist
                 price: hotel.rate_per_night?.lowest
             };
         });
 
-
-        // console.
         return summarizedHotels;
-
-        // 
-        // const hotelData = hotelRetrievalResults['properties'];
-        // console.log(hotelData);
-        // const summarizedHotels = hotelData.reduce((filtered, hotel) => {
-        //     // Only add hotels with links and stop once we have 7
-        //     if (hotel.link && filtered.length < 7) {
-        //         filtered.push({
-        //             name: hotel.name,
-        //             rating: hotel.overall_rating,
-        //             description: hotel.description,
-        //             thumbnail: hotel.images?.[0]?.thumbnail, // Use optional chaining in case images array is not present
-        //             amenities: hotel.amenities.slice(0, 3),
-        //             link: hotel.link,
-        //             price: hotel.rate_per_night?.extracted_lowest,
-        //         });
-        //     }
-        //     // console.log(filtered)
-        //     return filtered;
-        // }, []);
 
     } catch (error) {
         console.error('Error reading or processing file:', error);
+        return [];
     }
 };
+
+
 
 export default getHotelOptions;

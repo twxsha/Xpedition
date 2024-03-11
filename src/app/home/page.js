@@ -7,8 +7,8 @@ import save from '@/public/save.png';
 import plus from '@/public/plus.png';
 import upload from '@/public/upload.png';
 import history from '@/public/history.png';
-import {Tooltip} from "@nextui-org/tooltip";
-import {Button} from "@nextui-org/button";
+import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@nextui-org/button";
 import './home.css';
 import HotelCard from '../components/HotelCard';
 import FlightCard from '../components/FlightCard';
@@ -44,7 +44,7 @@ const Home = () => {
     const [loadingText, setLoadingText] = useState('Creating your Xpedition');
     const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
     const [messageIndex, setMessageIndex] = useState(0);
-    
+
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -60,26 +60,22 @@ const Home = () => {
 
     const handleSavePopupClick = async () => {
         try {
-            //console.log(auth.currentUser.email);
-            if(!auth.currentUser) {
+            if (!auth.currentUser) {
                 navigate.push("/login");
             }
-            // Create a reference to the user's document under the "Xpeditions" collection
             const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
-            // Create a reference to a new collection within the user's document
             const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
-        
-            // Add a document to the new collection
+
             await setDoc(doc(subCollectionRef), {
                 id: XpeditionName,
                 name: input,
                 hotels: stay,
                 flights: flights,
                 activities: activities,
-                packing: packlist, 
+                packing: packlist,
                 weather: weather
             });
-        
+
             console.log("Document added to subcollection successfully!");
         } catch (error) {
             console.error("Error adding document to subcollection:", error);
@@ -98,7 +94,7 @@ const Home = () => {
     const handlePlusClick = () => {
         navigate.push('/describe');
     };
-    
+
     const handleNameChange = (e) => {
         setXpeditionName(e.target.value);
     }
@@ -175,37 +171,36 @@ const Home = () => {
             }
           }
         };
-    
+
         fetchData();
       }, [input]);
 
     
     useEffect(() => {
         if (backendLoading) {
-          setLoadingText(loadingMessages[messageIndex]);
+            setLoadingText(loadingMessages[messageIndex]);
         }
-      }, [backendLoading, messageIndex]);
-  
-    useEffect(() => {
-    let intervalId;
-    if (backendLoading) {
-        intervalId = setInterval(() => {
-        setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
-        }, 1000);
-    }
+    }, [backendLoading, messageIndex]);
 
-    return () => clearInterval(intervalId);
+    useEffect(() => {
+        let intervalId;
+        if (backendLoading) {
+            intervalId = setInterval(() => {
+                setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
+            }, 1000);
+        }
+
+        return () => clearInterval(intervalId);
     }, [backendLoading, loadingMessages.length]);
 
 
     useEffect(() => {
-        // Redirect to login if user is not authenticated
         if (!user) {
             navigate.push("/login");
         }
     }, [user, navigate]);
 
-    if(backendLoading) {
+    if (backendLoading) {
         return (
             <div className="home">
                 <header className="homeheader">
@@ -238,9 +233,9 @@ const Home = () => {
                         <Tooltip showArrow={true} className="custom-tooltip" content="Share Expedition">
                             <Button onClick={handleShareClick}> <img src={upload.src} className="upload" alt="logo" /></Button>
                         </Tooltip>
-                    </div> 
+                    </div>
                 </div>
-                { savePopup && <div className='saveBox'>
+                {savePopup && <div className='saveBox'>
                     <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Enter Xpedition Name: </label>
                     <div className="description-group">
@@ -252,8 +247,8 @@ const Home = () => {
                         />
                         <button onClick={handleSavePopupClick} className='save-button'>Save</button>
                     </div>
-                </div> }
-                { sharePopup && <div className='saveBox'>
+                </div>}
+                {sharePopup && <div className='saveBox'>
                     <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Share Xpedition: </label>
                     <div className="description-group">
