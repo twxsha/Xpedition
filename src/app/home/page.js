@@ -73,7 +73,7 @@ const Home = () => {
             await setDoc(doc(subCollectionRef), {
                 id: XpeditionName,
                 name: input,
-                //hotels: stay,
+                hotels: stay,
                 flights: flights,
                 activities: activities,
                 packing: packlist, 
