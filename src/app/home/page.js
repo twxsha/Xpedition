@@ -102,19 +102,22 @@ const Home = () => {
         setXpeditionName(e.target.value);
     }
     const handleSaveClick = () => {
+        handleXclick();
         setSavePopup(true);
     };
     const handleShareClick = () => {
+        handleXclick();
         setSharePopup(true);
     };
     const handleHistoryClick = () => {
+        handleXclick();
         setHistoryPopup(true);
     };
-    const handleXclick = (e) => {
+    const handleXclick = () => {
         setSavePopup(false);
         setSharePopup(false);
         setHistoryPopup(false);
-    }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
