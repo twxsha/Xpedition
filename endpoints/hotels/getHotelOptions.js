@@ -109,47 +109,53 @@ async function retrieve_hotel_options(user_prompt) {
 }
 
 
-const getHotelOptions = async (initial_prompt) => {
-    // const initial_prompt = "Help me plan a trip for NY. I have 3 triplets and will travel with my husband";
-    const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
-
+async function getHotelOptions(initial_prompt) {
     try {
+        const hotelRetrievalResults = await retrieve_hotel_options(initial_prompt);
 
         let filteredHotels = [];
         let hotelData = hotelRetrievalResults['properties'];
-        hotelData.forEach((hotel) => {
-            // Ensure overall_rating is a number and fix it to 2 decimal places
-            hotel.overall_rating = parseFloat(hotel.overall_rating).toFixed(2);
-            if (hotel.link) {
-                filteredHotels.push(hotel);
+
+        if (Array.isArray(hotelData)) {
+            hotelData.forEach((hotel) => {
+                hotel.overall_rating = parseFloat(hotel.overall_rating).toFixed(2);
+                if (hotel.link) {
+                    filteredHotels.push(hotel);
+                }
+            });
+
+            if (filteredHotels.length > 0) {
+                filteredHotels = filteredHotels.slice(0, 7);
             }
-        });
-        filteredHotels = filteredHotels.slice(0, 7);
+        }
 
         const summarizedHotels = filteredHotels.map(hotel => {
             // If the name is longer than 50 characters, slice it and add an ellipsis
             const formattedName = hotel.name.length > 50 ? hotel.name.slice(0, 50) + '...' : hotel.name;
 
+            const amenities = Array.isArray(hotel.amenities) && hotel.amenities.length > 0 
+                ? hotel.amenities.slice(0, 3) 
+                : [];
+
             return {
                 name: formattedName,
                 rating: hotel.overall_rating,
-                description: hotel.description,
-                // Use optional chaining for thumbnail to handle cases where images may not exist
+                description: hotel.description, 
                 thumbnail: hotel.images?.[0]?.thumbnail,
-                amenities: hotel.amenities.slice(0, 3),
+                amenities: amenities,
                 link: hotel.link,
-                // Use optional chaining for price to handle cases where rate_per_night may not exist
                 price: hotel.rate_per_night?.lowest
             };
         });
 
-
         return summarizedHotels;
-
 
     } catch (error) {
         console.error('Error reading or processing file:', error);
+        return [];
     }
 };
+
+
 
 export default getHotelOptions;

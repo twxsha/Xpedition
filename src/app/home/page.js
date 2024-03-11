@@ -60,16 +60,12 @@ const Home = () => {
 
     const handleSavePopupClick = async () => {
         try {
-            //console.log(auth.currentUser.email);
             if (!auth.currentUser) {
                 navigate.push("/login");
             }
-            // Create a reference to the user's document under the "Xpeditions" collection
             const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
-            // Create a reference to a new collection within the user's document
             const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
 
-            // Add a document to the new collection
             await setDoc(doc(subCollectionRef), {
                 name: input,
                 hotels: stay,
@@ -121,7 +117,6 @@ const Home = () => {
         if (storedDescription) {
             setInput(storedDescription);
         } else {
-            // If no description is found, redirect to '/describe'
             navigate.push('/describe');
         }
     }, [navigate]);
@@ -154,43 +149,6 @@ const Home = () => {
 
         fetchData();
     }, [input]);
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const storedDescription = sessionStorage.getItem('description');
-    //         if (storedDescription) {
-    //             setInput(storedDescription);
-    //             try {
-    //                 const results = await Promise.all([
-    //                     getHotelOptions(input),
-    //                     getFlightOptions(input),
-    //                     getPackingList(input),
-    //                     getActivitiesList(input),
-    //                     getWeather(input),
-    //                 ]);
-
-    //                 const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
-
-    //                 setStay(hotelsRes);
-    //                 setFlights(flightsRes);
-    //                 setPacklist(packingListRes.packing_list);
-    //                 setActivities(activitiesListRes.activities_list);
-    //                 setWeather(weatherRes);
-    //                 setBackendLoading(false);
-    //             } catch (error) {
-    //                 // Handle error
-    //                 console.error('Error fetching data:', error);
-    //             }
-    //             sessionStorage.removeItem('description');
-    //         } else {
-    //             // If no description is found in sessionStorage, navigate back to '/describe'
-    //             navigate.push('/describe');
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, [input]);
-
-
 
     useEffect(() => {
         if (backendLoading) {
@@ -211,7 +169,6 @@ const Home = () => {
 
 
     useEffect(() => {
-        // Redirect to login if user is not authenticated
         if (!user) {
             navigate.push("/login");
         }
