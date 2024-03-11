@@ -327,7 +327,6 @@
 /* Adjustments for responsive design */
 @media (max-width: 768px) {
   .home {
-<<<<<<< HEAD
     background: linear-gradient(211.75deg, #2965FF 19.11%, #5AC69F 106.79%);
     color: white;
     max-width: 100%;
