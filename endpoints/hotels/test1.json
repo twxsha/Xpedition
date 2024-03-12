@@ -1,0 +1,51 @@
+{
+    "search_metadata": {
+      "id": "test1",
+      "status": "Success",
+      "total_time_taken": 1.5
+    },
+    "search_parameters": {
+      "q": "Test City Hotels",
+      "adults": 2,
+      "children": 1,
+      "check_in_date": "2024-04-12",
+      "check_out_date": "2024-04-14"
+    },
+    "properties": [
+      {
+        "type": "hotel",
+        "name": "Economy Test Hotel",
+        "gps_coordinates": {
+          "latitude": -8.6881,
+          "longitude": 115.1559
+        },
+        "rate_per_night": {
+          "lowest": "$50",
+          "extracted_lowest": 50
+        },
+        "overall_rating": 3.5,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking"
+        ]
+      },
+      {
+        "type": "vacation rental",
+        "name": "Budget Villa",
+        "gps_coordinates": {
+          "latitude": -8.495,
+          "longitude": 115.253
+        },
+        "rate_per_night": {
+          "lowest": "$75",
+          "extracted_lowest": 75
+        },
+        "overall_rating": 4.0,
+        "amenities": [
+          "Kitchen",
+          "Outdoor pool"
+        ]
+      }
+    ]
+  }
+  

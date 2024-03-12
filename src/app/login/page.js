@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import './LogIn.css';
+import './login.css';
 import xpedition from '@/public/XPEDITION.png';
 
 const LogIn = () => {

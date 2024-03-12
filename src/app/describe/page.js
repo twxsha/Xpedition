@@ -45,7 +45,8 @@ const Describe = () => {
                     <img src={xpedition.src} className="describelogo" alt="logo" />
                     <p className='describeText'>Describe Your Xpedition</p>
                     <p className='describeSubText'>Tell us your starting point and describe your trip</p>
-                    <input type="text" id="describeInput" value={description} onChange={handleInputChange}></input>
+                    <input type="text" id="describeInput" value={description} 
+                    placeholder='Tell us your ideal location, dates, number of people or any other information to help us  provide our best recommendations' onChange={handleInputChange}></input>
                     <div className='describebuttons'>
                         <button className='describesignupbutton' onClick={handleGoClick}> Go </button>
                     </div>

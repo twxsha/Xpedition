@@ -7,8 +7,8 @@ import save from '@/public/save.png';
 import plus from '@/public/plus.png';
 import upload from '@/public/upload.png';
 import history from '@/public/history.png';
-import {Tooltip} from "@nextui-org/tooltip";
-import {Button} from "@nextui-org/button";
+import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@nextui-org/button";
 import './home.css';
 import HotelCard from '../components/HotelCard';
 import FlightCard from '../components/FlightCard';
@@ -18,7 +18,7 @@ import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
 import { getActivitiesList } from '@/endpoints/activities';
 import { getWeather } from '@/endpoints/weather';
-import { doc, collection, setDoc } from "firebase/firestore";
+import { doc, collection, setDoc, getDocs, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 import { getFlightOptions } from '@/endpoints/flights';
@@ -60,25 +60,22 @@ const Home = () => {
 
     const handleSavePopupClick = async () => {
         try {
-            //console.log(auth.currentUser.email);
-            if(!auth.currentUser) {
+            if (!auth.currentUser) {
                 navigate.push("/login");
             }
-            // Create a reference to the user's document under the "Xpeditions" collection
             const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
-            // Create a reference to a new collection within the user's document
             const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
-        
-            // Add a document to the new collection
-            await setDoc(doc(subCollectionRef), {
+
+            const newDocRef = await addDoc(subCollectionRef, {
+                id: XpeditionName,
                 name: input,
                 hotels: stay,
-                flights: "tbd",
+                flights: flights,
                 activities: activities,
-                packing: packlist, 
+                packing: packlist,
                 weather: weather
             });
-        
+            setXpeditionLink(window.location.origin + "/xpeditions/" + auth.currentUser.uid + "/" + newDocRef.id);
             console.log("Document added to subcollection successfully!");
         } catch (error) {
             console.error("Error adding document to subcollection:", error);
@@ -97,7 +94,7 @@ const Home = () => {
     const handlePlusClick = () => {
         navigate.push('/describe');
     };
-    
+
     const handleNameChange = (e) => {
         setXpeditionName(e.target.value);
     }
@@ -111,6 +108,30 @@ const Home = () => {
     };
     const handleHistoryClick = () => {
         handleXclick();
+        // go to database and get history
+        // [domain].com/xpeditions/user/eventid
+        let userid = auth.currentUser.uid;
+        const fetchEventByUID = async () => {
+            const eventsRef = collection(db, "xpeditions", userid, "events");
+            const eventsSnapshot = await getDocs(eventsRef);
+
+            const eventsData = [];
+            eventsSnapshot.forEach((doc) => {
+            if (doc.exists()) {
+                console.log("Document exists:", doc.id, doc.data());
+                let data = doc.data();
+                eventsData.push([
+                    data.id,
+                    "/xpeditions/" + userid + "/" + doc.id
+                ]);
+            } else {
+                console.log("Document doesn't exist");
+            }
+            setHistory(eventsData);
+            console.log(eventsData);
+            });
+        }
+        fetchEventByUID();
         setHistoryPopup(true);
     };
     const handleXclick = () => {
@@ -120,69 +141,69 @@ const Home = () => {
     };
 
     useEffect(() => {
+        const storedDescription = sessionStorage.getItem('description');
+        if (storedDescription) {
+          setInput(storedDescription);
+        } else {
+          navigate.push('/describe');
+        }
+      }, [navigate]);
+    
+      useEffect(() => {
         const fetchData = async () => {
-            const storedDescription = sessionStorage.getItem('description');
-            if (storedDescription) {
-                setInput(storedDescription);
-                try {
-                    const results = await Promise.all([
-                        getHotelOptions(input),
-                        getFlightOptions(input),
-                        getPackingList(input),
-                        getActivitiesList(input),
-                        getWeather(input),
-                    ]);
-    
-                    const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
-    
-                    setStay(hotelsRes);
-                    setFlights(flightsRes);
-                    setPacklist(packingListRes.packing_list);
-                    setActivities(activitiesListRes.activities_list);
-                    setWeather(weatherRes);
-                    setBackendLoading(false);
-                } catch (error) {
-                    // Handle error
-                    console.error('Error fetching data:', error);
-                }
-                sessionStorage.removeItem('description');
-            } else {
-                // If no description is found in sessionStorage, navigate back to '/describe'
-                navigate.push('/describe');
+          if (input) {
+            try {
+              const results = await Promise.all([
+                getHotelOptions(input),
+                getFlightOptions(input),
+                getPackingList(input),
+                getActivitiesList(input),
+                getWeather(input),
+              ]);
+      
+              const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
+      
+              setStay(hotelsRes);
+              setFlights(flightsRes);
+              setPacklist(packingListRes.packing_list);
+              setActivities(activitiesListRes.activities_list);
+              setWeather(weatherRes);
+              setBackendLoading(false);
+            } catch (error) {
+              console.error('Error fetching data:', error);
             }
+          }
         };
-    
+
         fetchData();
-    }, []);
-    
+      }, [input]);
 
     
     useEffect(() => {
         if (backendLoading) {
-          setLoadingText(loadingMessages[messageIndex]);
+            setLoadingText(loadingMessages[messageIndex]);
         }
-      }, [backendLoading, messageIndex]);
-  
-    useEffect(() => {
-    let intervalId;
-    if (backendLoading) {
-        intervalId = setInterval(() => {
-        setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
-        }, 1000);
-    }
+    }, [backendLoading, messageIndex]);
 
-    return () => clearInterval(intervalId);
+    useEffect(() => {
+        let intervalId;
+        if (backendLoading) {
+            intervalId = setInterval(() => {
+                setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
+            }, 1000);
+        }
+
+        return () => clearInterval(intervalId);
     }, [backendLoading, loadingMessages.length]);
 
 
     useEffect(() => {
-        // Redirect to login if user is not authenticated
         if (!user) {
             navigate.push("/login");
         }
     }, [user, navigate]);
 
-    if(backendLoading) {
+    if (backendLoading) {
         return (
             <div className="home">
                 <header className="homeheader">
@@ -215,9 +236,9 @@ const Home = () => {
                         <Tooltip showArrow={true} className="custom-tooltip" content="Share Expedition">
                             <Button onClick={handleShareClick}> <img src={upload.src} className="upload" alt="logo" /></Button>
                         </Tooltip>
-                    </div> 
+                    </div>
                 </div>
-                { savePopup && <div className='saveBox'>
+                {savePopup && <div className='saveBox'>
                     <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Enter Xpedition Name: </label>
                     <div className="description-group">
@@ -229,8 +250,8 @@ const Home = () => {
                         />
                         <button onClick={handleSavePopupClick} className='save-button'>Save</button>
                     </div>
-                </div> }
-                { sharePopup && <div className='saveBox'>
+                </div>}
+                {sharePopup && <div className='saveBox'>
                     <button onClick={handleXclick} className='x-button'>x</button>
                     <label className="save-label"> Share Xpedition: </label>
                     <div className="description-group">
@@ -243,19 +264,24 @@ const Home = () => {
                         />
                     </div>
                 </div> }
-                { historyPopup && <div className='saveBox'>
-                    <button onClick={handleXclick} className='x-button'>x</button>
-                    <label className="save-label"> History </label>
-                    <div className="description-group">
-                        <input
-                            type="text"
-                            value={History}
-                            onChange={handleNameChange}
-                            className="save-description"
-                            readOnly={true}
-                        />
+                {historyPopup && (
+                    <div className='saveBox'>
+                        <button onClick={handleXclick} className='x-button'>x</button>
+                        <label className="save-label">History</label>
+                        <div className="history-name">
+                        {History &&  History.length > 0 ? (History.map((obj) => (
+                            <div key={obj[0]}>
+                                <a href={obj[1]} target="_blank" rel="noopener noreferrer">
+                                    {obj[0]}
+                                </a>
+                            </div>
+                        ))) : (
+                            <p className="input-description">No Saved Xpeditions</p>
+                        )}
+                        </div>
                     </div>
-                </div> }
+                    )}
+
                 <label className="top-label"> Your Xpedition </label>
                 <div className="description-group">
                     <input
