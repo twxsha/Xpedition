@@ -18,7 +18,7 @@ import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
 import { getActivitiesList } from '@/endpoints/activities';
 import { getWeather } from '@/endpoints/weather';
-import { doc, collection, setDoc, getDocs } from "firebase/firestore";
+import { doc, collection, setDoc, getDocs, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 import { getFlightOptions } from '@/endpoints/flights';
@@ -44,7 +44,7 @@ const Home = () => {
     const [loadingText, setLoadingText] = useState('Creating your Xpedition');
     const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
     const [messageIndex, setMessageIndex] = useState(0);
-
+    
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -66,7 +66,7 @@ const Home = () => {
             const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
             const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
 
-            await setDoc(doc(subCollectionRef), {
+            const newDocRef = await addDoc(subCollectionRef, {
                 id: XpeditionName,
                 name: input,
                 hotels: stay,
@@ -75,7 +75,7 @@ const Home = () => {
                 packing: packlist,
                 weather: weather
             });
-
+            setXpeditionLink(window.location.origin + "/xpeditions/" + auth.currentUser.uid + "/" + newDocRef.id);
             console.log("Document added to subcollection successfully!");
         } catch (error) {
             console.error("Error adding document to subcollection:", error);
