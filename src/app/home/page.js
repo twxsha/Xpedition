@@ -18,7 +18,7 @@ import { getHotelOptions } from '@/endpoints/hotels';
 import { getPackingList } from '@/endpoints/packing';
 import { getActivitiesList } from '@/endpoints/activities';
 import { getWeather } from '@/endpoints/weather';
-import { doc, collection, setDoc } from "firebase/firestore";
+import { doc, collection, setDoc, getDocs, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 import { getFlightOptions } from '@/endpoints/flights';
@@ -44,7 +44,7 @@ const Home = () => {
     const [loadingText, setLoadingText] = useState('Creating your Xpedition');
     const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
     const [messageIndex, setMessageIndex] = useState(0);
-
+    
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -66,15 +66,16 @@ const Home = () => {
             const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
             const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
 
-            await setDoc(doc(subCollectionRef), {
+            const newDocRef = await addDoc(subCollectionRef, {
+                id: XpeditionName,
                 name: input,
                 hotels: stay,
-                flights: "tbd",
+                flights: flights,
                 activities: activities,
                 packing: packlist,
                 weather: weather
             });
-
+            setXpeditionLink(window.location.origin + "/xpeditions/" + auth.currentUser.uid + "/" + newDocRef.id);
             console.log("Document added to subcollection successfully!");
         } catch (error) {
             console.error("Error adding document to subcollection:", error);
@@ -104,6 +105,30 @@ const Home = () => {
         setSharePopup(true);
     };
     const handleHistoryClick = () => {
+        // go to database and get history
+        // [domain].com/xpeditions/user/eventid
+        let userid = auth.currentUser.uid;
+        const fetchEventByUID = async () => {
+            const eventsRef = collection(db, "xpeditions", userid, "events");
+            const eventsSnapshot = await getDocs(eventsRef);
+
+            const eventsData = [];
+            eventsSnapshot.forEach((doc) => {
+            if (doc.exists()) {
+                console.log("Document exists:", doc.id, doc.data());
+                let data = doc.data();
+                eventsData.push([
+                    data.id,
+                    "/xpeditions/" + userid + "/" + doc.id
+                ]);
+            } else {
+                console.log("Document doesn't exist");
+            }
+            setHistory(eventsData);
+            console.log(eventsData);
+            });
+        }
+        fetchEventByUID();
         setHistoryPopup(true);
     };
     const handleXclick = (e) => {
@@ -115,41 +140,42 @@ const Home = () => {
     useEffect(() => {
         const storedDescription = sessionStorage.getItem('description');
         if (storedDescription) {
-            setInput(storedDescription);
+          setInput(storedDescription);
         } else {
-            navigate.push('/describe');
+          navigate.push('/describe');
         }
-    }, [navigate]);
-
-    useEffect(() => {
+      }, [navigate]);
+    
+      useEffect(() => {
         const fetchData = async () => {
-            if (input) {
-                try {
-                    const results = await Promise.all([
-                        getHotelOptions(input),
-                        getFlightOptions(input),
-                        getPackingList(input),
-                        getActivitiesList(input),
-                        getWeather(input),
-                    ]);
-
-                    const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
-
-                    setStay(hotelsRes);
-                    setFlights(flightsRes);
-                    setPacklist(packingListRes.packing_list);
-                    setActivities(activitiesListRes.activities_list);
-                    setWeather(weatherRes);
-                    setBackendLoading(false);
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
+          if (input) {
+            try {
+              const results = await Promise.all([
+                getHotelOptions(input),
+                getFlightOptions(input),
+                getPackingList(input),
+                getActivitiesList(input),
+                getWeather(input),
+              ]);
+      
+              const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
+      
+              setStay(hotelsRes);
+              setFlights(flightsRes);
+              setPacklist(packingListRes.packing_list);
+              setActivities(activitiesListRes.activities_list);
+              setWeather(weatherRes);
+              setBackendLoading(false);
+            } catch (error) {
+              console.error('Error fetching data:', error);
             }
+          }
         };
 
         fetchData();
-    }, [input]);
+      }, [input]);
 
+    
     useEffect(() => {
         if (backendLoading) {
             setLoadingText(loadingMessages[messageIndex]);
@@ -234,20 +260,25 @@ const Home = () => {
                             readOnly={true}
                         />
                     </div>
-                </div>}
-                {historyPopup && <div className='saveBox'>
-                    <button onClick={handleXclick} className='x-button'>x</button>
-                    <label className="save-label"> History </label>
-                    <div className="description-group">
-                        <input
-                            type="text"
-                            value={History}
-                            onChange={handleNameChange}
-                            className="save-description"
-                            readOnly={true}
-                        />
+                </div> }
+                {historyPopup && (
+                    <div className='saveBox'>
+                        <button onClick={handleXclick} className='x-button'>x</button>
+                        <label className="save-label">History</label>
+                        <div className="history-name">
+                        {History &&  History.length > 0 ? (History.map((obj) => (
+                            <div key={obj[0]}>
+                                <a href={obj[1]} target="_blank" rel="noopener noreferrer">
+                                    {obj[0]}
+                                </a>
+                            </div>
+                        ))) : (
+                            <p className="input-description">No Saved Xpeditions</p>
+                        )}
+                        </div>
                     </div>
-                </div>}
+                    )}
+
                 <label className="top-label"> Your Xpedition </label>
                 <div className="description-group">
                     <input

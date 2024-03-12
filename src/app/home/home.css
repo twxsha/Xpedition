@@ -122,6 +122,19 @@
   width: 100%;
 }
 
+.history-name {
+  margin-right: 20px;
+  background: #81A4FF;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  font-family:  "Josephine Sans";
+  width: 100%;
+  
+}
+
 .save-button {
   margin-right: 20px;
   background: #81A4FF;
