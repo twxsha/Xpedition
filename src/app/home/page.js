@@ -99,12 +99,15 @@ const Home = () => {
         setXpeditionName(e.target.value);
     }
     const handleSaveClick = () => {
+        handleXclick();
         setSavePopup(true);
     };
     const handleShareClick = () => {
+        handleXclick();
         setSharePopup(true);
     };
     const handleHistoryClick = () => {
+        handleXclick();
         // go to database and get history
         // [domain].com/xpeditions/user/eventid
         let userid = auth.currentUser.uid;
@@ -131,11 +134,11 @@ const Home = () => {
         fetchEventByUID();
         setHistoryPopup(true);
     };
-    const handleXclick = (e) => {
+    const handleXclick = () => {
         setSavePopup(false);
         setSharePopup(false);
         setHistoryPopup(false);
-    }
+    };
 
     useEffect(() => {
         const storedDescription = sessionStorage.getItem('description');
