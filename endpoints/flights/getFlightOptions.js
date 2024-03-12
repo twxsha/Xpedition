@@ -137,10 +137,10 @@ async function getFlightOptions(initial_prompt) {
 
   try {
     let summarizedFlightData = []
-    let flightData = flight_retrieval_results.best_flights.slice(0,3);
-    flightData = flightData.concat(flight_retrieval_results.other_flights.slice(0,3));
+    let flightData = flight_retrieval_results.best_flights ? flight_retrieval_results.best_flights.slice(0,3) : [];
+    flightData = flight_retrieval_results.other_flights ? flightData.concat(flight_retrieval_results.other_flights.slice(0,3)) : flightData;
     flightData = flightData.slice(0,3)
-    let link = flight_retrieval_results.search_metadata.google_flights_url
+    let link = flight_retrieval_results.search_metadata ? flight_retrieval_results.search_metadata.google_flights_url : ""
     flightData.forEach((option) => {
         let summarizedOption = {}
         summarizedOption.flights = []
