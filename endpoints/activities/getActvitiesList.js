@@ -4,8 +4,12 @@ const { OpenAI } = require("openai");
 
 const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
+/**
+ * Uses OpenAI function call to generate a list of activities for given trip prompt in a structured JSON format
+ * @param {*} initial_prompt Initial trip prompt provided by the user
+ * @returns A list of activities in a JSON object for the given prompt
+ */
 const getActivitiesList = async (initial_prompt) => {
-    // let initial_prompt = "Help me plan a Maui, Hawaii"
     const gptResponse = await openai.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
@@ -39,8 +43,6 @@ const getActivitiesList = async (initial_prompt) => {
 
     const functionCall = gptResponse.choices[0].message.function_call;
     const activities_list = functionCall['arguments'];
-
-    // console.log(activities_list);
     
     return JSON.parse(activities_list);
 }
