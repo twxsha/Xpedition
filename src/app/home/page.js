@@ -266,7 +266,7 @@ const Home = () => {
                         <button onClick={handleXclick} className='x-button'>x</button>
                         <label className="save-label">History</label>
                         <div className="history-name">
-                        {History &&  flights.length > 0 ? (History.map((obj) => (
+                        {History &&  History.length > 0 ? (History.map((obj) => (
                             <div key={obj[0]}>
                                 <a href={obj[1]} target="_blank" rel="noopener noreferrer">
                                     {obj[0]}
