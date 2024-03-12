@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '../firebase-config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import './signup.css';
+import './SignUp.css';
 import xpedition from '@/public/XPEDITION.png';
 
 const SignUp = () => {
