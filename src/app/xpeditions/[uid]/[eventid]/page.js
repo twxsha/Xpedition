@@ -10,6 +10,11 @@ import HotelCard from '../../../components/HotelCard';
 import FlightCard from '../../../components/FlightCard';
 import WeatherDisplay from '../../../components/WeatherCard';
 
+/**
+ * This is an alternative version of the home page used to view Xpeditions that were previously saved
+ * @param {*} params the ids to find the saved xpedition, come from the URL path (uid, eventid)
+ * @returns JSX for alternative home page (when viewing a saved xpedition)
+ */
 const Home = ({ params }) => {
     const navigate = useRouter();
     const [input, setInput] = useState('');

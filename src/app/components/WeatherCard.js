@@ -1,3 +1,9 @@
+/**
+ * The weather display component creates the display for the weather 
+ * @param {*} weather the weather data 
+ * @returns JSX for weather display
+ */
+
 const WeatherDisplay = ({ weather }) => {
     if (!weather) return <div className="weather-container">Loading weather...</div>;
   

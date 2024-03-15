@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/app/components/FlightCard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/app/components/FlightCard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect } from 'react';
+import styles from './FlightCard.module.css';
+import Link from 'next/link';
+import { useState } from 'react';
+import { format } from 'path';
+
+
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes &lt; 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+/**
+ * The flight card component displays all the info for one flight(s) option
+ * @param {*} flight data for one flight
+ * @returns JSX for one flight card
+ */
+const FlightCard = ({ flight }) => {
+  const options = {  month: 'short', day: 'numeric' };
+
+  let [departureDateString, updateDepartureDateString] = useState('');
+  let [arrivalDateString, updateArrivalDateString] = useState('');
+  let [arrivalTime, updateArrivalTime] = useState('');
+  let [departureTime, updateDepartureTime] = useState('');
+  useEffect(() => {
+    let d = new Date(flight.departure_time)
+    updateDepartureDateString(d.toLocaleDateString("en-us", options))
+    updateDepartureTime(formatAMPM(d))
+  }, [flight.departure_time]);
+
+  useEffect(() => {
+    let d = new Date(flight.arrival_time)
+    updateArrivalDateString(d.toLocaleDateString("en-us", options))
+    updateArrivalTime(formatAMPM(d))
+  }, [flight.departure_time]);
+
+
+
+  return (
+    &lt;Link href={flight.link} target='blank'>
+        &lt;div className={styles.card}>
+        &lt;div className={styles.imageWrapper}>
+            &lt;img src={flight.airline_logo} alt={flight.airline} className={styles.image} />
+        &lt;/div>
+        &lt;div className = {styles.details}>
+          &lt;div className={styles.title2}>{departureDateString  + " - " + arrivalDateString}&lt;/div>
+          &lt;div className={styles.subtitle}>{departureTime + " - " + arrivalTime}&lt;/div>
+        &lt;/div>
+        &lt;div className = {styles.details}>
+          &lt;div className={styles.title}>{flight.airline}&lt;/div>
+          &lt;div className={styles.subtitle}>{flight.departure_code + "-" + flight.arrival_code}&lt;/div>   
+        &lt;/div>
+        &lt;div className = {styles.details}>
+          &lt;div className={styles.title}>{flight.num_stops > 1 ? flight.num_stops + " stops" : flight.num_stops > 0 ? flight.num_stops + " stop" : "Nonstop"}&lt;/div>
+          &lt;div className={styles.subtitle}>{Math.floor(flight.total_duration / 60) + " hr " + flight.total_duration % 60 + " min"}&lt;/div>
+        &lt;/div>
+        &lt;div className = {styles.details}>
+          &lt;div className={styles.price}>{"$"+flight.price}&lt;/div>
+          &lt;div className = {styles.subtitle}>{flight.type}&lt;/div>
+        &lt;/div>
+ 
+        &lt;/div>
+
+    &lt;/Link>
+  );
+};
+
+export default FlightCard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Describe">Describe</a></li><li><a href="global.html#FlightCard">FlightCard</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HotelCard">HotelCard</a></li><li><a href="global.html#Landing">Landing</a></li><li><a href="global.html#LogIn">LogIn</a></li><li><a href="global.html#SignUp">SignUp</a></li><li><a href="global.html#WeatherDisplay">WeatherDisplay</a></li><li><a href="global.html#create_flight_request_parameters">create_flight_request_parameters</a></li><li><a href="global.html#create_hotel_request_parameters">create_hotel_request_parameters</a></li><li><a href="global.html#generate_flight_request_params">generate_flight_request_params</a></li><li><a href="global.html#generate_hotel_request_params">generate_hotel_request_params</a></li><li><a href="global.html#getActivitiesList">getActivitiesList</a></li><li><a href="global.html#getFlightOptions">getFlightOptions</a></li><li><a href="global.html#getHotelOptions">getHotelOptions</a></li><li><a href="global.html#getPackingList">getPackingList</a></li><li><a href="global.html#getWeather">getWeather</a></li><li><a href="global.html#page">page</a></li><li><a href="global.html#retrieve_flight_options">retrieve_flight_options</a></li><li><a href="global.html#retrieve_hotel_options">retrieve_hotel_options</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 15 2024 14:42:15 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/app/login/page.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/app/login/page.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use client'; 
+
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { auth } from '../firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import './LogIn.css';
+import xpedition from '@/public/XPEDITION.png';
+
+/**
+ * Login Page 
+ * @returns JSX for login page
+ */
+const LogIn = () => {
+    const navigate = useRouter();
+    const [contact, setContact] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setUser(user);
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    useEffect(() => {
+        // Redirect to login if user is not authenticated
+        if (user &amp;&amp; !loading) {
+            navigate.push("/describe");
+        }
+    }, [user, loading, navigate]);
+
+
+
+    const handleContactChange = (e) => {
+        setContact(e.target.value);
+    };
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+    const handleLogInClick = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, contact, password);
+            navigate.push('/describe');
+        } catch (error) {
+            console.error("Error Logging In:", error.message);
+            if (error.code === 'auth/invalid-credential') {
+                setErrorMessage('Email or password is incorrect.');
+            } 
+            else if (error.code === 'auth/invalid-email') {
+                setErrorMessage('Please provide a valid email.');
+            } 
+            else if (error.code === 'auth/missing-password') {
+                setErrorMessage('Password is missing. Please enter a password.');
+            } else {
+                setErrorMessage('Failed to login. Please try again.');
+            }
+        }
+    };
+    const handleSignUpClick = () => {
+        navigate.push('/signup');
+    };
+    return (
+        &lt;div className="login">
+            &lt;header className="loginheader">
+                &lt;img src={xpedition.src} className="loginlogo" alt="logo" />
+                &lt;div className="logintrect">
+                    &lt;p className='loginText'>Log In&lt;/p>
+                    &lt;div className='loginform'>
+                        &lt;div className='contactInput'>
+                            &lt;input type="text"
+                                id="contact"
+                                value={contact}
+                                onChange={handleContactChange}
+                                placeholder=' Email ' >
+                            &lt;/input>
+                        &lt;/div>
+                        &lt;div className='passwordInput'>
+                            &lt;input type="password"
+                                id="password"
+                                value={password}
+                                onChange={handlePasswordChange}
+                                placeholder='  Password' >
+                            &lt;/input>
+                        &lt;/div>
+                        {errorMessage &amp;&amp; &lt;div className='errorMessage'>{errorMessage}&lt;/div>}
+                        &lt;div className='loginpageButton'>
+                            &lt;button className='loginpagebutton' onClick={handleLogInClick}> &lt;p>Get Started&lt;/p> &lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;button className='loginsignupbutton' onClick={handleSignUpClick} >Don't have an account? &lt;u>Sign Up&lt;/u>&lt;/button>
+                &lt;/div>
+            &lt;/header>
+        &lt;/div>
+    );
+};
+
+export default LogIn;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Describe">Describe</a></li><li><a href="global.html#FlightCard">FlightCard</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HotelCard">HotelCard</a></li><li><a href="global.html#Landing">Landing</a></li><li><a href="global.html#LogIn">LogIn</a></li><li><a href="global.html#SignUp">SignUp</a></li><li><a href="global.html#WeatherDisplay">WeatherDisplay</a></li><li><a href="global.html#create_flight_request_parameters">create_flight_request_parameters</a></li><li><a href="global.html#create_hotel_request_parameters">create_hotel_request_parameters</a></li><li><a href="global.html#generate_flight_request_params">generate_flight_request_params</a></li><li><a href="global.html#generate_hotel_request_params">generate_hotel_request_params</a></li><li><a href="global.html#getActivitiesList">getActivitiesList</a></li><li><a href="global.html#getFlightOptions">getFlightOptions</a></li><li><a href="global.html#getHotelOptions">getHotelOptions</a></li><li><a href="global.html#getPackingList">getPackingList</a></li><li><a href="global.html#getWeather">getWeather</a></li><li><a href="global.html#page">page</a></li><li><a href="global.html#retrieve_flight_options">retrieve_flight_options</a></li><li><a href="global.html#retrieve_hotel_options">retrieve_hotel_options</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 15 2024 14:42:15 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

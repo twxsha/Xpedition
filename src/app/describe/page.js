@@ -6,6 +6,10 @@ import { auth } from '../firebase-config';
 import './describe.css';
 import xpedition from '@/public/XPEDITION.png';
 
+/**
+ * This is the page where users enter their prompt
+ * @returns JSX for describe page
+ */
 const Describe = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);

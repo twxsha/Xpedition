@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './HotelCard.module.css';
 import Link from 'next/link';
-
+/**
+ * The hotel card component displays all the information for one stay option
+ * @param {*} hotel all the data for one hotel 
+ * @returns JSX for one hotel card
+ */
 const HotelCard = ({ hotel }) => {
   return (
     <Link href={hotel.link} target='blank'>

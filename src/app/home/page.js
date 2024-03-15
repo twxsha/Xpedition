@@ -23,7 +23,10 @@ import { db, auth } from "../firebase-config";
 import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 import { getFlightOptions } from '@/endpoints/flights';
 
-
+/**
+ * This is the page where users can view their full xpedition
+ * @returns JSX for the home page
+ */
 const Home = () => {
     const navigate = useRouter();
     const [user] = useAuthState(auth); // Get current user
@@ -58,6 +61,9 @@ const Home = () => {
         setWeather(e.target.value);
     };
 
+    /**
+     * Saves current Xpedition to Firebase
+     */
     const handleSavePopupClick = async () => {
         try {
             if (!auth.currentUser) {
@@ -140,6 +146,9 @@ const Home = () => {
         setHistoryPopup(false);
     };
 
+    /**
+     * Forces user to give prompt
+     */
     useEffect(() => {
         const storedDescription = sessionStorage.getItem('description');
         if (storedDescription) {
@@ -149,6 +158,9 @@ const Home = () => {
         }
       }, [navigate]);
     
+    /**
+     * Fetches all the data from all the endpoints based on the prompt.
+     */
       useEffect(() => {
         const fetchData = async () => {
           if (input) {
@@ -179,6 +191,9 @@ const Home = () => {
       }, [input]);
 
     
+    /**
+     * handles loading screen logic while data is being fetched
+     */
     useEffect(() => {
         if (backendLoading) {
             setLoadingText(loadingMessages[messageIndex]);
