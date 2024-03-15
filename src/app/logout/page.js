@@ -5,7 +5,9 @@ import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
 // Inside your component, create a function for logout
-
+/**
+ * This is the logout page. 
+ */
 const page = async () => {
     const navigate = useRouter();
     signOut(auth)

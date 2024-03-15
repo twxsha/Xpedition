@@ -16,6 +16,11 @@ function formatAMPM(date) {
   return strTime;
 }
 
+/**
+ * The flight card component displays all the info for one flight(s) option
+ * @param {*} flight data for one flight
+ * @returns JSX for one flight card
+ */
 const FlightCard = ({ flight }) => {
   const options = {  month: 'short', day: 'numeric' };
 

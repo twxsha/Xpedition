@@ -7,6 +7,10 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './signup.css';
 import xpedition from '@/public/XPEDITION.png';
 
+/**
+ * This is the signup page where users can create accounts 
+ * @returns JSX for signup page
+ */
 const SignUp = () => {
     const navigate = useRouter();
     const [firstname, setFirstname] = useState('');

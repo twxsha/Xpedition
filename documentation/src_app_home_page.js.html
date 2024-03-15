@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/app/home/page.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/app/home/page.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import xpedition from '@/public/XPEDITION.png';
+import save from '@/public/save.png';
+import plus from '@/public/plus.png';
+import upload from '@/public/upload.png';
+import history from '@/public/history.png';
+import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@nextui-org/button";
+import './home.css';
+import HotelCard from '../components/HotelCard';
+import FlightCard from '../components/FlightCard';
+import WeatherDisplay from '../components/WeatherCard';
+
+import { getHotelOptions } from '@/endpoints/hotels';
+import { getPackingList } from '@/endpoints/packing';
+import { getActivitiesList } from '@/endpoints/activities';
+import { getWeather } from '@/endpoints/weather';
+import { doc, collection, setDoc } from "firebase/firestore";
+import { db, auth } from "../firebase-config";
+import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
+import { getFlightOptions } from '@/endpoints/flights';
+
+/**
+ * This is the page where users can view their full xpedition
+ * @returns JSX for the home page
+ */
+const Home = () => {
+    const navigate = useRouter();
+    const [user] = useAuthState(auth); // Get current user
+    const [input, setInput] = useState('');
+    const [flights, setFlights] = useState('');
+    const [stay, setStay] = useState('');
+    const [weather, setWeather] = useState('');
+    const [activities, setActivities] = useState('');
+    const [packlist, setPacklist] = useState('');
+    const [savePopup, setSavePopup] = useState(false);
+    const [sharePopup, setSharePopup] = useState(false);
+    const [historyPopup, setHistoryPopup] = useState(false);
+    const [XpeditionName, setXpeditionName] = useState('');
+    const [XpeditionLink, setXpeditionLink] = useState('');
+    const [History, setHistory] = useState('');
+    const popupRef = useRef(null);
+    const [backendLoading, setBackendLoading] = useState(true);
+    const [loadingText, setLoadingText] = useState('Creating your Xpedition');
+    const loadingMessages = ['Contacting the Flights Wizard', 'Chatting with Dr. Hotel', 'Generating Packing List', 'Asking god for the Weather'];
+    const [messageIndex, setMessageIndex] = useState(0);
+
+    const handleInputChange = (e) => {
+        setInput(e.target.value);
+    };
+    const handleflightsChange = (e) => {
+        setFlights(e.target.value);
+    };
+    const handleStayChange = (e) => {
+        setStay(e.target.value);
+    };
+    const handleWeatherChange = (e) => {
+        setWeather(e.target.value);
+    };
+
+    /**
+     * Saves current Xpedition to Firebase
+     */
+    const handleSavePopupClick = async () => {
+        try {
+            if (!auth.currentUser) {
+                navigate.push("/login");
+            }
+            const userDocRef = doc(db, "xpeditions", auth.currentUser.uid);
+            const subCollectionRef = collection(userDocRef, "events"); // Replace "newCollectionName" with your desired collection name
+
+            await setDoc(doc(subCollectionRef), {
+                name: input,
+                hotels: stay,
+                flights: "tbd",
+                activities: activities,
+                packing: packlist,
+                weather: weather
+            });
+
+            console.log("Document added to subcollection successfully!");
+        } catch (error) {
+            console.error("Error adding document to subcollection:", error);
+        }
+        setSavePopup(false);
+        setXpeditionName('');
+        console.log("hi")
+    };
+
+    const handleActivitiesClick = (e) => {
+        setActivities(e.target.value);
+    };
+    const handlePacklistClick = (e) => {
+        setPacklist(e.target.value);
+    };
+    const handlePlusClick = () => {
+        navigate.push('/describe');
+    };
+
+    const handleNameChange = (e) => {
+        setXpeditionName(e.target.value);
+    }
+    const handleSaveClick = () => {
+        setSavePopup(true);
+    };
+    const handleShareClick = () => {
+        setSharePopup(true);
+    };
+    const handleHistoryClick = () => {
+        setHistoryPopup(true);
+    };
+    const handleXclick = (e) => {
+        setSavePopup(false);
+        setSharePopup(false);
+        setHistoryPopup(false);
+    }
+
+    /**
+     * Forces user to give prompt
+     */
+    useEffect(() => {
+        const storedDescription = sessionStorage.getItem('description');
+        if (storedDescription) {
+            setInput(storedDescription);
+        } else {
+            navigate.push('/describe');
+        }
+    }, [navigate]);
+
+    /**
+     * Fetches all the data from all the endpoints based on the prompt.
+     */
+    useEffect(() => {
+        const fetchData = async () => {
+            if (input) {
+                try {
+                    const results = await Promise.all([
+                        getHotelOptions(input),
+                        getFlightOptions(input),
+                        getPackingList(input),
+                        getActivitiesList(input),
+                        getWeather(input),
+                    ]);
+
+                    const [hotelsRes, flightsRes, packingListRes, activitiesListRes, weatherRes] = results;
+
+                    setStay(hotelsRes);
+                    setFlights(flightsRes);
+                    setPacklist(packingListRes.packing_list);
+                    setActivities(activitiesListRes.activities_list);
+                    setWeather(weatherRes);
+                    setBackendLoading(false);
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
+        };
+
+        fetchData();
+    }, [input]);
+
+    /**
+     * handles loading screen logic while data is being fetched
+     */
+    useEffect(() => {
+        if (backendLoading) {
+            setLoadingText(loadingMessages[messageIndex]);
+        }
+    }, [backendLoading, messageIndex]);
+
+    useEffect(() => {
+        let intervalId;
+        if (backendLoading) {
+            intervalId = setInterval(() => {
+                setMessageIndex((prevIndex) => (prevIndex + 1) % loadingMessages.length);
+            }, 1000);
+        }
+
+        return () => clearInterval(intervalId);
+    }, [backendLoading, loadingMessages.length]);
+
+
+    useEffect(() => {
+        if (!user) {
+            navigate.push("/login");
+        }
+    }, [user, navigate]);
+
+    if (backendLoading) {
+        return (
+            &lt;div className="home">
+                &lt;header className="homeheader">
+                    &lt;div className='navbar'>
+                        &lt;img src={xpedition.src} className="home_logo" alt="logo" />
+                    &lt;/div>
+                &lt;/header>
+                &lt;div>
+                    &lt;p className='loadingText'> {loadingText} &lt;/p>
+                &lt;/div>
+            &lt;/div>
+        );
+    }
+
+    return (
+        &lt;div className="home">
+            &lt;header className="homeheader">
+                &lt;div className='navbar'>
+                    &lt;img src={xpedition.src} className="home_logo" alt="logo" />
+                    &lt;div>
+                        &lt;Tooltip showArrow={true} className="custom-tooltip" content="Save Xpedition" placement="bottom">
+                            &lt;Button onClick={handleSaveClick}>&lt;img src={save.src} className="save" alt="logo" />&lt;/Button>
+                        &lt;/Tooltip>
+                        &lt;Tooltip showArrow={true} className="custom-tooltip" content="New Xpedition">
+                            &lt;Button onClick={handlePlusClick}>&lt;img src={plus.src} className="plus" alt="logo" />&lt;/Button>
+                        &lt;/Tooltip>
+                        &lt;Tooltip showArrow={true} className="custom-tooltip" content="History">
+                            &lt;Button onClick={handleHistoryClick}>&lt;img src={history.src} className="history" alt="logo" />&lt;/Button>
+                        &lt;/Tooltip>
+                        &lt;Tooltip showArrow={true} className="custom-tooltip" content="Share Expedition">
+                            &lt;Button onClick={handleShareClick}> &lt;img src={upload.src} className="upload" alt="logo" />&lt;/Button>
+                        &lt;/Tooltip>
+                    &lt;/div>
+                &lt;/div>
+                {savePopup &amp;&amp; &lt;div className='saveBox'>
+                    &lt;button onClick={handleXclick} className='x-button'>x&lt;/button>
+                    &lt;label className="save-label"> Enter Xpedition Name: &lt;/label>
+                    &lt;div className="description-group">
+                        &lt;input
+                            type="text"
+                            value={XpeditionName}
+                            onChange={handleNameChange}
+                            className="save-description"
+                        />
+                        &lt;button onClick={handleSavePopupClick} className='save-button'>Save&lt;/button>
+                    &lt;/div>
+                &lt;/div>}
+                {sharePopup &amp;&amp; &lt;div className='saveBox'>
+                    &lt;button onClick={handleXclick} className='x-button'>x&lt;/button>
+                    &lt;label className="save-label"> Share Xpedition: &lt;/label>
+                    &lt;div className="description-group">
+                        &lt;input
+                            type="text"
+                            value={XpeditionLink}
+                            onChange={handleNameChange}
+                            className="save-description"
+                            readOnly={true}
+                        />
+                    &lt;/div>
+                &lt;/div>}
+                {historyPopup &amp;&amp; &lt;div className='saveBox'>
+                    &lt;button onClick={handleXclick} className='x-button'>x&lt;/button>
+                    &lt;label className="save-label"> History &lt;/label>
+                    &lt;div className="description-group">
+                        &lt;input
+                            type="text"
+                            value={History}
+                            onChange={handleNameChange}
+                            className="save-description"
+                            readOnly={true}
+                        />
+                    &lt;/div>
+                &lt;/div>}
+                &lt;label className="top-label"> Your Xpedition &lt;/label>
+                &lt;div className="description-group">
+                    &lt;input
+                        type="text"
+                        value={input}
+                        onChange={handleInputChange}
+                        className="input-description"
+                        readOnly={true}
+                    />
+                &lt;/div>
+
+                &lt;main className="main-content">
+                    &lt;div className="row">
+                        &lt;div className="input-group">
+                            &lt;label className="input-label">Flights&lt;/label>
+                            &lt;div className="flight-cards-container">
+                                {flights &amp;&amp; flights.length > 0 ? (
+                                    flights.map((flight, index) => (
+                                        &lt;FlightCard key={index} flight={flight} />
+                                    ))
+                                ) : (
+                                    &lt;p> Loading Flights...&lt;/p>
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div className="input-group">
+                            &lt;label className="input-label">Stays&lt;/label>
+                            &lt;div className="hotel-cards-container">
+                                {stay &amp;&amp; stay.length > 0 ? (
+                                    stay.map((hotel, index) => (
+                                        &lt;HotelCard key={index} hotel={hotel} />
+                                    ))
+                                ) : (
+                                    &lt;p> Loading hotels...&lt;/p>
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+
+                    &lt;/div>
+                    &lt;div className="row">
+                        &lt;div className="input-group">
+                            &lt;label className="input-label">Weather&lt;/label>
+                            &lt;WeatherDisplay weather={weather} />
+                        &lt;/div>
+                        &lt;div className="input-group">
+                            &lt;label className="input-label">Activities&lt;/label>
+                            &lt;div className="activities-container">
+                                {activities &amp;&amp; activities.length > 0 ? (
+                                    activities.map((item, index) => (
+                                        &lt;div key={index} className="activities-item">
+                                            {item}
+                                        &lt;/div>
+                                    ))
+                                ) : (
+                                    &lt;p> Loading activities...&lt;/p>
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div className="input-group">
+                            &lt;label className="input-label">Packing List&lt;/label>
+                            &lt;div className="packing-list-container">
+                                {packlist &amp;&amp; packlist.length > 0 ? (
+                                    packlist.map((item, index) => (
+                                        &lt;div key={index} className="packing-list-item">
+                                            {item}
+                                        &lt;/div>
+                                    ))
+                                ) : (
+                                    &lt;p>Loading list...&lt;/p>
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+
+                    &lt;/div>
+                &lt;/main>
+            &lt;/header>
+        &lt;/div>
+    );
+};
+
+export default Home;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Describe">Describe</a></li><li><a href="global.html#FlightCard">FlightCard</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HotelCard">HotelCard</a></li><li><a href="global.html#Landing">Landing</a></li><li><a href="global.html#LogIn">LogIn</a></li><li><a href="global.html#SignUp">SignUp</a></li><li><a href="global.html#WeatherDisplay">WeatherDisplay</a></li><li><a href="global.html#create_flight_request_parameters">create_flight_request_parameters</a></li><li><a href="global.html#create_hotel_request_parameters">create_hotel_request_parameters</a></li><li><a href="global.html#generate_flight_request_params">generate_flight_request_params</a></li><li><a href="global.html#generate_hotel_request_params">generate_hotel_request_params</a></li><li><a href="global.html#getActivitiesList">getActivitiesList</a></li><li><a href="global.html#getFlightOptions">getFlightOptions</a></li><li><a href="global.html#getHotelOptions">getHotelOptions</a></li><li><a href="global.html#getPackingList">getPackingList</a></li><li><a href="global.html#getWeather">getWeather</a></li><li><a href="global.html#page">page</a></li><li><a href="global.html#retrieve_flight_options">retrieve_flight_options</a></li><li><a href="global.html#retrieve_hotel_options">retrieve_hotel_options</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 15 2024 14:42:15 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

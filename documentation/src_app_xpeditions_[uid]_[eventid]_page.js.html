@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/app/xpeditions/[uid]/[eventid]/page.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/app/xpeditions/[uid]/[eventid]/page.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use client'; 
+
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import './xpedition.css';
+import { doc, collection, setDoc, getDocs, getDoc } from "firebase/firestore";
+import { db, auth } from "../../../firebase-config";
+import xpedition from '@/public/XPEDITION.png';
+import HotelCard from '../../../components/HotelCard';
+import FlightCard from '../../../components/FlightCard';
+import WeatherDisplay from '../../../components/WeatherCard';
+
+/**
+ * This is an alternative version of the home page used to view Xpeditions that were previously saved
+ * @param {*} params the ids to find the saved xpedition, come from the URL path (uid, eventid)
+ * @returns JSX for alternative home page (when viewing a saved xpedition)
+ */
+const Home = ({ params }) => {
+    const navigate = useRouter();
+    const [input, setInput] = useState('');
+    const [flights, setFlights] = useState('');
+    const [stay, setStay] = useState('');
+    const [weather, setWeather] = useState('');
+    const [activities, setActivities] = useState('');
+    const [packlist, setPacklist] = useState('');
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        const fetchEventByUID = async () => {
+            const eventRef = doc(db, "xpeditions", params.uid, "events", params.eventid);
+            const eventDoc = await getDoc(eventRef);
+            if (eventDoc.exists()) {
+                console.log("Document exists:", eventDoc.data());
+                let data = eventDoc.data();
+                setStay(data.hotels);
+                setFlights(data.flights);
+                setWeather(data.weather);
+                setPacklist(data.packing);
+                setActivities(data.activities);
+                setInput(data.name);
+                setLoading(false);
+              } else {
+                console.log("Document doesn't exist");
+                return null;
+              }
+        }
+        fetchEventByUID();
+      }, []);
+
+    if(loading) {
+        return (
+            &lt;div className="home">
+                &lt;header className="homeheader">
+                    &lt;div className='navbar'>
+                        &lt;img src={xpedition.src} className="home_logo" alt="logo" />
+                    &lt;/div>
+                &lt;/header>
+                &lt;div>
+                    &lt;p className='loadingText'>Loading...&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        );
+    }
+
+    return (
+        &lt;div className="home">
+        &lt;header className="homeheader">
+            &lt;div className='navbar'>
+                &lt;img src={xpedition.src} className="home_logo" alt="logo" />
+               
+            &lt;/div>
+            &lt;main className="main-content">
+                &lt;div className="row">
+                    &lt;div className="input-group">
+                        &lt;label className="input-label">Flights&lt;/label>
+                        &lt;div className="flight-cards-container">
+                            {flights &amp;&amp; flights.length > 0 ? (
+                                flights.map((flight, index) => (
+                                    &lt;FlightCard key={index} flight={flight} />
+                                ))
+                            ) : (
+                                &lt;p> Loading Flights...&lt;/p>
+                            )}
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className="input-group">
+                        &lt;label className="input-label">Stays&lt;/label>
+                        &lt;div className="hotel-cards-container">
+                            {stay &amp;&amp; stay.length > 0 ? (
+                                stay.map((hotel, index) => (
+                                    &lt;HotelCard key={index} hotel={hotel} />
+                                ))
+                            ) : (
+                                &lt;p> Loading hotels...&lt;/p>
+                            )}
+                        &lt;/div>
+                    &lt;/div>
+
+                &lt;/div>
+                &lt;div className="row">
+                    &lt;div className="input-group">
+                        &lt;label className="input-label">Weather&lt;/label>
+                        &lt;WeatherDisplay weather={weather} />
+                    &lt;/div>
+                    &lt;div className="input-group">
+                        &lt;label className="input-label">Activities&lt;/label>
+                        &lt;div className="activities-container">
+                            {activities &amp;&amp; activities.length > 0 ? (
+                                activities.map((item, index) => (
+                                    &lt;div key={index} className="activities-item">
+                                        {item}
+                                    &lt;/div>
+                                ))
+                            ) : (
+                                &lt;p> Loading activities...&lt;/p>
+                            )}
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className="input-group">
+                        &lt;label className="input-label">Packing List&lt;/label>
+                        &lt;div className="packing-list-container">
+                            {packlist &amp;&amp; packlist.length > 0 ? (
+                                packlist.map((item, index) => (
+                                    &lt;div key={index} className="packing-list-item">
+                                        {item}
+                                    &lt;/div>
+                                ))
+                            ) : (
+                                &lt;p>Loading list...&lt;/p>
+                            )}
+                        &lt;/div>
+                    &lt;/div>
+
+                &lt;/div>
+            &lt;/main>
+        &lt;/header>
+    &lt;/div>
+    );
+};
+
+export default Home;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Describe">Describe</a></li><li><a href="global.html#FlightCard">FlightCard</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HotelCard">HotelCard</a></li><li><a href="global.html#Landing">Landing</a></li><li><a href="global.html#LogIn">LogIn</a></li><li><a href="global.html#SignUp">SignUp</a></li><li><a href="global.html#WeatherDisplay">WeatherDisplay</a></li><li><a href="global.html#create_flight_request_parameters">create_flight_request_parameters</a></li><li><a href="global.html#create_hotel_request_parameters">create_hotel_request_parameters</a></li><li><a href="global.html#generate_flight_request_params">generate_flight_request_params</a></li><li><a href="global.html#generate_hotel_request_params">generate_hotel_request_params</a></li><li><a href="global.html#getActivitiesList">getActivitiesList</a></li><li><a href="global.html#getFlightOptions">getFlightOptions</a></li><li><a href="global.html#getHotelOptions">getHotelOptions</a></li><li><a href="global.html#getPackingList">getPackingList</a></li><li><a href="global.html#getWeather">getWeather</a></li><li><a href="global.html#page">page</a></li><li><a href="global.html#retrieve_flight_options">retrieve_flight_options</a></li><li><a href="global.html#retrieve_hotel_options">retrieve_hotel_options</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 15 2024 14:42:15 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

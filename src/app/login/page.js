@@ -7,6 +7,10 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 import xpedition from '@/public/XPEDITION.png';
 
+/**
+ * Login Page 
+ * @returns JSX for login page
+ */
 const LogIn = () => {
     const navigate = useRouter();
     const [contact, setContact] = useState('');

@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation';
 import './landing.css';
 import xpedition from '@/public/XPEDITION.png';
 
+/**
+ * This is the landing page 
+ * @returns JSX for the landing page
+ */
 const Landing = () => {
     const navigate = useRouter();
     const handleSignupClick = () => {
